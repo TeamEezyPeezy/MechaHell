@@ -9,7 +9,7 @@ public class EnemyAi : MonoBehaviour
 
     // Attacking
     public float timeBetweenAttacks;
-    private bool alreadyAttacked;
+    //private bool alreadyAttacked;
     public GameObject projectile;
 
     public LayerMask whatIsPlayer;
@@ -30,7 +30,6 @@ public class EnemyAi : MonoBehaviour
     void Update()
     {
         playerInAttackRange = CheckAttackRange(transform, target);
-        print(playerInAttackRange);
 
         if (!playerInAttackRange) ChasePlayer();
         if (playerInAttackRange) AttackPlayer();
@@ -56,7 +55,8 @@ public class EnemyAi : MonoBehaviour
         // ROTATE
         RotateTowards(target.position);
 
-        print(transform.name + "Attacks player");
+        //print(transform.name + "Attacks player");
+
         /*
         if (!alreadyAttacked)
         {
@@ -82,7 +82,7 @@ public class EnemyAi : MonoBehaviour
 
     private void ResetAttack()
     {
-        alreadyAttacked = false;
+        //alreadyAttacked = false;
     }
 
     private void OnDrawGizmosSelected()
