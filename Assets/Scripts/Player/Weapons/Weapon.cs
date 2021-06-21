@@ -14,5 +14,6 @@ public abstract class Weapon
     public int magazineSize;
     public int bulletsPerTap;
     public bool allowButtonHold;
+    public string weaponName;
 
 }

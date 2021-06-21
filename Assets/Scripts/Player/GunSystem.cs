@@ -52,8 +52,14 @@ public class GunSystem : MonoBehaviour
         // test weapon swap
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            mainWeapon =  SelectWeapon("DesertEagle");
+            // yes very bad until i figure out what we gna do with these:D
+            if(mainWeapon.weaponName == "Ak47"){
+                mainWeapon = SelectWeapon("DesertEagle");
+            } else {
+                mainWeapon = SelectWeapon("Ak47");
+            }
             UpdateWeaponInfo();
+            
         } 
 
         // check if shooting was allowed
@@ -75,6 +81,7 @@ public class GunSystem : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         Vector3 direction = firePoint.right + new Vector3(xSpread, 0, 0);
         rb.AddForce(direction * mainWeapon.bulletForce, ForceMode2D.Impulse);
+        Destroy(bullet, 3f);
 
         bulletsLeft--;
         bulletsToShoot--;

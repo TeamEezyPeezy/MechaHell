@@ -15,6 +15,7 @@ public class Ak47 : Weapon
         magazineSize = 30;
         bulletsPerTap = 1;
         allowButtonHold = true; 
+        weaponName = "Ak47";
     }
    
 }

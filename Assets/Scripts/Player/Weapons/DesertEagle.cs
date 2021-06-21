@@ -14,7 +14,8 @@ public class DesertEagle : Weapon
         timeBetweenShots = 0.7f;
         magazineSize = 7;
         bulletsPerTap = 1;
-        allowButtonHold = false; 
+        allowButtonHold = false;
+        weaponName = "DesertEagle";
     }
    
 }
