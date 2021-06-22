@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8116413541067230171}
   - component: {fileID: 8116413541067230170}
   - component: {fileID: 8116413541067230165}
+  - component: {fileID: 3222000044811696104}
   - component: {fileID: 8116413541067230174}
   m_Layer: 0
   m_Name: Player
@@ -169,15 +170,18 @@ MonoBehaviour:
   bulletPreFab: {fileID: 6328627581732720392, guid: 90438e378ff0d944f89ece63dead5be2, type: 3}
   ammoInfo: {fileID: 0}
   reloadInfo: {fileID: 0}
-  bulletForce: 20
-  damage: 1
-  timeBetweenShooting: 0.15
-  spread: 0
-  reloadTime: 2
-  timeBetweenShots: 0.1
-  magazineSize: 30
-  bulletsPerTap: 1
-  allowButtonHold: 1
+--- !u!114 &3222000044811696104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8116413541067230164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51be61ecd53673149891b2dd31be1eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &8116413541067230174
 PolygonCollider2D:
   m_ObjectHideFlags: 0
