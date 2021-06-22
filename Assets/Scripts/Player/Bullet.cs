@@ -14,7 +14,6 @@ public class Bullet : MonoBehaviour
         //Destroy(animation, 5f);
         Destroy(gameObject);
 
-       Debug.Log("Collision");
    }
 
    private void CheckEnemyCollision(Collision2D collision)

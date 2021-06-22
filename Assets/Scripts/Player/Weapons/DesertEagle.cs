@@ -6,14 +6,14 @@ public class DesertEagle : Weapon
 {
     public DesertEagle()
     {
-        bulletForce = 30f;
+        bulletForce = 50f;
         damage = 40;
         timeBetweenShooting = 0.7f;
-        spread = 0.1f;
+        spread = 0.02f;
         reloadTime = 1.5f;
-        timeBetweenShots = 0.7f;
+        timeBetweenShots = 0.05f;
         magazineSize = 7;
-        bulletsPerTap = 1;
+        bulletsPerTap = 2;
         allowButtonHold = false;
         weaponName = "DesertEagle";
     }

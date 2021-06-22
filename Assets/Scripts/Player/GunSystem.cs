@@ -74,13 +74,24 @@ public class GunSystem : MonoBehaviour
     void Shoot()
     {
         readyToShoot = false;
-
         float xSpread = Random.Range(-mainWeapon.spread, mainWeapon.spread);
+        float ySpread = Random.Range(-mainWeapon.spread, mainWeapon.spread);
 
-        GameObject bullet = Instantiate(bulletPreFab, firePoint.position, firePoint.rotation);
+        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 direction = (Input.mousePosition - sp).normalized;
+        direction.x += xSpread;
+        direction.y += ySpread;
+        direction.Normalize();
+        
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        
+        // Instantiate the bullet using our new rotation
+        GameObject bullet = Instantiate(bulletPreFab, firePoint.position, bulletRotation);
+
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        Vector3 direction = firePoint.right + new Vector3(xSpread, 0, 0);
         rb.AddForce(direction * mainWeapon.bulletForce, ForceMode2D.Impulse);
+
         Destroy(bullet, 3f);
 
         bulletsLeft--;
@@ -91,9 +102,7 @@ public class GunSystem : MonoBehaviour
         if(bulletsToShoot > 0 && bulletsLeft > 0)
         {
             Invoke("Shoot", mainWeapon.timeBetweenShots);
-        }
-
-        if (bulletsToShoot == 0) {
+        } else  {
             Invoke("ResetShot", mainWeapon.timeBetweenShooting);
         }
 
@@ -124,6 +133,7 @@ public class GunSystem : MonoBehaviour
         bulletsLeft = mainWeapon.magazineSize;
         reloading = false;
         reloadInfo.SetText("");
+        UpdateWeaponInfo();
     }
 
     Weapon SelectWeapon(string weaponName)
