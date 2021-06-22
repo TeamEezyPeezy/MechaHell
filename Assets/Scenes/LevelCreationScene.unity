@@ -1759,14 +1759,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8116413541067230169, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8116413541067230169, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8116413541067230169, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.283664
       objectReference: {fileID: 0}
@@ -1810,10 +1802,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1376416394}
-    - target: {fileID: 8116413541067230170, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
 --- !u!1 &189900187
@@ -4460,31 +4448,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &670281775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8116413541067230164, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
-  m_PrefabInstance: {fileID: 152935093}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &670281781 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8116413541067230169, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
-  m_PrefabInstance: {fileID: 152935093}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &670281782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670281775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a00dd88eae4c04e9874c9b328ddf0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosiveBulletPreFab: {fileID: 7456490683519980421, guid: 2630fa7616a5cf54682bbf04ae353661, type: 3}
-  firePoint: {fileID: 1918406233}
-  bulletForce: 20
 --- !u!1 &684617108
 GameObject:
   m_ObjectHideFlags: 0
@@ -13547,36 +13510,6 @@ Transform:
   - {fileID: 1428938019}
   m_Father: {fileID: 1085444067}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1918406232
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1918406233}
-  m_Layer: 0
-  m_Name: FirePointExplosive
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1918406233
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918406232}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.52, y: 0.88, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
-  m_Children: []
-  m_Father: {fileID: 670281781}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918818719
 GameObject:
