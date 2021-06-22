@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: VisualEffects
+    uniqueID: 3315975979
+    locked: 0

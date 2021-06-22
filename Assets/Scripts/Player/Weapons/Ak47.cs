@@ -6,7 +6,7 @@ public class Ak47 : Weapon
 {
     public Ak47()
     {
-        bulletForce = 50f;
+        bulletForce = 80f;
         damage = 20;
         timeBetweenShooting = 0.15f;
         spread = 0.05f;
