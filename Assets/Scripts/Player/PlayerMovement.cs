@@ -10,30 +10,31 @@ public class PlayerMovement : MonoBehaviour
    public Rigidbody2D playerRigidBody;
    public Camera cam;
 
-   public Animator animator;
+    public Animator animator;
 
    Vector2 movement;
    Vector2 mousePos;
    float angleOffset = -90f;
-<<<<<<< HEAD
-=======
 
->>>>>>> main
-
-
-    // Update is called once per frame
+    bool isWalking = false;
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     void Update()
     {
         GetMovementInputs();
         GetMousePosition();
-<<<<<<< HEAD
 
-        animator = GetComponent<Animator>();
+        if(isWalking)
+        {
+            animator.SetBool("isMoving", isWalking);
+        } else {
+            animator.SetBool("isMoving", isWalking);
+        }
 
-        if (Input.GetButtonDown("Jump")) SceneManager.LoadScene("AiTestScene");
-=======
+        //if (Input.GetButtonDown("Jump")) SceneManager.LoadScene("AiTestScene");
         if(Input.GetButtonDown("Jump")) SceneManager.LoadScene("DoorTestScene");
->>>>>>> main
     }
 
     void FixedUpdate()
@@ -46,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRigidBody.MovePosition(playerRigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
         
-
     }
     void RotatePlayer()
     {
@@ -59,7 +59,13 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        animator.SetBool("isMoving", true);
+        if (movement.x != 0 || movement.y != 0)
+        {
+            isWalking = true;
+        } else
+        {
+            isWalking = false;
+        }
     }
     void GetMousePosition()
     {
