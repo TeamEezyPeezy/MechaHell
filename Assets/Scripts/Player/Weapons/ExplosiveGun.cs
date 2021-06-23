@@ -31,6 +31,8 @@ public class ExplosiveGun : MonoBehaviour
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(direction * bulletForce, ForceMode2D.Impulse);
 
+            ScreenShakeController.instance.StartShake(.1f, 0.2f);
+
             Destroy(bullet, 3f);
         }
   

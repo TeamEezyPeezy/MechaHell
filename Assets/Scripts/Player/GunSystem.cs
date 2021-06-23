@@ -13,6 +13,9 @@ public class GunSystem : MonoBehaviour
 
     public Weapon mainWeapon;
 
+    public GameObject akBullet;
+    public GameObject DesertEagleBullet;
+
     int bulletsLeft, bulletsToShoot;
 
     bool shooting, readyToShoot, reloading;
@@ -91,6 +94,7 @@ public class GunSystem : MonoBehaviour
 
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(direction * mainWeapon.bulletForce, ForceMode2D.Impulse);
+        mainWeapon.FireEffects();
 
         Destroy(bullet, 3f);
 
@@ -140,11 +144,17 @@ public class GunSystem : MonoBehaviour
     {
         switch(weaponName)
         {
-            case "DesertEagle" : return new DesertEagle();
-            case "Ak47" : return new Ak47();
+            case "DesertEagle" : 
+                bulletPreFab = DesertEagleBullet;
+                return new DesertEagle();
+            case "Ak47" :
+                bulletPreFab = akBullet;
+                return new Ak47();
 
             // TODO maybe implement something else since this can cause bugs with typos
-            default : return new Ak47();
+            default :
+                bulletPreFab = akBullet; 
+                return new Ak47();
         }
     }
 }

@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GetMovementInputs();
         GetMousePosition();
-        if(Input.GetButtonDown("Jump")) SceneManager.LoadScene("AiTestScene");
+        if(Input.GetButtonDown("Jump")) SceneManager.LoadScene("DoorTestScene");
     }
 
     void FixedUpdate()

@@ -8,9 +8,12 @@ public class ExplosiveBullet : MonoBehaviour
    public GameObject explosionPreFab;
    public float explosionForce, radius;
 
+   public int damage = 100;
+
    void OnCollisionEnter2D(Collision2D other)
    {
        Explode();
+       ScreenShakeController.instance.StartShake(.2f, 1f);
        Destroy(gameObject);
    }
 
@@ -23,11 +26,14 @@ public class ExplosiveBullet : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
         foreach (Collider2D nearby in colliders)
         {
-            Rigidbody2D rigidbody2D = nearby.GetComponent<Rigidbody2D>();
-            if(rigidbody2D)
+           
+            Enemy enemy = nearby.gameObject.GetComponent<Enemy>();
+
+            if (enemy != null)
             {
-                Debug.Log("Enemy hit do something");
+                enemy.TakeDamage(damage);
             }
+        
         }
    }
 }
