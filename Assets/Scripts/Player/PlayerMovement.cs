@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
    public float moveSpeed = 5f;
    public Rigidbody2D playerRigidBody;
    public Camera cam;
+
+   public Animator animator;
+
    Vector2 movement;
    Vector2 mousePos;
-   float angleOffset = 0f;
-
+   float angleOffset = -90f;
 
 
     // Update is called once per frame
@@ -20,7 +22,10 @@ public class PlayerMovement : MonoBehaviour
     {
         GetMovementInputs();
         GetMousePosition();
-        if(Input.GetButtonDown("Jump")) SceneManager.LoadScene("AiTestScene");
+
+        animator = GetComponent<Animator>();
+
+        if (Input.GetButtonDown("Jump")) SceneManager.LoadScene("AiTestScene");
     }
 
     void FixedUpdate()
@@ -32,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer()
     {
         playerRigidBody.MovePosition(playerRigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
+        
+
     }
     void RotatePlayer()
     {
@@ -44,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetBool("isMoving", true);
     }
     void GetMousePosition()
     {
