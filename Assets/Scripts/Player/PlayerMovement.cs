@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
    public Camera cam;
    Vector2 movement;
    Vector2 mousePos;
-   float angleOffset = 0f;
+   float angleOffset = -90f;
 
 
 
