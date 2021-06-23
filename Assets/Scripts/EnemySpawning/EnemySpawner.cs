@@ -15,12 +15,12 @@ public class EnemySpawner : MonoBehaviour
     private Timer timer;
 
     public float timeBetweenSpawning = 10f;
-    public float timeBetweenSpawns = 2f;
     public float enemiesToSpawn = 5f;
-    public float minSpawnTime= 0.5f, maxSpawnTime = 2f;
-    public float minRangeToSpawn = 3f;
+    public float minRangeToSpawn = 3.5f;
     private float nextTime = 0f;
     private int waveNumber = 0;
+    public float minSpawnTime = 0.5f, maxSpawnTime = 2f;
+    private float timeBetweenSpawns = 0f;
 
     private bool waveSpawned = false;
     private bool currentlySpawning = false;
@@ -54,7 +54,6 @@ public class EnemySpawner : MonoBehaviour
         {
             timer.Reset();
             StartCoroutine(SpawnWave());
-            waveSpawned = true;
         }
     }
 
@@ -96,6 +95,7 @@ public class EnemySpawner : MonoBehaviour
 
         waveNumber++;
         currentlySpawning = false;
+        waveSpawned = true;
 
         StopCoroutine(nameof(SpawnWave));
     }

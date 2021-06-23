@@ -6794,7 +6794,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.6, y: 2.523077}
+    oldSize: {x: 2.6, y: 2.8307693}
     newSize: {x: 3.13, y: 2.07}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -9941,12 +9941,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2130695167}
   enemyPrefab: {fileID: 6843096791398924692, guid: afba5ec2485ae8e4ab67c984baf8a741, type: 3}
-  timeBetweenSpawning: 10
-  timeBetweenSpawns: 2
-  enemiesToSpawn: 10
+  timeBetweenSpawning: 5
+  enemiesToSpawn: 3
+  minRangeToSpawn: 4
   minSpawnTime: 0.5
-  maxSpawnTime: 2
-  minRangeToSpawn: 3
+  maxSpawnTime: 3
 --- !u!4 &978283219
 Transform:
   m_ObjectHideFlags: 0
