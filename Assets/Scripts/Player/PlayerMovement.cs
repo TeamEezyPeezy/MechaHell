@@ -15,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
    Vector2 movement;
    Vector2 mousePos;
    float angleOffset = -90f;
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 
 
     // Update is called once per frame
@@ -22,10 +26,14 @@ public class PlayerMovement : MonoBehaviour
     {
         GetMovementInputs();
         GetMousePosition();
+<<<<<<< HEAD
 
         animator = GetComponent<Animator>();
 
         if (Input.GetButtonDown("Jump")) SceneManager.LoadScene("AiTestScene");
+=======
+        if(Input.GetButtonDown("Jump")) SceneManager.LoadScene("DoorTestScene");
+>>>>>>> main
     }
 
     void FixedUpdate()

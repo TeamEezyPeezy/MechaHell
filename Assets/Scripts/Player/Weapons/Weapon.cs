@@ -16,4 +16,5 @@ public abstract class Weapon
     public bool allowButtonHold;
     public string weaponName;
 
+    public abstract void FireEffects();
 }

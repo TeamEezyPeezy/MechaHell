@@ -17,5 +17,9 @@ public class Ak47 : Weapon
         allowButtonHold = true; 
         weaponName = "Ak47";
     }
-   
+    
+    override public void FireEffects()
+    {
+        //  ScreenShakeController.instance.StartShake(.05f, 0.1f);
+    }
 }
