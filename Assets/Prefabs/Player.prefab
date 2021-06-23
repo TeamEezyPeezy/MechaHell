@@ -202,6 +202,8 @@ MonoBehaviour:
   bulletPreFab: {fileID: 6328627581732720392, guid: 90438e378ff0d944f89ece63dead5be2, type: 3}
   ammoInfo: {fileID: 0}
   reloadInfo: {fileID: 0}
+  akBullet: {fileID: 6328627581732720392, guid: 90438e378ff0d944f89ece63dead5be2, type: 3}
+  DesertEagleBullet: {fileID: 8287099883914235949, guid: 94740e52f203e8d4190461170f00a1d2, type: 3}
 --- !u!114 &3222000044811696104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51be61ecd53673149891b2dd31be1eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpenRange: 5
+  currentRoom: {fileID: 0}
 --- !u!60 &8116413541067230174
 PolygonCollider2D:
   m_ObjectHideFlags: 0

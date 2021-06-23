@@ -7,14 +7,21 @@ public class Bullet : MonoBehaviour
     // public GameObject hitAnimation;
    void OnCollisionEnter2D(Collision2D collision)
    {
-       CheckEnemyCollision(collision);
+     
+     if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet")) return;
+        Debug.Log(collision);
 
+
+        CheckEnemyCollision(collision);
+        Destroy(gameObject);
         // TODO When animation for bullet explosion / disappearing is done, enable these
         //GameObject animation = Instantiate(hitAnimation, transform.position, Quaternion.identity);
         //Destroy(animation, 5f);
-        Destroy(gameObject);
+       
 
    }
+
+
 
    private void CheckEnemyCollision(Collision2D collision)
    {
