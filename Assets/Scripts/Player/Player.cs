@@ -65,4 +65,11 @@ public class Player : MonoBehaviour
         }
         return tMin;
     }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw range of players reach to open doors.
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, doorOpenRange);
+    }
 }

@@ -13,15 +13,6 @@ public class Timer : MonoBehaviour
 
     private bool isRunning = false;
     private float lastStartTime;
-    private bool runOnStart = true;
-
-    private void Start()
-    {
-        if (runOnStart)
-        {
-            Run(startTime);
-        }
-    }
 
     public Timer(float t)
     {
@@ -30,7 +21,7 @@ public class Timer : MonoBehaviour
 
     public bool IsComplete
     {
-        get { return currentTime + startTime >= lastStartTime; }
+        get { return currentTime <= 0; }
     }
 
     public void Run(float startTime)
@@ -47,7 +38,7 @@ public class Timer : MonoBehaviour
 
     public void Reset()
     {
-        currentTime = startTime;
+        currentTime = lastStartTime;
         isRunning = false;
     }
 

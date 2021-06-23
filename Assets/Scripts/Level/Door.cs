@@ -6,9 +6,10 @@ public class Door : MonoBehaviour, iDoor
 {
     public Animator animator;
 
-    public Room nextRoom;
+    public Door doorPair;
 
     private bool isOpen = false;
+    private bool doorPairOpen = false;
 
     [Tooltip("Cost to open door, for example key / money")]
     public int doorCost = 1;
@@ -20,9 +21,23 @@ public class Door : MonoBehaviour, iDoor
             if (GameManager.Instance.Money >= doorCost)
             {
                 // Open Door.
-                animator.SetTrigger("OpenDoor");
+                if (animator != null)
+                {
+                    animator.SetTrigger("OpenDoor");
+                }
+
                 GameManager.Instance.Money -= doorCost;
                 isOpen = true;
+            }
+
+            if (!doorPairOpen)
+            {
+                if (doorPair.animator != null)
+                {
+                    doorPair.animator.SetTrigger("OpenDoor");
+                }
+
+                doorPairOpen = true;
             }
         }
     }
