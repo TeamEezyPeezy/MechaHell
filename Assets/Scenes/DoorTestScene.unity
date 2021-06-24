@@ -519,6 +519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 23365974}
   doorPair: {fileID: 2113492191}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &28871142
 GameObject:
@@ -1798,6 +1799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 108935488}
   doorPair: {fileID: 2009936495}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &112815360
 GameObject:
@@ -2447,6 +2449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 147619896}
   doorPair: {fileID: 958562340}
+  isOpen: 0
   doorCost: 1
 --- !u!1001 &152935093
 PrefabInstance:
@@ -3577,6 +3580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 259321172}
   doorPair: {fileID: 428775350}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &286046653
 GameObject:
@@ -3974,6 +3978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 305316314}
   doorPair: {fileID: 1388822131}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &327563545
 GameObject:
@@ -5194,6 +5199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 407597392}
   doorPair: {fileID: 1894979969}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &408244941
 GameObject:
@@ -5465,6 +5471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 428775347}
   doorPair: {fileID: 259321175}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &433069193
 GameObject:
@@ -6448,6 +6455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 579097544}
   doorPair: {fileID: 1593622428}
+  isOpen: 0
   doorCost: 1
 --- !u!1001 &597371888
 PrefabInstance:
@@ -6593,6 +6601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 597371893}
   doorPair: {fileID: 1905162534}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &633035520
 GameObject:
@@ -9869,6 +9878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 958562337}
   doorPair: {fileID: 147619899}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &967949003
 GameObject:
@@ -10442,6 +10452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 978785491}
   doorPair: {fileID: 1806430866}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &982783803
 GameObject:
@@ -10839,6 +10850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 994155033}
   doorPair: {fileID: 1812644630}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1006698840
 GameObject:
@@ -13355,6 +13367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1275741116}
   doorPair: {fileID: 1490990865}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1280458767
 GameObject:
@@ -13960,6 +13973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1346686548}
   doorPair: {fileID: 1948525394}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1365788011
 GameObject:
@@ -14231,6 +14245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1367779556}
   doorPair: {fileID: 7041600801862196933}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1369771679
 GameObject:
@@ -14561,6 +14576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1388822128}
   doorPair: {fileID: 305316317}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1403170119
 GameObject:
@@ -15606,6 +15622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1490990862}
   doorPair: {fileID: 1275741119}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1504922331
 GameObject:
@@ -16527,6 +16544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1541546277}
   doorPair: {fileID: 2142158272}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1575764565
 GameObject:
@@ -17176,6 +17194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1593622425}
   doorPair: {fileID: 579097547}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1610025498
 GameObject:
@@ -18417,7 +18436,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 661787351, guid: 3972003461ff7e84587347eaa1788967, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3972003461ff7e84587347eaa1788967, type: 3}
 --- !u!1 &1718041776
 GameObject:
@@ -19916,6 +19936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1806430863}
   doorPair: {fileID: 978785494}
+  isOpen: 0
   doorCost: 1
 --- !u!1001 &1812644622
 PrefabInstance:
@@ -20061,6 +20082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1812644627}
   doorPair: {fileID: 994155036}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1828300065
 GameObject:
@@ -20877,6 +20899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1894979966}
   doorPair: {fileID: 407597395}
+  isOpen: 0
   doorCost: 1
 --- !u!1001 &1905162526
 PrefabInstance:
@@ -21022,6 +21045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1905162531}
   doorPair: {fileID: 597371896}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1918818719
 GameObject:
@@ -21627,6 +21651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1948525391}
   doorPair: {fileID: 1346686551}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &1964123170
 GameObject:
@@ -22566,6 +22591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2009936492}
   doorPair: {fileID: 108935491}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &2014401452
 GameObject:
@@ -24031,6 +24057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2113492188}
   doorPair: {fileID: 23365977}
+  isOpen: 0
   doorCost: 1
 --- !u!1 &2121036030
 GameObject:
@@ -24313,6 +24340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2142158269}
   doorPair: {fileID: 1541546280}
+  isOpen: 0
   doorCost: 1
 --- !u!1001 &7041600801862196925
 PrefabInstance:
@@ -24458,4 +24486,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7041600801862196932}
   doorPair: {fileID: 1367779559}
+  isOpen: 0
   doorCost: 1
