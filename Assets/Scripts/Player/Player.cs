@@ -73,19 +73,24 @@ public class Player : MonoBehaviour
 
     private void OpenDoor()
     {
-        Door closestDoor = GetClosestDoor(currentRoom.MyDoors);
-        if (closestDoor != null)
+        if (currentRoom != null)
         {
-            if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange)
-            {
-                // Open door
-                print("Open door.");
+            if (currentRoom.myDoors.Length <= 0) return;
 
-                closestDoor.OpenDoor();
-            }
-            else
+            Door closestDoor = GetClosestDoor(currentRoom.MyDoors);
+            if (closestDoor != null)
             {
-                print("Can't reach door.");
+                if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange)
+                {
+                    // Open door
+                    print("Open door.");
+
+                    closestDoor.OpenDoor();
+                }
+                else
+                {
+                    print("Can't reach door.");
+                }
             }
         }
     }
