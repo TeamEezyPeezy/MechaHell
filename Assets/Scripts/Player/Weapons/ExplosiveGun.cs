@@ -7,12 +7,23 @@ public class ExplosiveGun : MonoBehaviour
     public GameObject explosiveBulletPreFab;
     public Transform firePoint;
     public float bulletForce = 20f;
+
+    public Animator animator;       //karin
+
     bool readyToShoot = true;
+
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
 
     void Update()
     {
         if(Input.GetMouseButtonDown(1)){
             Fire();
+            animator.SetTrigger("isShootingBazooka");    //karin
         }
     }
     public void Fire()
@@ -34,6 +45,7 @@ public class ExplosiveGun : MonoBehaviour
             ScreenShakeController.instance.StartShake(.1f, 0.2f);
 
             Destroy(bullet, 3f);
+            animator.ResetTrigger("isShootingBazooka");    //karin
         }
   
     }
