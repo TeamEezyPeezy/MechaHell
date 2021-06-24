@@ -17,26 +17,30 @@ public class PlayerMovement : MonoBehaviour
    float angleOffset = -90f;
 
     bool isWalking = false;
+    bool animationChanged = false;
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        // animator = GetComponent<Animator>();
     }
     void Update()
     {
         GetMovementInputs();
         GetMousePosition();
-
-        if(isWalking)
-        {
-            animator.SetBool("isMoving", isWalking);
-        } else {
-            animator.SetBool("isMoving", isWalking);
-        }
-
-        //if (Input.GetButtonDown("Jump")) SceneManager.LoadScene("AiTestScene");
+        HandleMovementAnimations();
+        
+        // temporary reset for testing purposes
         if(Input.GetButtonDown("Jump")) SceneManager.LoadScene("DoorTestScene");
     }
 
+    void HandleMovementAnimations()
+    {
+        if(animationChanged)
+        {
+            Debug.Log("animation change");
+            animator.SetBool("isMoving", isWalking);
+            animationChanged = false;
+        }
+    }
     void FixedUpdate()
     {
         MovePlayer();
@@ -61,11 +65,19 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         if (movement.x != 0 || movement.y != 0)
         {
-            isWalking = true;
+            if(!isWalking){
+                animationChanged = true;
+                isWalking = true;
+            }
         } else
         {
-            isWalking = false;
+            if(isWalking){
+                animationChanged = true;
+                isWalking = false;
+            }
         }
+
+  
     }
     void GetMousePosition()
     {

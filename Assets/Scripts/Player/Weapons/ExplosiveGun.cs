@@ -12,18 +12,10 @@ public class ExplosiveGun : MonoBehaviour
 
     bool readyToShoot = true;
 
-
-    void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-
     void Update()
     {
         if(Input.GetMouseButtonDown(1)){
             Fire();
-            animator.SetTrigger("isShootingBazooka");    //karin
         }
     }
     public void Fire()
@@ -44,8 +36,9 @@ public class ExplosiveGun : MonoBehaviour
 
             ScreenShakeController.instance.StartShake(.1f, 0.2f);
 
+            animator.SetTrigger("shootingBazooka");
+
             Destroy(bullet, 3f);
-            animator.ResetTrigger("isShootingBazooka");    //karin
         }
   
     }
