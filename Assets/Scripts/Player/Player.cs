@@ -1,10 +1,24 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public float doorOpenRange = 5f;
     public Room currentRoom;
+    public GameObject doorInfoText;
+    private Timer timer;
+    private float doorCheckInterval = 0.5f;
+
+    private void Awake()
+    {
+        timer = gameObject.AddComponent<Timer>();
+    }
+
+    private void Start()
+    {
+        timer.Run(doorCheckInterval);
+    }
 
     public Room CurrentRoom
     {
@@ -28,6 +42,30 @@ public class Player : MonoBehaviour
         {
             OpenDoor();
         }
+
+        if (timer.IsComplete)
+        {
+            CheckIfCloseToDoor();
+            timer.Reset();
+            timer.Run(doorCheckInterval);
+        }
+    }
+
+    private void CheckIfCloseToDoor()
+    {
+        Door closestDoor = GetClosestDoor(currentRoom.MyDoors);
+        if (closestDoor != null)
+        {
+            if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange && !closestDoor.isOpen)
+            {
+                // Show door info text.
+                doorInfoText.SetActive(true);
+            }
+            else
+            {
+                doorInfoText.SetActive(false);
+            }
+        }
     }
 
     private void OpenDoor()
@@ -35,7 +73,7 @@ public class Player : MonoBehaviour
         Door closestDoor = GetClosestDoor(currentRoom.MyDoors);
         if (closestDoor != null)
         {
-            if (Vector2.Distance(transform.position, closestDoor.transform.position) < doorOpenRange)
+            if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange)
             {
                 // Open door
                 print("Open door.");

@@ -2515,6 +2515,10 @@ PrefabInstance:
       propertyPath: currentRoom
       value: 
       objectReference: {fileID: 1485978878}
+    - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: doorInfoText
+      value: 
+      objectReference: {fileID: 661787347}
     - target: {fileID: 8116413540481223788, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -6760,6 +6764,11 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &661787347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 661787347, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+  m_PrefabInstance: {fileID: 1710412719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &662970687
 GameObject:
   m_ObjectHideFlags: 0
@@ -18074,14 +18083,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4943448780853515532, guid: 3972003461ff7e84587347eaa1788967, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -300
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943448782226136468, guid: 3972003461ff7e84587347eaa1788967, type: 3}
-      propertyPath: m_SortingOrder
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 4943448782226136469, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18169,26 +18170,6 @@ PrefabInstance:
     - target: {fileID: 4943448782226136473, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943448782226136475, guid: 3972003461ff7e84587347eaa1788967, type: 3}
-      propertyPath: m_ScaleFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943448782226136475, guid: 3972003461ff7e84587347eaa1788967, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943448782226136475, guid: 3972003461ff7e84587347eaa1788967, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943448782226136475, guid: 3972003461ff7e84587347eaa1788967, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943448782226136475, guid: 3972003461ff7e84587347eaa1788967, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3972003461ff7e84587347eaa1788967, type: 3}

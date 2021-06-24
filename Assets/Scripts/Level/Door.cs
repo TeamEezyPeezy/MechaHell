@@ -8,7 +8,7 @@ public class Door : MonoBehaviour, iDoor
 
     public Door doorPair;
 
-    private bool isOpen = false;
+    public bool isOpen = false;
     private bool doorPairOpen = false;
 
     [Tooltip("Cost to open door, for example key / money")]
