@@ -18436,6 +18436,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718608, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718608, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718608, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718608, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 414.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718608, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.31201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718608, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718608, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718609, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_margin.y
+      value: -0.31681442
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718609, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_margin.z
+      value: 0.044265743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718609, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943448782506718609, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 661787351, guid: 3972003461ff7e84587347eaa1788967, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3972003461ff7e84587347eaa1788967, type: 3}
