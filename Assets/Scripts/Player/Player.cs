@@ -53,17 +53,20 @@ public class Player : MonoBehaviour
 
     private void CheckIfCloseToDoor()
     {
-        Door closestDoor = GetClosestDoor(currentRoom.MyDoors);
-        if (closestDoor != null)
+        if (currentRoom != null)
         {
-            if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange && !closestDoor.isOpen)
+            Door closestDoor = GetClosestDoor(currentRoom.MyDoors);
+            if (closestDoor != null)
             {
-                // Show door info text.
-                doorInfoText.SetActive(true);
-            }
-            else
-            {
-                doorInfoText.SetActive(false);
+                if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange && !closestDoor.isOpen)
+                {
+                    // Show door info text.
+                    doorInfoText.SetActive(true);
+                }
+                else
+                {
+                    doorInfoText.SetActive(false);
+                }
             }
         }
     }
