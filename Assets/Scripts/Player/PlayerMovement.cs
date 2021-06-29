@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     float dashStartTime;
    Vector2 movement;
-   Vector3 dashDirection;
+   Vector2 lastMovementDirection;
    Vector2 mousePos;
    float angleOffset = -90f;
 
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
                 playerRigidBody.MovePosition(playerRigidBody.position + movement * moveSpeed * Time.fixedDeltaTime);
                 break;
             case State.Dashing:
-                playerRigidBody.velocity = movement * dashSpeed;;
+                playerRigidBody.velocity = lastMovementDirection * dashSpeed;;
             break;
         }
         
@@ -109,6 +109,8 @@ public class PlayerMovement : MonoBehaviour
                 movement.y = Input.GetAxisRaw("Vertical");
                 if (movement.x != 0 || movement.y != 0)
                 {
+                    lastMovementDirection = movement; // allows dashing even when character is not moving
+
                     if(!isWalking){
                         animationChanged = true;
                         isWalking = true;
