@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 661787348}
   - component: {fileID: 661787350}
   - component: {fileID: 661787349}
-  - component: {fileID: 661787351}
   m_Layer: 5
   m_Name: Text_DoorOpenInfo
   m_TagString: Untagged
@@ -135,18 +134,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &661787351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661787347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa41e29c22acd62488b8a3783d3c26e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4943448780853515539
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +414,7 @@ GameObject:
   - component: {fileID: 4943448782226136468}
   - component: {fileID: 4943448782226136475}
   - component: {fileID: 4943448782226136474}
+  - component: {fileID: 7744016337640852506}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -518,6 +506,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7744016337640852506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4943448782226136473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d407469e3a1eb13448e47e84ca454acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseHud: {fileID: 0}
 --- !u!1 &4943448782506718615
 GameObject:
   m_ObjectHideFlags: 0
