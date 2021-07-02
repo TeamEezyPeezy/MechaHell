@@ -6,6 +6,7 @@ using TMPro;
 public class GunSystem : MonoBehaviour
 {
  
+ 
     public Transform firePoint;
     public GameObject bulletPreFab;
     public TextMeshProUGUI ammoInfo;
@@ -15,7 +16,9 @@ public class GunSystem : MonoBehaviour
 
     public GameObject akBullet;
     public GameObject DesertEagleBullet;
-
+    public AudioSource machineGunAudioSource;
+    public AudioSource sniperAudioSource;
+    public AudioSource reloadAudioSource;
     int bulletsLeft, bulletsToShoot;
 
     bool shooting, readyToShoot, reloading;
@@ -70,6 +73,7 @@ public class GunSystem : MonoBehaviour
         {   
             bulletsToShoot = mainWeapon.bulletsPerTap;
             Shoot();
+
             ammoInfo.SetText(bulletsLeft + " / " + mainWeapon.magazineSize);
         }
 
@@ -95,6 +99,7 @@ public class GunSystem : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(direction * mainWeapon.bulletForce, ForceMode2D.Impulse);
         mainWeapon.FireEffects();
+        PlayGunSound();
 
         Destroy(bullet, 3f);
 
@@ -131,6 +136,7 @@ public class GunSystem : MonoBehaviour
         reloadInfo.SetText("Reloading..");
         reloading = true;
         Invoke("ReloadingFinished", mainWeapon.reloadTime);
+        reloadAudioSource.Play();
     }
     void ReloadingFinished()
     {
@@ -138,6 +144,20 @@ public class GunSystem : MonoBehaviour
         reloading = false;
         reloadInfo.SetText("");
         UpdateWeaponInfo();
+    }
+
+    void PlayGunSound()
+    {
+        switch(mainWeapon.weaponName)
+        {
+            case "Ak47" : 
+                machineGunAudioSource.Play();
+                break;
+            case "DesertEagle" :
+                sniperAudioSource.Play();
+                break;
+            default : break;
+        }
     }
 
     Weapon SelectWeapon(string weaponName)
