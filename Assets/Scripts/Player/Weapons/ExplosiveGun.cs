@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ExplosiveGun : MonoBehaviour
 {
     public GameObject explosiveBulletPreFab;
     public Transform firePoint;
     public float bulletForce = 20f;
+    public float cooldown;
+    public TextMeshProUGUI cooldownInfo;
+
+    float shootTime;
+
 
     public Animator animator;       //karin
 
@@ -17,13 +23,14 @@ public class ExplosiveGun : MonoBehaviour
         if(Input.GetMouseButtonDown(1)){
             Fire();
         }
+        HandleCooldowns();
     }
     public void Fire()
     {
         if(readyToShoot)
         {
             readyToShoot = false;
-            Invoke("ResetGun", 2f);
+            // Invoke("ResetGun", cooldown);
   
             Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
             Vector3 direction = (Input.mousePosition - sp).normalized;
@@ -38,9 +45,24 @@ public class ExplosiveGun : MonoBehaviour
 
             animator.SetTrigger("shootingBazooka");
 
+            shootTime = Time.time;
+
             Destroy(bullet, 3f);
         }
   
+    }
+
+    void HandleCooldowns()
+    {
+        if(!readyToShoot)
+        {
+            cooldownInfo.SetText(cooldown - ((int)(Time.time - shootTime)) + "s");
+            if(Time.time - shootTime > cooldown)
+            {
+                cooldownInfo.SetText("Bazooka ready!");
+                ResetGun();
+            }
+        }
     }
     public void ResetGun()
     {
