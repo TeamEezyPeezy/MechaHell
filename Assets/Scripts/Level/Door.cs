@@ -5,6 +5,8 @@ public class Door : MonoBehaviour, iDoor
 {
     public Animator animator;
 
+    public AudioSource DoorOpenAudioSource;
+
     public Door doorPair;
 
     private Light2D[] doorLights;
@@ -87,6 +89,8 @@ public class Door : MonoBehaviour, iDoor
 
                 GameManager.Instance.Money -= doorCost;
                 isOpen = true;
+
+                DoorOpenAudioSource.Play();
             }
         }
     }
