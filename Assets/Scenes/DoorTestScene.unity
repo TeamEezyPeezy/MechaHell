@@ -420,7 +420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &10721867
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -669,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 23365974}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 2113492191}
   isOpen: 0
   doorCost: 1
@@ -1095,7 +1095,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &54152831
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2132,6 +2131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 108935488}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 2009936495}
   isOpen: 0
   doorCost: 1
@@ -2432,7 +2432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &120160823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2527,7 +2526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &129975347
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2622,7 +2620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &137935772
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3157,6 +3154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 147619896}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 958562340}
   isOpen: 0
   doorCost: 1
@@ -3324,7 +3322,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &169951966
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4559,6 +4556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 259321172}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 428775350}
   isOpen: 0
   doorCost: 1
@@ -5009,6 +5007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 305316314}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1388822131}
   isOpen: 0
   doorCost: 1
@@ -5091,7 +5090,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &314709119
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5594,7 +5592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &355317768
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5897,7 +5894,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &379042007
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6813,6 +6809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 407597392}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1894979969}
   isOpen: 0
   doorCost: 1
@@ -6987,7 +6984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &424033890
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7244,6 +7240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 428775347}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 259321175}
   isOpen: 0
   doorCost: 1
@@ -7758,7 +7755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!1 &465584504
 GameObject:
   m_ObjectHideFlags: 0
@@ -7804,7 +7800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &465584507
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8025,7 +8020,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &487145617
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8280,7 +8274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &495685604
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8375,7 +8368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &510129354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8804,7 +8796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &541601029
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9063,7 +9054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &571195014
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9430,6 +9420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 579097544}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1593622428}
   isOpen: 0
   doorCost: 1
@@ -9478,7 +9469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &585442230
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9573,7 +9563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &588700293
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9774,6 +9763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 597371893}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1905162534}
   isOpen: 0
   doorCost: 1
@@ -10733,7 +10723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &728430904
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10877,7 +10866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!1 &742381910
 GameObject:
   m_ObjectHideFlags: 0
@@ -12845,7 +12833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &910736460
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13661,6 +13648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 958562337}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 147619899}
   isOpen: 0
   doorCost: 1
@@ -14072,6 +14060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allRooms: []
+  activeRooms: []
   player: {fileID: 2130695167}
   enemyPrefab: {fileID: 6843096791398924692, guid: afba5ec2485ae8e4ab67c984baf8a741, type: 3}
   timeBetweenSpawning: 5
@@ -14244,6 +14233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 978785491}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1806430866}
   isOpen: 0
   doorCost: 1
@@ -14650,6 +14640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 994155033}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1812644630}
   isOpen: 0
   doorCost: 1
@@ -15565,7 +15556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1073789397
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16115,7 +16105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1142795275
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16716,7 +16705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1177309550
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16811,7 +16799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1185247223
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17384,7 +17371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1244224087
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17765,7 +17751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1258754022
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17860,7 +17845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1262873987
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18277,6 +18261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1275741116}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1490990865}
   isOpen: 0
   doorCost: 1
@@ -18649,7 +18634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1315537185
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18928,7 +18912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1320411159
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19255,6 +19238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1346686548}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1948525394}
   isOpen: 0
   doorCost: 1
@@ -19303,7 +19287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1351697566
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19678,6 +19661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1367779556}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 7041600801862196933}
   isOpen: 0
   doorCost: 1
@@ -20101,6 +20085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1388822128}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 305316317}
   isOpen: 0
   doorCost: 1
@@ -20149,7 +20134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1393061328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21252,6 +21236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1490990862}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1275741119}
   isOpen: 0
   doorCost: 1
@@ -22224,6 +22209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1541546277}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 2142158272}
   isOpen: 0
   doorCost: 1
@@ -22964,6 +22950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1593622425}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 579097547}
   isOpen: 0
   doorCost: 1
@@ -23609,7 +23596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1677430028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26262,6 +26248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1806430863}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 978785494}
   isOpen: 0
   doorCost: 1
@@ -26468,6 +26455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1812644627}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 994155036}
   isOpen: 0
   doorCost: 1
@@ -27741,6 +27729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1894979966}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 407597395}
   isOpen: 0
   doorCost: 1
@@ -27935,6 +27924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1905162531}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 597371896}
   isOpen: 0
   doorCost: 1
@@ -28454,7 +28444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &1945014474
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28695,6 +28684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1948525391}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1346686551}
   isOpen: 0
   doorCost: 1
@@ -29416,7 +29406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!1 &1996023504
 GameObject:
   m_ObjectHideFlags: 0
@@ -29902,6 +29891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2009936492}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 108935491}
   isOpen: 0
   doorCost: 1
@@ -29999,7 +29989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!1 &2014246625
 GameObject:
   m_ObjectHideFlags: 0
@@ -30506,7 +30495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &2044191006
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30727,7 +30715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &2057138295
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31602,7 +31589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e865edc26cf0c0479b8e527b3e52334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 0
 --- !u!23 &2103170250
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31808,6 +31794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5067450489504862182}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 23365977}
   isOpen: 0
   doorCost: 1
@@ -32099,6 +32086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2142158269}
+  DoorOpenAudioSource: {fileID: 0}
   doorPair: {fileID: 1541546280}
   isOpen: 0
   doorCost: 1
@@ -32978,6 +32966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7041600801862196932}
+  DoorOpenAudioSource: {fileID: 1064711965}
   doorPair: {fileID: 1367779559}
   isOpen: 0
   doorCost: 1

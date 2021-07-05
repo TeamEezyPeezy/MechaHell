@@ -5,6 +5,8 @@ public class Door : MonoBehaviour, iDoor
 {
     public Animator animator;
 
+    public AudioSource DoorOpenAudioSource;
+
     public Door doorPair;
 
     private Light2D[] doorLights;
@@ -81,11 +83,13 @@ public class Door : MonoBehaviour, iDoor
             {
                 // Open Door.
                 SetAnimTriggers();
+                DoorOpenAudioSource.Play();
 
                 // Set doors to green lights
                 canFade = true;
 
                 GameManager.Instance.Money -= doorCost;
+
                 isOpen = true;
             }
         }
