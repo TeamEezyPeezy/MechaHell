@@ -10,6 +10,7 @@ public class ExplosiveGun : MonoBehaviour
     public float bulletForce = 20f;
     public float cooldown;
     public TextMeshProUGUI cooldownInfo;
+    public AudioSource BazookaAudioSource;
 
     float shootTime;
 
@@ -44,6 +45,8 @@ public class ExplosiveGun : MonoBehaviour
             ScreenShakeController.instance.StartShake(.1f, 0.2f);
 
             animator.SetTrigger("shootingBazooka");
+
+            BazookaAudioSource.Play();
 
             shootTime = Time.time;
 
