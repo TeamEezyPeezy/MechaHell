@@ -6,10 +6,11 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoBehaviour
 {
     private GameManager gameManager;
-
     public static List<Transform> enemies;
 
-    private Room currentRoom;
+    public Room[] allRooms;
+    public List<Room> activeRooms;
+
     public Player player;
     public GameObject enemyPrefab;
     private Timer timer;
@@ -17,33 +18,29 @@ public class EnemySpawner : MonoBehaviour
     public float timeBetweenSpawning = 10f;
     public float enemiesToSpawn = 5f;
     public float minRangeToSpawn = 3.5f;
-    private float nextTime = 0f;
     private int waveNumber = 0;
     public float minSpawnTime = 0.5f, maxSpawnTime = 2f;
     private float timeBetweenSpawns = 0f;
-
     private bool waveSpawned = false;
     private bool currentlySpawning = false;
-    private bool enemiesAlive = false;
 
     private void Awake()
     {
+        activeRooms.Add(player.CurrentRoom);
         gameManager = GameManager.Instance;
         timer = gameObject.AddComponent<Timer>();
+        allRooms = FindObjectsOfType<Room>();
     }
 
     private void Start()
     {
         timer.Run(timeBetweenSpawning);
-        currentRoom = player.CurrentRoom;
+
         enemies = new List<Transform>();
     }
 
     void Update()
     {
-        currentRoom = player.currentRoom;
-        enemiesAlive = TrackEnemiesAlive();
-
         if (waveSpawned)
         {
             timer.Run(timeBetweenSpawning);
@@ -57,19 +54,6 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    bool TrackEnemiesAlive()
-    {
-        if (Time.time > nextTime)
-        {
-            if (enemies.Count >= 1)
-            {
-                return true;
-            }
-            nextTime = Time.time + 0.5f;
-        }
-        return false;
-    }
-
     IEnumerator SpawnWave()
     {
         currentlySpawning = true;
@@ -80,9 +64,13 @@ public class EnemySpawner : MonoBehaviour
         {
             for (int i = 0; i < enemiesToSpawn + waveNumber; i++)
             {
-                if (currentRoom != null)
+                int activeRoomAmount = activeRooms.Count;
+                int randomValue = Random.Range(0, activeRoomAmount);
+                Room randomRoom = activeRooms[randomValue];
+
+                if (randomRoom != null)
                 {
-                    Vector2 spawnPos = currentRoom.CalculateSpawnPoint(player.transform, minRangeToSpawn);
+                    Vector2 spawnPos = randomRoom.CalculateSpawnPoint(player.transform, minRangeToSpawn);
 
                     SpawnEnemy(enemyPrefab, spawnPos);
                 }

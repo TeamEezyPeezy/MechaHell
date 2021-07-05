@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public GameObject doorInfoText;
     private Timer timer;
     private float doorCheckInterval = 0.5f;
+    public EnemySpawner enemySpawner;
 
     private void Awake()
     {
@@ -34,6 +35,18 @@ public class Player : MonoBehaviour
         if (otherRoom == currentRoom) return;
 
         currentRoom = other.GetComponent<Room>();
+
+        if (currentRoom != null)
+        {
+            if (!currentRoom.IsRoomUnlocked)
+            {
+                print("Room unlocked!");
+                otherRoom.IsRoomUnlocked = true;
+
+                // Add all active rooms to list so spawner can spawn to those spots always.
+                enemySpawner.activeRooms.Add(otherRoom);
+            }
+        }
     }
 
     private void Update()
