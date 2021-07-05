@@ -669,6 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 23365974}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 2113492191}
   isOpen: 0
   doorCost: 1
@@ -2132,6 +2133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 108935488}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 2009936495}
   isOpen: 0
   doorCost: 1
@@ -3157,6 +3159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 147619896}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 958562340}
   isOpen: 0
   doorCost: 1
@@ -4559,6 +4562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 259321172}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 428775350}
   isOpen: 0
   doorCost: 1
@@ -5009,6 +5013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 305316314}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1388822131}
   isOpen: 0
   doorCost: 1
@@ -6813,6 +6818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 407597392}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1894979969}
   isOpen: 0
   doorCost: 1
@@ -7244,6 +7250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 428775347}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 259321175}
   isOpen: 0
   doorCost: 1
@@ -9430,6 +9437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 579097544}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1593622428}
   isOpen: 0
   doorCost: 1
@@ -9774,6 +9782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 597371893}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1905162534}
   isOpen: 0
   doorCost: 1
@@ -13661,6 +13670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 958562337}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 147619899}
   isOpen: 0
   doorCost: 1
@@ -14244,6 +14254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 978785491}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1806430866}
   isOpen: 0
   doorCost: 1
@@ -14650,6 +14661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 994155033}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1812644630}
   isOpen: 0
   doorCost: 1
@@ -18277,6 +18289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1275741116}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1490990865}
   isOpen: 0
   doorCost: 1
@@ -19255,6 +19268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1346686548}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1948525394}
   isOpen: 0
   doorCost: 1
@@ -19678,6 +19692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1367779556}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 7041600801862196933}
   isOpen: 0
   doorCost: 1
@@ -20101,6 +20116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1388822128}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 305316317}
   isOpen: 0
   doorCost: 1
@@ -21252,6 +21268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1490990862}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1275741119}
   isOpen: 0
   doorCost: 1
@@ -22224,6 +22241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1541546277}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 2142158272}
   isOpen: 0
   doorCost: 1
@@ -22964,6 +22982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1593622425}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 579097547}
   isOpen: 0
   doorCost: 1
@@ -26262,6 +26281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1806430863}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 978785494}
   isOpen: 0
   doorCost: 1
@@ -26468,6 +26488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1812644627}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 994155036}
   isOpen: 0
   doorCost: 1
@@ -27741,6 +27762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1894979966}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 407597395}
   isOpen: 0
   doorCost: 1
@@ -27935,6 +27957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1905162531}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 597371896}
   isOpen: 0
   doorCost: 1
@@ -28695,6 +28718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1948525391}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1346686551}
   isOpen: 0
   doorCost: 1
@@ -29902,6 +29926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2009936492}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 108935491}
   isOpen: 0
   doorCost: 1
@@ -31808,6 +31833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5067450489504862182}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 23365977}
   isOpen: 0
   doorCost: 1
@@ -32099,6 +32125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2142158269}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1541546280}
   isOpen: 0
   doorCost: 1
@@ -32978,6 +33005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7041600801862196932}
+  DoorOpenAudioSource: {fileID: 1144278967}
   doorPair: {fileID: 1367779559}
   isOpen: 0
   doorCost: 1
