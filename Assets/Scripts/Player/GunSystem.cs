@@ -14,8 +14,8 @@ public class GunSystem : MonoBehaviour
 
     public Weapon mainWeapon;
 
-    public GameObject akBullet;
-    public GameObject DesertEagleBullet;
+    public GameObject machinegunBullet;
+    public GameObject sniperBullet;
     public AudioSource machineGunAudioSource;
     public AudioSource sniperAudioSource;
     public AudioSource reloadAudioSource;
@@ -25,7 +25,7 @@ public class GunSystem : MonoBehaviour
 
     void Awake()
     {
-        mainWeapon = SelectWeapon("Ak47");
+        mainWeapon = SelectWeapon("machinegun");
         UpdateWeaponInfo();
         readyToShoot = true;
         reloadInfo.SetText("");
@@ -59,10 +59,10 @@ public class GunSystem : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q))
         {
             // yes very bad until i figure out what we gna do with these:D
-            if(mainWeapon.weaponName == "Ak47"){
-                mainWeapon = SelectWeapon("DesertEagle");
+            if(mainWeapon.weaponName == "machinegun"){
+                mainWeapon = SelectWeapon("sniper");
             } else {
-                mainWeapon = SelectWeapon("Ak47");
+                mainWeapon = SelectWeapon("machinegun");
             }
             UpdateWeaponInfo();
             
@@ -150,10 +150,10 @@ public class GunSystem : MonoBehaviour
     {
         switch(mainWeapon.weaponName)
         {
-            case "Ak47" : 
+            case "machinegun" : 
                 machineGunAudioSource.Play();
                 break;
-            case "DesertEagle" :
+            case "sniper" :
                 sniperAudioSource.Play();
                 break;
             default : break;
@@ -164,17 +164,17 @@ public class GunSystem : MonoBehaviour
     {
         switch(weaponName)
         {
-            case "DesertEagle" : 
-                bulletPreFab = DesertEagleBullet;
-                return new DesertEagle();
-            case "Ak47" :
-                bulletPreFab = akBullet;
-                return new Ak47();
+            case "sniper" : 
+                bulletPreFab = sniperBullet;
+                return new Sniper();
+            case "machinegun" :
+                bulletPreFab = machinegunBullet;
+                return new Machinegun();
 
             // TODO maybe implement something else since this can cause bugs with typos
             default :
-                bulletPreFab = akBullet; 
-                return new Ak47();
+                bulletPreFab = machinegunBullet; 
+                return new Machinegun();
         }
     }
 }

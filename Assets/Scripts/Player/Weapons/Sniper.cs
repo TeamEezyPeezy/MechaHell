@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DesertEagle : Weapon
+public class Sniper : Weapon
 {
-    public DesertEagle()
+    public Sniper()
     {
         bulletForce = 50f;
         timeBetweenShooting = 0.7f;
@@ -14,7 +14,7 @@ public class DesertEagle : Weapon
         magazineSize = 7;
         bulletsPerTap = 1;
         allowButtonHold = false;
-        weaponName = "DesertEagle";
+        weaponName = "sniper";
     }
 
     override public void FireEffects()
