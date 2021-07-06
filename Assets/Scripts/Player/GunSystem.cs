@@ -12,10 +12,12 @@ public class GunSystem : MonoBehaviour
     public TextMeshProUGUI ammoInfo;
     public TextMeshProUGUI reloadInfo;
 
-    public Weapon mainWeapon;
+    public Weapon currentWeapon;
+    Sniper sniper;
+    Machinegun machinegun;
 
-    public GameObject akBullet;
-    public GameObject DesertEagleBullet;
+    public GameObject machinegunBullet;
+    public GameObject sniperBullet;
     public AudioSource machineGunAudioSource;
     public AudioSource sniperAudioSource;
     public AudioSource reloadAudioSource;
@@ -25,19 +27,24 @@ public class GunSystem : MonoBehaviour
 
     void Awake()
     {
-        mainWeapon = SelectWeapon("Ak47");
+        sniper = new Sniper();
+        machinegun = new Machinegun();
+        currentWeapon = SelectWeapon("default"); // use default on load, to not update bulletsleft before game starts
         UpdateWeaponInfo();
         readyToShoot = true;
         reloadInfo.SetText("");
-        ammoInfo.SetText(bulletsLeft + " / " + mainWeapon.magazineSize);
 
     }
 
     void UpdateWeaponInfo()
     {
-        bulletsLeft = mainWeapon.magazineSize;
-        ammoInfo.SetText(bulletsLeft + " / " + mainWeapon.magazineSize);
-
+        bulletsLeft = currentWeapon.magazineSize;
+        ammoInfo.SetText(bulletsLeft + " / " + currentWeapon.magazineSize);
+    }
+     void UpdateInfoAfterWeaponSwitch()
+    {
+        bulletsLeft = currentWeapon.bulletsLeftWhenSwitching;
+        ammoInfo.SetText(bulletsLeft + " / " + currentWeapon.magazineSize);
     }
 
     // Update is called once per frame
@@ -49,40 +56,42 @@ public class GunSystem : MonoBehaviour
     void UpdateInputs()
     {
         // shooting inputs
-        if(mainWeapon.allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
+        if(currentWeapon.allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
         // reload inputs
-        if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < mainWeapon.magazineSize && !reloading) Reload();
+        if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < currentWeapon.magazineSize && !reloading) Reload();
 
         // test weapon swap
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            // yes very bad until i figure out what we gna do with these:D
-            if(mainWeapon.weaponName == "Ak47"){
-                mainWeapon = SelectWeapon("DesertEagle");
+            if(currentWeapon.weaponName == "machinegun"){
+                currentWeapon = SelectWeapon("sniper");
             } else {
-                mainWeapon = SelectWeapon("Ak47");
+                currentWeapon = SelectWeapon("machinegun");
             }
-            UpdateWeaponInfo();
+            UpdateInfoAfterWeaponSwitch();
             
         } 
 
         // check if shooting was allowed
         if(readyToShoot && shooting && !reloading && bulletsLeft > 0)
         {   
-            bulletsToShoot = mainWeapon.bulletsPerTap;
+            bulletsToShoot = currentWeapon.bulletsPerTap;
             Shoot();
 
-            ammoInfo.SetText(bulletsLeft + " / " + mainWeapon.magazineSize);
+            ammoInfo.SetText(bulletsLeft + " / " + currentWeapon.magazineSize);
+        } else if(shooting && !reloading && bulletsLeft == 0)
+        {
+            Reload();
         }
 
     }
     void Shoot()
     {
         readyToShoot = false;
-        float xSpread = Random.Range(-mainWeapon.spread, mainWeapon.spread);
-        float ySpread = Random.Range(-mainWeapon.spread, mainWeapon.spread);
+        float xSpread = Random.Range(-currentWeapon.spread, currentWeapon.spread);
+        float ySpread = Random.Range(-currentWeapon.spread, currentWeapon.spread);
 
         Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 direction = (Input.mousePosition - sp).normalized;
@@ -97,8 +106,8 @@ public class GunSystem : MonoBehaviour
         GameObject bullet = Instantiate(bulletPreFab, firePoint.position, bulletRotation);
 
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(direction * mainWeapon.bulletForce, ForceMode2D.Impulse);
-        mainWeapon.FireEffects();
+        rb.AddForce(direction * currentWeapon.bulletForce, ForceMode2D.Impulse);
+        currentWeapon.FireEffects();
         PlayGunSound();
 
         Destroy(bullet, 3f);
@@ -110,9 +119,9 @@ public class GunSystem : MonoBehaviour
         // Takes care of how many bullets is being shot per tap
         if(bulletsToShoot > 0 && bulletsLeft > 0)
         {
-            Invoke("Shoot", mainWeapon.timeBetweenShots);
+            Invoke("Shoot", currentWeapon.timeBetweenShots);
         } else  {
-            Invoke("ResetShot", mainWeapon.timeBetweenShooting);
+            Invoke("ResetShot", currentWeapon.timeBetweenShooting);
         }
 
         if(bulletsLeft == 0)
@@ -135,12 +144,12 @@ public class GunSystem : MonoBehaviour
     {
         reloadInfo.SetText("Reloading..");
         reloading = true;
-        Invoke("ReloadingFinished", mainWeapon.reloadTime);
+        Invoke("ReloadingFinished", currentWeapon.reloadTime);
         reloadAudioSource.Play();
     }
     void ReloadingFinished()
     {
-        bulletsLeft = mainWeapon.magazineSize;
+        bulletsLeft = currentWeapon.magazineSize;
         reloading = false;
         reloadInfo.SetText("");
         UpdateWeaponInfo();
@@ -148,12 +157,12 @@ public class GunSystem : MonoBehaviour
 
     void PlayGunSound()
     {
-        switch(mainWeapon.weaponName)
+        switch(currentWeapon.weaponName)
         {
-            case "Ak47" : 
+            case "machinegun" : 
                 machineGunAudioSource.Play();
                 break;
-            case "DesertEagle" :
+            case "sniper" :
                 sniperAudioSource.Play();
                 break;
             default : break;
@@ -164,17 +173,19 @@ public class GunSystem : MonoBehaviour
     {
         switch(weaponName)
         {
-            case "DesertEagle" : 
-                bulletPreFab = DesertEagleBullet;
-                return new DesertEagle();
-            case "Ak47" :
-                bulletPreFab = akBullet;
-                return new Ak47();
+            case "sniper" : 
+                bulletPreFab = sniperBullet;
+                machinegun.bulletsLeftWhenSwitching = bulletsLeft;
+                return sniper;
+            case "machinegun" :
+                bulletPreFab = machinegunBullet;
+                sniper.bulletsLeftWhenSwitching = bulletsLeft;
+                return machinegun;
 
             // TODO maybe implement something else since this can cause bugs with typos
             default :
-                bulletPreFab = akBullet; 
-                return new Ak47();
+                bulletPreFab = machinegunBullet;
+                return machinegun;
         }
     }
 }
