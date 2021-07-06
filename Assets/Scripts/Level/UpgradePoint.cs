@@ -1,57 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UpgradePoint : MonoBehaviour
 {
   
     public GameObject infoText;
-    public GameObject upgradeMachineGunButton;
-    public GameObject upgradeSniperButton;
-    public GameObject upgradeDashButton;
-    public GameObject upgradeBazookaButton;
-    public GameObject upgradePlayerStatsButton;
     public GameObject upgradePanel;
     public GunSystem gunSystem;
+    public PlayerMovement playerMovementReference;
+    public ExplosiveGun bazookaReference;
     Sniper sniperReference;
     Machinegun machinegunReference;
 
-    bool isActive = false;
+    public TextMeshProUGUI machineGunStats;
+    public TextMeshProUGUI sniperStats;
+    public TextMeshProUGUI playerMovementStats;
+    public TextMeshProUGUI dashStats;
+    public TextMeshProUGUI bazookaStats;
+
+    bool isPanelOpen = false;
     bool playerClose = false;
 
     void Awake()
     {
         sniperReference = gunSystem.sniper;
         machinegunReference = gunSystem.machinegun;
-        // ShowUI(false);
-        upgradePanel.SetActive(false);
+        UpdateTexts();
     }
     void Update()
     {
         UpdateInputs();
     }
 
-    void ShowUI(bool visibile)
+    void UpdateTexts()
     {
-        upgradeMachineGunButton.SetActive(visibile);
-        upgradeSniperButton.SetActive(visibile);
-        upgradeDashButton.SetActive(visibile);
-        upgradeBazookaButton.SetActive(visibile);
-        upgradePlayerStatsButton.SetActive(visibile);
-
+        machineGunStats.SetText("Machinegun level " + machinegunReference.upgradeLevel);
+        sniperStats.SetText("Sniper level " + sniperReference.upgradeLevel);
+        playerMovementStats.SetText("Player movementspeed " + playerMovementReference.moveSpeed);
+        bazookaStats.SetText("Bazooka cooldown " + bazookaReference.cooldown);
+        dashStats.SetText("Dash cooldown " + playerMovementReference.dashCooldown);
     }
-
-  
-    void UpdateInputs()
+      void UpdateInputs()
     {
         if(Input.GetKeyDown(KeyCode.E) && playerClose)
         {
-            if(!isActive)
+            if(!isPanelOpen)
             {
-                isActive = true;
+                isPanelOpen = true;
                 OpenPanel();  
             } else {
-                isActive = false;
+                isPanelOpen = false;
                 ClosePanel();
             }
         }
@@ -61,17 +61,13 @@ public class UpgradePoint : MonoBehaviour
     void OpenPanel()
     {
         infoText.SetActive(false);
-        //ShowUI(true);
         upgradePanel.SetActive(true);
-        
     }
 
     void ClosePanel()
     {
         infoText.SetActive(true);
         upgradePanel.SetActive(false);
-
-        // ShowUI(false);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -87,38 +83,58 @@ public class UpgradePoint : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             infoText.SetActive(false);
             playerClose = false;
-            isActive = false;
-            // ShowUI(false);
+            isPanelOpen = false;
             upgradePanel.SetActive(false);
         }
     }
 
     public void UpgradeMachineGun()
     {
-         // test for upgrades
         if(machinegunReference.upgradeLevel < 3){
             machinegunReference.magazineSize += 5;
+            machinegunReference.timeBetweenShooting *= 0.7f;
+            machinegunReference.timeBetweenShots *= 0.7f;
+            machinegunReference.spread -= 0.02f;
             machinegunReference.upgradeLevel++;
             gunSystem.UpdateWeaponInfo();
+
+            UpdateTexts();
         }
     }
     public void UpgradeSniper()
     {
-        Debug.Log("Snoper ugrade");
-      
+        if(sniperReference.upgradeLevel < 3){
+            sniperReference.magazineSize += 1;
+            sniperReference.timeBetweenShooting *= 0.8f;
+            sniperReference.reloadTime *= 0.8f;
+            sniperReference.upgradeLevel++;
+            gunSystem.UpdateWeaponInfo();
+            UpdateTexts();
+        }
     }
     public void UpgradeBazooka()
     {
-        Debug.Log("Bazookq ugrade");
+        if(bazookaReference.cooldown > 1f){
+            bazookaReference.cooldown -= 1f;
+            UpdateTexts();
+        }
     }
     public void UpgradeDash()
     {
-        Debug.Log("Dash ugrade"); 
+        if(playerMovementReference.dashCooldown > 1){
+            playerMovementReference.dashCooldown  -= 1f;
+            UpdateTexts();
+        }
+       
     }
 
     public void UpgradePlayerStats()
     {
-        Debug.Log("playere ugrade");
+        if(playerMovementReference.moveSpeed < 10f)
+        {
+            playerMovementReference.moveSpeed += 1f;
+            UpdateTexts();
+        }
     }
 
   
