@@ -8,10 +8,10 @@ public class Machinegun : Weapon
     {
         bulletForce = 80f;
         damage = 20;
-        timeBetweenShooting = 0.15f;
-        spread = 0.05f;
+        timeBetweenShooting = 0.3f;
+        spread = 0.1f;
         reloadTime = 1.5f;
-        timeBetweenShots = 0.15f;
+        timeBetweenShots = 0.3f;
         magazineSize = 30;
         bulletsLeftWhenSwitching = 30;
         bulletsPerTap = 1;
