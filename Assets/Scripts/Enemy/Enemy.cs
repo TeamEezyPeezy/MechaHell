@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        print(gameObject.name + " Damage taken, amount: " + damage + "\n Health left: " + currentHealth);
+        //print(gameObject.name + " Damage taken, amount: " + damage + "\n Health left: " + currentHealth);
 
         currentHealth -= damage;
         if (currentHealth <= 0) Invoke(nameof(DestroyEnemy), 0f);
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        print(gameObject.name + " Destroyed.");
+        // print(gameObject.name + " Destroyed.");
         Destroy(gameObject);
     }
 }

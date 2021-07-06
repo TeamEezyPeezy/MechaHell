@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour
    {
      
      if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet")) return;
-        Debug.Log(collision);
 
 
         CheckEnemyCollision(collision);
