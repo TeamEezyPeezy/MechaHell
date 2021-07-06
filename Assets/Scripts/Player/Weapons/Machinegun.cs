@@ -13,6 +13,7 @@ public class Machinegun : Weapon
         reloadTime = 1.5f;
         timeBetweenShots = 0.15f;
         magazineSize = 30;
+        bulletsLeftWhenSwitching = 30;
         bulletsPerTap = 1;
         allowButtonHold = true; 
         weaponName = "machinegun";

@@ -12,6 +12,7 @@ public class Sniper : Weapon
         reloadTime = 1.5f;
         timeBetweenShots = 0.05f;
         magazineSize = 7;
+        bulletsLeftWhenSwitching = 7;
         bulletsPerTap = 1;
         allowButtonHold = false;
         weaponName = "sniper";
