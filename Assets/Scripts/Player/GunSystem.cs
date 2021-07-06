@@ -81,6 +81,9 @@ public class GunSystem : MonoBehaviour
             Shoot();
 
             ammoInfo.SetText(bulletsLeft + " / " + currentWeapon.magazineSize);
+        } else if(shooting && !reloading && bulletsLeft == 0)
+        {
+            Reload();
         }
 
     }
