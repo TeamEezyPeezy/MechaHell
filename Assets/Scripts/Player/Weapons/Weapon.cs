@@ -17,6 +17,7 @@ public class Weapon
     public bool allowButtonHold;
     public string weaponName;
     public int bulletsLeftWhenSwitching;
+    public int upgradeLevel;
 
     public virtual void FireEffects(){}
 }

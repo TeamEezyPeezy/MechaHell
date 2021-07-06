@@ -17,6 +17,7 @@ public class Machinegun : Weapon
         bulletsPerTap = 1;
         allowButtonHold = true; 
         weaponName = "machinegun";
+        upgradeLevel = 1;
     }
     
     override public void FireEffects()

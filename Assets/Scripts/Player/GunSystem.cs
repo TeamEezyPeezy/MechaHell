@@ -13,8 +13,10 @@ public class GunSystem : MonoBehaviour
     public TextMeshProUGUI reloadInfo;
 
     public Weapon currentWeapon;
-    Sniper sniper;
-    Machinegun machinegun;
+    [HideInInspector]
+    public Sniper sniper;
+    [HideInInspector]
+    public Machinegun machinegun;
 
     public GameObject machinegunBullet;
     public GameObject sniperBullet;
@@ -36,7 +38,7 @@ public class GunSystem : MonoBehaviour
 
     }
 
-    void UpdateWeaponInfo()
+    public void UpdateWeaponInfo()
     {
         bulletsLeft = currentWeapon.magazineSize;
         ammoInfo.SetText(bulletsLeft + " / " + currentWeapon.magazineSize);

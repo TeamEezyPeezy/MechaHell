@@ -16,6 +16,7 @@ public class Sniper : Weapon
         bulletsPerTap = 1;
         allowButtonHold = false;
         weaponName = "sniper";
+        upgradeLevel = 1;
     }
 
     override public void FireEffects()
