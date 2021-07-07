@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public Room currentRoom;
     public GameObject doorInfoText;
     private Timer timer;
-    private float doorCheckInterval = 0.5f;
+    private float doorCheckInterval = 0.25f;
     public EnemySpawner enemySpawner;
 
     private void Awake()
@@ -30,6 +30,11 @@ public class Player : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other)
+    {
+        CurrentRoomCheck(other);
+    }
+
+    public void CurrentRoomCheck(Collider2D other)
     {
         Room otherRoom = other.GetComponent<Room>();
         if (otherRoom == currentRoom) return;

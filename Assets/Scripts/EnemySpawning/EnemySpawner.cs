@@ -15,14 +15,29 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     private Timer timer;
 
+    public int WaveNumber
+    {
+        get
+        {
+            return waveNumber;
+        }
+        set
+        {
+            waveNumber = value;
+        }
+    }
+
     public float timeBetweenSpawning = 10f;
     public float enemiesToSpawn = 5f;
     public float minRangeToSpawn = 3.5f;
-    private int waveNumber = 0;
     public float minSpawnTime = 0.5f, maxSpawnTime = 2f;
+
+    private int waveNumber = 0;
     private float timeBetweenSpawns = 0f;
     private bool waveSpawned = false;
+#pragma warning disable 414
     private bool currentlySpawning = false;
+#pragma warning restore 414
 
     private void Awake()
     {
@@ -62,7 +77,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (enemiesToSpawn > 0)
         {
-            for (int i = 0; i < enemiesToSpawn + waveNumber; i++)
+            for (int i = 0; i < enemiesToSpawn + WaveNumber; i++)
             {
                 int activeRoomAmount = activeRooms.Count;
                 int randomValue = Random.Range(0, activeRoomAmount);
@@ -81,7 +96,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        waveNumber++;
+        WaveNumber++;
         currentlySpawning = false;
         waveSpawned = true;
 

@@ -15,6 +15,7 @@ public class Door : MonoBehaviour, iDoor
 
     private bool canFade;
     private float fadeTime = .75f;
+    private float doorSoundDelay = .55f;
     private float fadeStart;
 
     public bool isOpen = false;
@@ -83,7 +84,8 @@ public class Door : MonoBehaviour, iDoor
             {
                 // Open Door.
                 SetAnimTriggers();
-                DoorOpenAudioSource.Play();
+
+                Invoke("PlayDoorSound", doorSoundDelay);
 
                 // Set doors to green lights
                 canFade = true;
@@ -93,5 +95,10 @@ public class Door : MonoBehaviour, iDoor
                 isOpen = true;
             }
         }
+    }
+
+    private void PlayDoorSound()
+    {
+        DoorOpenAudioSource.Play();
     }
 }
