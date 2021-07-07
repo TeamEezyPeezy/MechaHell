@@ -3,8 +3,16 @@ using UnityEngine;
 
 public class UiController : MonoBehaviour
 {
-
     [SerializeField] private GameObject pauseHud;
+    [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private TextMeshProUGUI keyCardText;
+
+    private GameManager gameManager;
+
+    private void Awake()
+    {
+        gameManager = GameManager.Instance;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +24,21 @@ public class UiController : MonoBehaviour
     void Update()
     {
         CheckUserInput();
+
+        UpdatePlayerTexts();
+    }
+
+    private void UpdatePlayerTexts()
+    {
+        if (moneyText != null)
+        {
+            moneyText.text = "$" + gameManager.Money;
+        }
+
+        if (keyCardText != null)
+        {
+            keyCardText.text = "Keycards " + gameManager.Keycards;
+        }
     }
 
     void CheckUserInput()

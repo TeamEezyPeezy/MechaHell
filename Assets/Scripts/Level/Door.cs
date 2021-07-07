@@ -80,7 +80,7 @@ public class Door : MonoBehaviour, iDoor
     {
         if (!isOpen)
         {
-            if (GameManager.Instance.Money >= doorCost)
+            if (GameManager.Instance.Keycards >= doorCost)
             {
                 // Open Door.
                 SetAnimTriggers();
@@ -90,7 +90,7 @@ public class Door : MonoBehaviour, iDoor
                 // Set doors to green lights
                 canFade = true;
 
-                GameManager.Instance.Money -= doorCost;
+                GameManager.Instance.Keycards -= doorCost;
 
                 isOpen = true;
             }

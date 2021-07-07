@@ -158,3 +158,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 40
+  keyCardDrop: {fileID: 4411184046429463690, guid: a285cf2f9fbd86e4495de7dc775029bb, type: 3}

@@ -7,42 +7,28 @@ public class EnemySpawner : MonoBehaviour
 {
     private GameManager gameManager;
     public static List<Transform> enemies;
-
     public Room[] allRooms;
     public List<Room> activeRooms;
-
     public Player player;
     public GameObject enemyPrefab;
     private Timer timer;
-
-    public int WaveNumber
-    {
-        get
-        {
-            return waveNumber;
-        }
-        set
-        {
-            waveNumber = value;
-        }
-    }
 
     public float timeBetweenSpawning = 10f;
     public float enemiesToSpawn = 5f;
     public float minRangeToSpawn = 3.5f;
     public float minSpawnTime = 0.5f, maxSpawnTime = 2f;
 
-    private int waveNumber = 0;
     private float timeBetweenSpawns = 0f;
-    private bool waveSpawned = false;
 #pragma warning disable 414
     private bool currentlySpawning = false;
+    private bool betweenWaveTime = false;
 #pragma warning restore 414
 
     private void Awake()
     {
-        activeRooms.Add(player.CurrentRoom);
         gameManager = GameManager.Instance;
+
+        activeRooms.Add(player.CurrentRoom);
         timer = gameObject.AddComponent<Timer>();
         allRooms = FindObjectsOfType<Room>();
     }
@@ -56,15 +42,21 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (waveSpawned)
+        if (!currentlySpawning && gameManager.EnemyCount <= 0)
         {
-            timer.Run(timeBetweenSpawning);
-            waveSpawned = false;
+            if (!betweenWaveTime)
+            {
+                timer.Run(timeBetweenSpawning);
+                betweenWaveTime = true;
+            }
+
+            print("Between wavetime: " + (int)timer.CurrentTime);
         }
 
-        if (timer.IsComplete && !waveSpawned)
+        if (timer.IsComplete)
         {
             timer.Reset();
+            betweenWaveTime = false;
             StartCoroutine(SpawnWave());
         }
     }
@@ -72,12 +64,11 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         currentlySpawning = true;
-
         print("Spawning new wave of enemies.");
 
         if (enemiesToSpawn > 0)
         {
-            for (int i = 0; i < enemiesToSpawn + WaveNumber; i++)
+            for (int i = 0; i < enemiesToSpawn + gameManager.WaveNumber; i++)
             {
                 int activeRoomAmount = activeRooms.Count;
                 int randomValue = Random.Range(0, activeRoomAmount);
@@ -96,9 +87,8 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        WaveNumber++;
         currentlySpawning = false;
-        waveSpawned = true;
+        gameManager.WaveNumber++;
 
         StopCoroutine(nameof(SpawnWave));
     }

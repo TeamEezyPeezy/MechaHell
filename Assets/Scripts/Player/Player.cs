@@ -8,18 +8,9 @@ public class Player : MonoBehaviour
     public Room currentRoom;
     public GameObject doorInfoText;
     private Timer timer;
-    private float doorCheckInterval = 0.25f;
+    private float doorCheckInterval = .25f;
     public EnemySpawner enemySpawner;
-
-    private void Awake()
-    {
-        timer = gameObject.AddComponent<Timer>();
-    }
-
-    private void Start()
-    {
-        timer.Run(doorCheckInterval);
-    }
+    private GameManager gameManager;
 
     public Room CurrentRoom
     {
@@ -27,31 +18,21 @@ public class Player : MonoBehaviour
         {
             return currentRoom;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        CurrentRoomCheck(other);
-    }
-
-    public void CurrentRoomCheck(Collider2D other)
-    {
-        Room otherRoom = other.GetComponent<Room>();
-        if (otherRoom == currentRoom) return;
-
-        currentRoom = other.GetComponent<Room>();
-
-        if (currentRoom != null)
+        set
         {
-            if (!currentRoom.IsRoomUnlocked)
-            {
-                print("Room unlocked!");
-                otherRoom.IsRoomUnlocked = true;
-
-                // Add all active rooms to list so spawner can spawn to those spots always.
-                enemySpawner.activeRooms.Add(otherRoom);
-            }
+            currentRoom = value;
         }
+    }
+
+    private void Awake()
+    {
+        gameManager = GameManager.Instance;
+        timer = gameObject.AddComponent<Timer>();
+    }
+
+    private void Start()
+    {
+        timer.Run(doorCheckInterval);
     }
 
     private void Update()
@@ -66,6 +47,38 @@ public class Player : MonoBehaviour
             CheckIfCloseToDoor();
             timer.Reset();
             timer.Run(doorCheckInterval);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Keycard"))
+        {
+            gameManager.Keycards++;
+
+            if (other.gameObject.tag.Equals("Keycard"))
+            {
+                Destroy(other.gameObject);
+            }
+        } 
+        if (other.gameObject.tag.Equals("Room"))
+        {
+            Room otherRoom = other.GetComponent<Room>();
+            if (otherRoom == currentRoom) return;
+
+            currentRoom = otherRoom;
+
+            if (currentRoom != null)
+            {
+                if (!currentRoom.IsRoomUnlocked)
+                {
+                    print("Room unlocked!");
+                    otherRoom.IsRoomUnlocked = true;
+
+                    // Add all active rooms to list so spawner can spawn to those spots always.
+                    enemySpawner.activeRooms.Add(otherRoom);
+                }
+            }
         }
     }
 
@@ -95,7 +108,7 @@ public class Player : MonoBehaviour
         {
             if (currentRoom.myDoors.Length <= 0) return;
 
-            Door closestDoor = GetClosestDoor(currentRoom.MyDoors);
+            Door closestDoor = GetClosestDoor(CurrentRoom.MyDoors);
             if (closestDoor != null)
             {
                 if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange)
