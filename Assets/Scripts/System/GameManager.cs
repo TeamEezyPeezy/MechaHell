@@ -102,6 +102,7 @@ public class GameManager : Singleton<GameManager>
     public void EnemyDied()
     {
         EnemyCount--;
+        Money += 50;
     }
 
     public void EnemySpawned()
