@@ -12684,7 +12684,7 @@ GameObject:
   - component: {fileID: 742381915}
   m_Layer: 0
   m_Name: barracks_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13546,7 +13546,7 @@ GameObject:
   - component: {fileID: 797677448}
   m_Layer: 0
   m_Name: mess_hall_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14006,7 +14006,7 @@ GameObject:
   - component: {fileID: 874321501}
   m_Layer: 0
   m_Name: med_bay_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15043,7 +15043,7 @@ GameObject:
   - component: {fileID: 926228856}
   m_Layer: 0
   m_Name: landing_dock_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19287,7 +19287,7 @@ GameObject:
   - component: {fileID: 1158070027}
   m_Layer: 0
   m_Name: cargo_hold_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19688,7 +19688,7 @@ GameObject:
   - component: {fileID: 1171199327}
   m_Layer: 0
   m_Name: kitchen_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24657,7 +24657,7 @@ GameObject:
   - component: {fileID: 1485978878}
   m_Layer: 0
   m_Name: lobby_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25225,7 +25225,7 @@ GameObject:
   - component: {fileID: 1504922336}
   m_Layer: 0
   m_Name: armory_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32261,7 +32261,7 @@ GameObject:
   - component: {fileID: 1880003531}
   m_Layer: 0
   m_Name: command_room_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36883,7 +36883,7 @@ GameObject:
   - component: {fileID: 2086182184}
   m_Layer: 0
   m_Name: cargo_transfer_floor
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
