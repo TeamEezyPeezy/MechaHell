@@ -30,9 +30,9 @@ public class UpgradePoint : MonoBehaviour
     bool isPanelOpen = false;
     bool playerClose = false;
 
-    int machinegunUpgradeCost = 300;
+    int machinegunUpgradeCost = 200;
     int sniperUpgraceCost = 300;
-    int bazookaUpgradeCost = 300;
+    int bazookaUpgradeCost = 700;
     int dashUpgradeCost = 300;
     int playerUpgradeCost = 300;
 
@@ -148,7 +148,7 @@ public class UpgradePoint : MonoBehaviour
     {
         if(bazookaReference.cooldown > 1f && hasEnoughMoneyFor(bazookaUpgradeCost)){
             gameManager.Money -= bazookaUpgradeCost;
-            bazookaUpgradeCost += 150;
+            bazookaUpgradeCost += 200;
 
             bazookaReference.cooldown -= 1f;
             UpdateTexts();
