@@ -62,7 +62,7 @@ public class ExplosiveGun : MonoBehaviour
             cooldownInfo.SetText((int)cooldown - ((int)(Time.time - shootTime)) + "s");
             if(Time.time - shootTime > cooldown)
             {
-                cooldownInfo.SetText("Bazooka ready!");
+                cooldownInfo.SetText("");
                 ResetGun();
             }
         }

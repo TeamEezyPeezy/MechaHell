@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         state = State.Normal;
         dashOnCooldown = false;
-        dashCooldownTimer.SetText("Dash ready!");
+        dashCooldownTimer.SetText("");
 
     }
     void Update()
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             if(Time.time - dashStartTime > dashCooldown)
             {
                 dashOnCooldown = false;
-                dashCooldownTimer.SetText("Dash ready!");
+                dashCooldownTimer.SetText("");
             }
         }
     }
