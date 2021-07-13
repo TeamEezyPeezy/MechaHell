@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Keycard
   - Room
+  - UpgradeCenter
   layers:
   - Default
   - TransparentFX
