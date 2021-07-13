@@ -231,7 +231,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: b420eaa76592cb943862d4d47cddbd3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1172,6 +1172,7 @@ MonoBehaviour:
   playerRigidBody: {fileID: 8116413541067230171}
   cam: {fileID: 0}
   animator: {fileID: 671347002}
+  DashSound: {fileID: 0}
 --- !u!114 &8116413541067230165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,6 +1194,7 @@ MonoBehaviour:
   machineGunAudioSource: {fileID: 2014246627}
   sniperAudioSource: {fileID: 1706142811}
   reloadAudioSource: {fileID: 446237059}
+  weaponSwitchAnimation: {fileID: 0}
 --- !u!114 &3222000044811696104
 MonoBehaviour:
   m_ObjectHideFlags: 0

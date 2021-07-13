@@ -33,7 +33,14 @@ public class ExplosiveGun : MonoBehaviour
             readyToShoot = false;
             // Invoke("ResetGun", cooldown);
   
-            Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+            Vector3 sp;
+            if(isMouseTooCloseToPlayer())
+            {
+                sp = Camera.main.WorldToScreenPoint(transform.position);   
+            } else {
+                sp = Camera.main.WorldToScreenPoint(firePoint.position);   
+            }
+
             Vector3 direction = (Input.mousePosition - sp).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion bulletRotation = Quaternion.Euler(new Vector3(0, 0, angle));
@@ -62,7 +69,7 @@ public class ExplosiveGun : MonoBehaviour
             cooldownInfo.SetText((int)cooldown - ((int)(Time.time - shootTime)) + "s");
             if(Time.time - shootTime > cooldown)
             {
-                cooldownInfo.SetText("Bazooka ready!");
+                cooldownInfo.SetText("");
                 ResetGun();
             }
         }
@@ -70,5 +77,10 @@ public class ExplosiveGun : MonoBehaviour
     public void ResetGun()
     {
         readyToShoot = true;
+    }
+     bool isMouseTooCloseToPlayer()
+    {
+        float distance = Vector3.Distance(Input.mousePosition, Camera.main.WorldToScreenPoint(transform.position)); 
+        return distance > 80f ? false : true;
     }
 }

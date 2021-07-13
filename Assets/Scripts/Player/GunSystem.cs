@@ -23,6 +23,7 @@ public class GunSystem : MonoBehaviour
     public AudioSource machineGunAudioSource;
     public AudioSource sniperAudioSource;
     public AudioSource reloadAudioSource;
+    public Animator weaponSwitchAnimation;
     int bulletsLeft, bulletsToShoot;
 
     bool shooting, readyToShoot, reloading;
@@ -69,8 +70,10 @@ public class GunSystem : MonoBehaviour
         {
             if(currentWeapon.weaponName == "machinegun"){
                 currentWeapon = SelectWeapon("sniper");
+                weaponSwitchAnimation.Play("rifleToSniper");
             } else {
                 currentWeapon = SelectWeapon("machinegun");
+                weaponSwitchAnimation.Play("sniperToRifle");
             }
             UpdateInfoAfterWeaponSwitch();
             
@@ -94,8 +97,14 @@ public class GunSystem : MonoBehaviour
         readyToShoot = false;
         float xSpread = Random.Range(-currentWeapon.spread, currentWeapon.spread);
         float ySpread = Random.Range(-currentWeapon.spread, currentWeapon.spread);
-
-        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 sp;
+        if(isMouseTooCloseToPlayer())
+        {
+            sp = Camera.main.WorldToScreenPoint(transform.position);   
+        } else {
+            sp = Camera.main.WorldToScreenPoint(firePoint.position);   
+        }
+       
         Vector3 direction = (Input.mousePosition - sp).normalized;
         direction.x += xSpread;
         direction.y += ySpread;
@@ -189,5 +198,11 @@ public class GunSystem : MonoBehaviour
                 bulletPreFab = machinegunBullet;
                 return machinegun;
         }
+    }
+
+    bool isMouseTooCloseToPlayer()
+    {
+        float distance = Vector3.Distance(Input.mousePosition, Camera.main.WorldToScreenPoint(transform.position)); 
+        return distance > 80f ? false : true;
     }
 }
