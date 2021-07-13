@@ -4130,7 +4130,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1339135943}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradePoint, Assembly-CSharp
         m_MethodName: UpgradeDash
         m_Mode: 1
@@ -6977,8 +6977,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2130695167}
-  money: 1000
-  keyCards: 2
+  money: 0
+  keyCards: 0
   lastKeyDropWave: 0
 --- !u!1 &393126646
 GameObject:
@@ -9191,7 +9191,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1339135943}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradePoint, Assembly-CSharp
         m_MethodName: UpgradePlayerStats
         m_Mode: 1
@@ -17490,7 +17490,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1339135943}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradePoint, Assembly-CSharp
         m_MethodName: UpgradeBazooka
         m_Mode: 1
@@ -23083,7 +23083,6 @@ GameObject:
   - component: {fileID: 1339135940}
   - component: {fileID: 1339135939}
   - component: {fileID: 1339135938}
-  - component: {fileID: 1339135943}
   - component: {fileID: 1339135942}
   - component: {fileID: 1339135944}
   m_Layer: 0
@@ -23092,7 +23091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1339135938
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23243,33 +23242,6 @@ PolygonCollider2D:
       - {x: 1.7781227, y: -0.8844645}
       - {x: 1.8106519, y: -0.78816015}
       - {x: 1.9860755, y: -0.05956615}
---- !u!114 &1339135943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339135937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6fd553ae914a0f43ad368ac2ee6a334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoText: {fileID: 572035534}
-  upgradePanel: {fileID: 275149326}
-  gunSystem: {fileID: 37835660}
-  playerMovementReference: {fileID: 37835661}
-  bazookaReference: {fileID: 37835659}
-  machineGunStats: {fileID: 227332655}
-  sniperStats: {fileID: 155629409}
-  playerMovementStats: {fileID: 1509915296}
-  dashStats: {fileID: 941332252}
-  bazookaStats: {fileID: 928352987}
-  machineGunCostInfo: {fileID: 1704200813}
-  sniperCostInfo: {fileID: 2022023795}
-  bazookaCostInfo: {fileID: 861197890}
-  dashCostInfo: {fileID: 1572901921}
-  playerCostInfo: {fileID: 963981454}
 --- !u!114 &1339135944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30216,9 +30188,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1283256196, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1283256197, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1907235328, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1907235329, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_RootOrder
@@ -30388,6 +30368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dashCooldown
       objectReference: {fileID: 0}
+    - target: {fileID: 4950569604677411999, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5564399306876059486, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -30395,6 +30379,10 @@ PrefabInstance:
     - target: {fileID: 5896832934197615140, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_RootOrder
       value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6156321512313281002, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6388668304883482089, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_RootOrder
@@ -30428,6 +30416,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 9034161206358808648, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: bazookaReference
+      value: 
+      objectReference: {fileID: 37835659}
+    - target: {fileID: 9034161206358808648, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: playerMovementReference
+      value: 
+      objectReference: {fileID: 37835661}
     m_RemovedComponents:
     - {fileID: 661787351, guid: 3972003461ff7e84587347eaa1788967, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3972003461ff7e84587347eaa1788967, type: 3}
@@ -32982,7 +32978,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1339135943}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradePoint, Assembly-CSharp
         m_MethodName: UpgradeSniper
         m_Mode: 1
@@ -36922,7 +36918,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1339135943}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradePoint, Assembly-CSharp
         m_MethodName: UpgradeMachineGun
         m_Mode: 1
