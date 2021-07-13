@@ -307,8 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPreFab: {fileID: 3145013165821201381, guid: 15827954ac7360147a11518332b6a968, type: 3}
   explosionForce: 100
-  radius: 2.5
-  ExplosionImpactAudioSource: {fileID: 3026204619358019733}
+  radius: 6
   damage: 100
 --- !u!198 &3172081654043403227
 ParticleSystem:

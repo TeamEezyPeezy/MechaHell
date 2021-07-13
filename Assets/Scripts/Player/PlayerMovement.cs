@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource DashSound;
+
 
     float dashStartTime;
    Vector2 movement;
@@ -134,6 +136,8 @@ public class PlayerMovement : MonoBehaviour
                         dashOnCooldown = true;
 
                         // start dash animation here
+
+                        DashSound.Play();
                     }
                     
                 }
