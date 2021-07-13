@@ -95,7 +95,7 @@ public class GunSystem : MonoBehaviour
         float xSpread = Random.Range(-currentWeapon.spread, currentWeapon.spread);
         float ySpread = Random.Range(-currentWeapon.spread, currentWeapon.spread);
 
-        Vector3 sp = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 sp = Camera.main.WorldToScreenPoint(firePoint.position);
         Vector3 direction = (Input.mousePosition - sp).normalized;
         direction.x += xSpread;
         direction.y += ySpread;
