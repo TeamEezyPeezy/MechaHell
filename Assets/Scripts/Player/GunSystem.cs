@@ -23,6 +23,7 @@ public class GunSystem : MonoBehaviour
     public AudioSource machineGunAudioSource;
     public AudioSource sniperAudioSource;
     public AudioSource reloadAudioSource;
+    public Animator weaponSwitchAnimation;
     int bulletsLeft, bulletsToShoot;
 
     bool shooting, readyToShoot, reloading;
@@ -69,8 +70,10 @@ public class GunSystem : MonoBehaviour
         {
             if(currentWeapon.weaponName == "machinegun"){
                 currentWeapon = SelectWeapon("sniper");
+                weaponSwitchAnimation.Play("rifleToSniper");
             } else {
                 currentWeapon = SelectWeapon("machinegun");
+                weaponSwitchAnimation.Play("sniperToRifle");
             }
             UpdateInfoAfterWeaponSwitch();
             
