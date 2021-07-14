@@ -92,6 +92,7 @@ public class Door : MonoBehaviour, iDoor
                 canFade = true;
 
                 GameManager.Instance.Keycards -= doorCost;
+                GameManager.Instance.RoomsOpen ++;
 
                 isOpen = true;
             }

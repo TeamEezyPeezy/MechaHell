@@ -9,17 +9,28 @@ public class GameManager : Singleton<GameManager>
     private int money = 100;
     [SerializeField] 
     private int keyCards = 0;
+    [SerializeField]
+    private int waveNumber = 0;
 
     private int enemyCount = 0;
-    private int waveNumber = 4;
     private int roomsOpen = 1;
-
     private bool canDropKeycard = false;
 
     [HideInInspector]
     public int lastKeyDropWave = 0;
 
     private void Start()
+    {
+        FindPlayer();
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        FindPlayer();
+    }
+
+    private void FindPlayer()
     {
         if (player == null)
         {
@@ -109,18 +120,6 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    protected override void Awake()
-    {
-        // Base awake creates singleton out of this class,
-        // it stays in hierarchy even if scene is changed.
-        base.Awake();
-    }
-
-    private void Update()
-    {
-
-    }
-
     public void EnemyDied()
     {
         EnemyCount--;
@@ -131,5 +130,4 @@ public class GameManager : Singleton<GameManager>
     {
         EnemyCount++;
     }
-
 }

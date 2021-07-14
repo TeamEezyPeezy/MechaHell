@@ -17,7 +17,28 @@ public class EnemySpawner : MonoBehaviour
     private Timer timer;
 
     // Enemy Amounts
-    public float enemiesToSpawn = 5f;
+    public float enemiesAtStart = 5f;
+
+    private float basicEnemiesToSpawn;
+    private float flyingEnemiesToSpawn;
+
+    private float baseDifficultyMultiplier = .75f;
+    public float roomExtraDifficulty = 0.25f;
+    private float difficultyMultiplier = 1f;
+
+    public float RoomExtraDifficulty
+    {
+        get
+        {
+            float temp = roomExtraDifficulty * gameManager.RoomsOpen;
+            print(temp);
+            return temp;
+        }
+        set
+        {
+            roomExtraDifficulty = value;
+        }
+    }
 
     // Spawn times
     public float timeBetweenSpawning = 10f;
@@ -31,6 +52,20 @@ public class EnemySpawner : MonoBehaviour
     private bool betweenWaveTime = false;
 #pragma warning restore 414
 
+    private void CalculateEnemyAmounts()
+    {
+        difficultyMultiplier = baseDifficultyMultiplier + RoomExtraDifficulty;
+        print("Difficulty multiplier = " + difficultyMultiplier);
+        basicEnemiesToSpawn = basicEnemiesToSpawn + (gameManager.WaveNumber * difficultyMultiplier);
+        print("Next wave basic enemies: " + basicEnemiesToSpawn);
+
+        if (gameManager.WaveNumber >= 5 || gameManager.RoomsOpen >= 2)
+        {
+            flyingEnemiesToSpawn = flyingEnemiesToSpawn + (gameManager.WaveNumber * difficultyMultiplier);
+            print("Next wave flying enemies: " + flyingEnemiesToSpawn);
+        }
+    }
+
     private void Awake()
     {
         gameManager = GameManager.Instance;
@@ -42,6 +77,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        basicEnemiesToSpawn = enemiesAtStart;
+
         timer.Run(timeBetweenSpawning);
 
         enemies = new List<Transform>();
@@ -73,9 +110,11 @@ public class EnemySpawner : MonoBehaviour
         currentlySpawning = true;
         print("Spawning new wave of enemies.");
 
-        if (enemiesToSpawn > 0)
+        CalculateEnemyAmounts();
+
+        if (basicEnemiesToSpawn > 0)
         {
-            for (int i = 0; i < enemiesToSpawn + gameManager.WaveNumber; i++)
+            for (int i = 0; i < basicEnemiesToSpawn; i++)
             {
                 int activeRoomAmount = activeRooms.Count;
                 int randomValue = Random.Range(0, activeRoomAmount);
@@ -86,6 +125,27 @@ public class EnemySpawner : MonoBehaviour
                     Vector2 spawnPos = randomRoom.CalculateSpawnPoint(player.transform, minRangeToSpawn);
 
                     SpawnEnemy(enemy_Basic, spawnPos);
+                }
+
+                timeBetweenSpawns = Random.Range(minSpawnTime, maxSpawnTime);
+
+                yield return new WaitForSeconds(timeBetweenSpawns);
+            }
+        }
+
+        if (flyingEnemiesToSpawn > 0)
+        {
+            for (int i = 0; i < flyingEnemiesToSpawn; i++)
+            {
+                int activeRoomAmount = activeRooms.Count;
+                int randomValue = Random.Range(0, activeRoomAmount);
+                Room randomRoom = activeRooms[randomValue];
+
+                if (randomRoom != null)
+                {
+                    Vector2 spawnPos = randomRoom.CalculateSpawnPoint(player.transform, minRangeToSpawn);
+
+                    SpawnEnemy(enemy_Flying, spawnPos);
                 }
 
                 timeBetweenSpawns = Random.Range(minSpawnTime, maxSpawnTime);

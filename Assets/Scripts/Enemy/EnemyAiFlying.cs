@@ -4,29 +4,21 @@ using UnityEngine;
 public class EnemyAiFlying : MonoBehaviour
 {
     [SerializeField] Transform target;
-    public Transform firePoint;
-
-    public float bulletSpeed = 10f;
-
     private NavMeshAgent agent;
 
-    // Attacking
-    public float timeBetweenAttacks;
-    //private bool alreadyAttacked;
+    public Transform firePoint;
     public GameObject projectile;
-
     public LayerMask whatIsPlayer;
 
-    // States
+    public float bulletSpeed = 10f;
+    public float timeBetweenAttacks;
     public float attackRange;
     public bool playerInSightRange, playerInAttackRange;
-
     private bool alreadyAttacked = false;
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -35,7 +27,6 @@ public class EnemyAiFlying : MonoBehaviour
     void Update()
     {
         playerInAttackRange = CheckAttackRange(transform, target);
-
         if (!playerInAttackRange) ChasePlayer();
         if (playerInAttackRange) AttackPlayer();
     }

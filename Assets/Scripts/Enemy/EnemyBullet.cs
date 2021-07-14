@@ -14,7 +14,8 @@ public class EnemyBullet : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             print("Hit player.");
-            Destroy(this.gameObject);
         }
+
+        Destroy(this.gameObject);
     }
 }

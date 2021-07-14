@@ -6,6 +6,7 @@ public class UiController : MonoBehaviour
     [SerializeField] private GameObject pauseHud;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private TextMeshProUGUI keyCardText;
+    [SerializeField] private TextMeshProUGUI waveNumberText;
 
     private GameManager gameManager;
 
@@ -43,6 +44,11 @@ public class UiController : MonoBehaviour
         if (keyCardText != null)
         {
             keyCardText.text = "Keycards " + gameManager.Keycards;
+        }
+
+        if (waveNumberText != null)
+        {
+            waveNumberText.text = "Wave: " + gameManager.WaveNumber;
         }
     }
 
