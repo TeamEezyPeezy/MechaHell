@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EnvironmentScene.unity
     guid: af4035f54b30f1c40907687721f32e45
+  - enabled: 1
+    path: Assets/Scenes/EnvironmentSceneDuplicate.unity
+    guid: 1ea808dfef51cdd4dbe4cac23d555725
   m_configObjects: {}
