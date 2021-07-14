@@ -10,14 +10,21 @@ public class EnemySpawner : MonoBehaviour
     public Room[] allRooms;
     public List<Room> activeRooms;
     public Player player;
-    public GameObject enemyPrefab;
+
+    public GameObject enemy_Basic;
+    public GameObject enemy_Flying;
+
     private Timer timer;
 
-    public float timeBetweenSpawning = 10f;
+    // Enemy Amounts
     public float enemiesToSpawn = 5f;
+
+    // Spawn times
+    public float timeBetweenSpawning = 10f;
     public float minRangeToSpawn = 3.5f;
     public float minSpawnTime = 0.5f, maxSpawnTime = 2f;
 
+    // Private * ------------- *
     private float timeBetweenSpawns = 0f;
 #pragma warning disable 414
     private bool currentlySpawning = false;
@@ -78,7 +85,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Vector2 spawnPos = randomRoom.CalculateSpawnPoint(player.transform, minRangeToSpawn);
 
-                    SpawnEnemy(enemyPrefab, spawnPos);
+                    SpawnEnemy(enemy_Basic, spawnPos);
                 }
 
                 timeBetweenSpawns = Random.Range(minSpawnTime, maxSpawnTime);

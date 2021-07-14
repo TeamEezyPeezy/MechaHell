@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4648320976220540152}
   - component: {fileID: 3026204619358019733}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ExplosionImpactSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4695665281163170938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 7456490683519980420}
   - component: {fileID: 3172081654043403227}
   - component: {fileID: 2404415617136142703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ExplosiveBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
