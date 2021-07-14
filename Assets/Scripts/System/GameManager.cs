@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
@@ -11,11 +12,20 @@ public class GameManager : Singleton<GameManager>
 
     private int enemyCount = 0;
     private int waveNumber = 4;
+    private int roomsOpen = 1;
 
     private bool canDropKeycard = false;
 
     [HideInInspector]
     public int lastKeyDropWave = 0;
+
+    private void Start()
+    {
+        if (player == null)
+        {
+            player = FindObjectOfType<Player>();
+        }
+    }
 
     public bool CanDropKeycard
     {
@@ -29,6 +39,18 @@ public class GameManager : Singleton<GameManager>
             {
                 return false;
             }
+        }
+    }
+
+    public int RoomsOpen
+    {
+        get
+        {
+            return roomsOpen;
+        }
+        set
+        {
+            roomsOpen = value;
         }
     }
 

@@ -82,6 +82,7 @@ public class Door : MonoBehaviour, iDoor
         {
             if (GameManager.Instance.Keycards >= doorCost)
             {
+                print("Opening door...");
                 // Open Door.
                 SetAnimTriggers();
 
