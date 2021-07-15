@@ -95,7 +95,7 @@ public class UiController : MonoBehaviour
 
     public void OnClickRestartButton()
     {
-        // TODO fix somehow
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }
