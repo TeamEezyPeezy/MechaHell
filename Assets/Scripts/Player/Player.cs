@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float doorOpenRange = 5f;
+    public int healthPoints = 100;
     public Room currentRoom;
     public GameObject doorInfoText;
     private Timer timer;
@@ -149,4 +150,15 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, doorOpenRange);
     }
+
+    public void TakeDamage(int amount)
+    {
+        healthPoints -= amount;
+        if(healthPoints <= 0)
+        {
+            healthPoints = 0; // if hp went under 0, corrects visual information
+            gameManager.GameOver();
+        }
+    }
+
 }
