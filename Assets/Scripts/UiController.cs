@@ -15,6 +15,11 @@ public class UiController : MonoBehaviour
     private GameManager gameManager;
     private int previousHealhPoints = 0;
 
+    public PlayerMovement playerMovementReference;
+    public ExplosiveGun bazookaReference;
+    public GunSystem gunReference;
+    public CooldownIcon coolDownReference;
+
 
     private void Awake()
     {
@@ -72,6 +77,10 @@ public class UiController : MonoBehaviour
     {
         Time.timeScale = 0f;
         pauseHud.SetActive(true);
+        playerMovementReference.enabled = false;
+        gunReference.enabled = false;
+        bazookaReference.enabled = false;
+        coolDownReference.enabled = false;
 
     }
 
@@ -79,6 +88,10 @@ public class UiController : MonoBehaviour
     {
         pauseHud.SetActive(false);
         Time.timeScale = 1f;
+        playerMovementReference.enabled = true;
+        gunReference.enabled = true;
+        bazookaReference.enabled = true;
+        coolDownReference.enabled = true;
     }
 
     public void OnClickQuitButton()
@@ -96,6 +109,6 @@ public class UiController : MonoBehaviour
     public void OnClickRestartButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
