@@ -5,6 +5,7 @@ public class GameManager : Singleton<GameManager>
 {
     public Player player;
 
+    public UiController uiController;
     [SerializeField]
     private int money = 100;
     [SerializeField] 
@@ -129,5 +130,9 @@ public class GameManager : Singleton<GameManager>
     public void EnemySpawned()
     {
         EnemyCount++;
+    }
+    public void GameOver()
+    {
+        uiController.OpenGameOverHud();
     }
 }

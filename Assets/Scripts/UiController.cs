@@ -1,19 +1,20 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UiController : MonoBehaviour
 {
     [SerializeField] private GameObject pauseHud;
+    [SerializeField] private GameObject gameOverHud;
+    [SerializeField] private Player player;
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private TextMeshProUGUI hpText;
     [SerializeField] private TextMeshProUGUI keyCardText;
     [SerializeField] private TextMeshProUGUI waveNumberText;
 
     private GameManager gameManager;
+    private int previousHealhPoints = 0;
 
-    public PlayerMovement playerMovementReference;
-    public ExplosiveGun bazookaReference;
-    public GunSystem gunReference;
-    public CooldownIcon coolDownReference;
 
     private void Awake()
     {
@@ -50,6 +51,13 @@ public class UiController : MonoBehaviour
         {
             waveNumberText.text = "Wave: " + gameManager.WaveNumber;
         }
+
+        if(player.healthPoints != previousHealhPoints)
+        {
+            Debug.Log(player.healthPoints);
+            hpText.text = "HP: " + player.healthPoints;
+            previousHealhPoints = player.healthPoints;
+        }
     }
 
     void CheckUserInput()
@@ -64,24 +72,30 @@ public class UiController : MonoBehaviour
     {
         Time.timeScale = 0f;
         pauseHud.SetActive(true);
-        playerMovementReference.enabled = false;
-        gunReference.enabled = false;
-        bazookaReference.enabled = false;
-        coolDownReference.enabled = false;
+
     }
 
     public void OnClickResumeButton()
     {
         pauseHud.SetActive(false);
         Time.timeScale = 1f;
-        playerMovementReference.enabled = true;
-        gunReference.enabled = true;
-        bazookaReference.enabled = true;
-        coolDownReference.enabled = true;
     }
 
     public void OnClickQuitButton()
     {
         Application.Quit();
+    }
+
+    public void OpenGameOverHud()
+    {
+        Time.timeScale = 0f;
+        gameOverHud.SetActive(true);
+ 
+    }
+
+    public void OnClickRestartButton()
+    {
+        // TODO fix somehow
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
