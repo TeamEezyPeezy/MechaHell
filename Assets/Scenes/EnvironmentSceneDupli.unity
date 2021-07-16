@@ -3253,6 +3253,10 @@ PrefabInstance:
       propertyPath: enemySpawner
       value: 
       objectReference: {fileID: 978283218}
+    - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: healthPoints
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8116413541067230164, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_Name
       value: Player
@@ -12037,8 +12041,8 @@ MonoBehaviour:
   player: {fileID: 2130695167}
   uiController: {fileID: 1108259437}
   money: 1000
-  keyCards: 1
-  waveNumber: 0
+  keyCards: 0
+  waveNumber: 1
   lastKeyDropWave: 0
 --- !u!4 &588877438
 Transform:

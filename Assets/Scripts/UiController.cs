@@ -102,8 +102,10 @@ public class UiController : MonoBehaviour
     public void OpenGameOverHud()
     {
         Time.timeScale = 0f;
-        gameOverHud.SetActive(true);
- 
+        if (gameOverHud != null)
+        {
+            gameOverHud.SetActive(true);
+        }
     }
 
     public void OnClickRestartButton()
