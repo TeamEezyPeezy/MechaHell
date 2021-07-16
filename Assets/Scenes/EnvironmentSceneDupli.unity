@@ -12041,7 +12041,7 @@ MonoBehaviour:
   player: {fileID: 2130695167}
   uiController: {fileID: 1108259437}
   money: 1000
-  keyCards: 5
+  keyCards: 0
   waveNumber: 1
   lastKeyDropWave: 0
 --- !u!4 &588877438
@@ -19935,7 +19935,7 @@ MonoBehaviour:
   timeBetweenSpawning: 5
   minRangeToSpawn: 4
   minSpawnTime: 0.5
-  maxSpawnTime: 3
+  maxSpawnTime: 1.25
 --- !u!4 &978283219
 Transform:
   m_ObjectHideFlags: 0
@@ -25805,7 +25805,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: cfa2892ea61b185428cb505c1c6f7568, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -35606,6 +35606,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 661787349, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 768941951, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 968779614, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485523011, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4943448782226136468, guid: 3972003461ff7e84587347eaa1788967, type: 3}
