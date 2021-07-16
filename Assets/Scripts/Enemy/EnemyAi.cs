@@ -17,6 +17,7 @@ public class EnemyAi : MonoBehaviour
     // States
     public float attackRange;
     public bool playerInSightRange, playerInAttackRange;
+    bool alreadyAttacked = false;
 
     void Start()
     {
@@ -69,6 +70,30 @@ public class EnemyAi : MonoBehaviour
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         } */
+
+        if(!alreadyAttacked)
+        {
+            alreadyAttacked = true;
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackRange);
+            foreach (Collider2D nearby in colliders)
+            {
+           
+                Player player = nearby.gameObject.GetComponent<Player>();
+
+                if (player != null)
+                {                                                                   
+                    player.TakeDamage(5);
+                    Debug.Log("Player took damage");
+                }
+            }
+            Invoke("ResetAttack", timeBetweenAttacks);
+        }
+        
+    }
+
+    private void ResetAttack()
+    {
+        alreadyAttacked = false;
     }
 
     private void RotateTowards(Vector2 target)
@@ -80,10 +105,6 @@ public class EnemyAi : MonoBehaviour
         transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
     }
 
-    private void ResetAttack()
-    {
-        //alreadyAttacked = false;
-    }
 
     private void OnDrawGizmosSelected()
     {
