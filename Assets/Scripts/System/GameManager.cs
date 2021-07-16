@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
     {
         get
         {
-            if (WaveNumber % 5 == 0 && lastKeyDropWave != WaveNumber)
+            if (WaveNumber % 1 == 0 && lastKeyDropWave != WaveNumber)
             {
                 return true;
             }
