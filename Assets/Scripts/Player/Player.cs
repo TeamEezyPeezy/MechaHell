@@ -161,4 +161,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void RefillHealth()
+    {
+        healthPoints = 100;
+    }
+    public void BuyBonushealth()
+    {
+        // cannot go over 150 hp
+        if(healthPoints > 125)
+        {
+            healthPoints = 150;
+        } else {
+            healthPoints += 25;
+        }
+    }
+
 }

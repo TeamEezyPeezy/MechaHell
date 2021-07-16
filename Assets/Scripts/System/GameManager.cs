@@ -75,6 +75,7 @@ public class GameManager : Singleton<GameManager>
         set
         {
             waveNumber = value;
+            player.RefillHealth();
         }
     }
 
