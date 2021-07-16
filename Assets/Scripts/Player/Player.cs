@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
             Door closestDoor = GetClosestDoor(currentRoom.MyDoors);
             if (closestDoor != null)
             {
-                if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange && !closestDoor.isOpen && !closestDoor.doorPair.isOpen)
+                if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange && !closestDoor.isOpen && !closestDoor.doorPair.isOpen && gameManager.Keycards >= 1)
                 {
                     // Show door info text.
                     doorInfoText.SetActive(true);
