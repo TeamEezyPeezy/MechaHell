@@ -138,14 +138,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  timeBetweenAttacks: 0.5
+  animator: {fileID: 4789947931532885987}
   projectile: {fileID: 0}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
+  minTimeSprint: 5
+  maxTimeSprint: 15
+  sprintDuration: 3
+  boostPercentage: 75
+  timeBetweenAttacks: 1
+  rotateSpeed: 2
   attackRange: 3.6
   playerInSightRange: 0
   playerInAttackRange: 0
+  mySpeed: 10
+  myAccel: 6
 --- !u!114 &6843096791398924693
 MonoBehaviour:
   m_ObjectHideFlags: 0
