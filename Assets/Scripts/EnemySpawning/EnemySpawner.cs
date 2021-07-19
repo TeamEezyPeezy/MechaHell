@@ -69,23 +69,32 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         gameManager = GameManager.Instance;
-
-        activeRooms.Add(player.CurrentRoom);
+        enemies = new List<Transform>();
         timer = gameObject.AddComponent<Timer>();
-        allRooms = FindObjectsOfType<Room>();
     }
 
     private void Start()
     {
+        gameManager.ResetGame();
+
+        allRooms = FindObjectsOfType<Room>();
+        if (player.currentRoom != null)
+        {
+            activeRooms.Add(player.CurrentRoom);
+        }
+        else
+        {
+            activeRooms.Add(player.startRoom);
+        }
+
         basicEnemiesToSpawn = enemiesAtStart;
-
         timer.Run(timeBetweenSpawning);
-
-        enemies = new List<Transform>();
     }
 
     void Update()
     {
+        print("CurrentlySpawning: " + currentlySpawning + " EnemyCount: " + gameManager.EnemyCount);
+
         if (!currentlySpawning && gameManager.EnemyCount <= 0)
         {
             if (!betweenWaveTime)
@@ -125,6 +134,10 @@ public class EnemySpawner : MonoBehaviour
                     Vector2 spawnPos = randomRoom.CalculateSpawnPoint(player.transform, minRangeToSpawn);
 
                     SpawnEnemy(enemy_Basic, spawnPos);
+                }
+                else
+                {
+                    print("Random room is null, can't Spawn enemy!");
                 }
 
                 timeBetweenSpawns = Random.Range(minSpawnTime, maxSpawnTime);

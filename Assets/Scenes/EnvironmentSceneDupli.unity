@@ -12040,9 +12040,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2130695167}
   uiController: {fileID: 1108259437}
-  money: 1000
-  keyCards: 0
-  waveNumber: 1
+  startMoney: 1000
+  startKeyCards: 0
+  startWave: 0
   lastKeyDropWave: 0
 --- !u!4 &588877438
 Transform:
@@ -35618,7 +35618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1485523011, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485523012, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 139.8
       objectReference: {fileID: 0}
     - target: {fileID: 4943448782226136468, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_Camera
@@ -35718,6 +35722,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6736311085474268192, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817423213540157989, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7642097226746401465, guid: 3972003461ff7e84587347eaa1788967, type: 3}

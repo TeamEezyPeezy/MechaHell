@@ -6,7 +6,10 @@ public class Player : MonoBehaviour
 {
     public float doorOpenRange = 5f;
     public int healthPoints = 100;
+
     public Room currentRoom;
+    public Room startRoom;
+
     public GameObject doorInfoText;
     private Timer timer;
     private float doorCheckInterval = .25f;
@@ -29,6 +32,7 @@ public class Player : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         timer = gameObject.AddComponent<Timer>();
+        startRoom = currentRoom;
     }
 
     private void Start()
@@ -154,17 +158,23 @@ public class Player : MonoBehaviour
     public void TakeDamage(int amount)
     {
         healthPoints -= amount;
-        if(healthPoints <= 0)
+        if (healthPoints <= 0)
         {
             healthPoints = 0; // if hp went under 0, corrects visual information
-            gameManager.GameOver();
+            PlayerDeath();
         }
+    }
+
+    private void PlayerDeath()
+    {
+        gameManager.GameOver();
     }
 
     public void RefillHealth()
     {
         healthPoints = 100;
     }
+
     public void BuyBonushealth()
     {
         // cannot go over 150 hp
@@ -175,5 +185,4 @@ public class Player : MonoBehaviour
             healthPoints += 25;
         }
     }
-
 }

@@ -37,7 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
     bool isWalking = false;
     bool animationChanged = false;
+#pragma warning disable 414
     bool isDashButtonDown;
+#pragma warning restore 414
     bool dashOnCooldown;
     void Awake()
     {

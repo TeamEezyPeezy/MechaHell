@@ -20,19 +20,22 @@ public class UiController : MonoBehaviour
     public GunSystem gunReference;
     public CooldownIcon coolDownReference;
 
+    private void OnEnable()
+    {
+        gameManager = GameManager.Instance;
+    }
 
     private void Awake()
     {
         gameManager = GameManager.Instance;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         pauseHud.SetActive(false);
+        gameOverHud.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckUserInput();
@@ -75,23 +78,25 @@ public class UiController : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0f;
         pauseHud.SetActive(true);
         playerMovementReference.enabled = false;
         gunReference.enabled = false;
         bazookaReference.enabled = false;
         coolDownReference.enabled = false;
 
+        Time.timeScale = 0f;
     }
 
     public void OnClickResumeButton()
     {
         pauseHud.SetActive(false);
-        Time.timeScale = 1f;
+
         playerMovementReference.enabled = true;
         gunReference.enabled = true;
         bazookaReference.enabled = true;
         coolDownReference.enabled = true;
+
+        Time.timeScale = 1f;
     }
 
     public void OnClickQuitButton()
@@ -101,11 +106,9 @@ public class UiController : MonoBehaviour
 
     public void OpenGameOverHud()
     {
+        gameOverHud.SetActive(true);
+
         Time.timeScale = 0f;
-        if (gameOverHud != null)
-        {
-            gameOverHud.SetActive(true);
-        }
     }
 
     public void OnClickRestartButton()

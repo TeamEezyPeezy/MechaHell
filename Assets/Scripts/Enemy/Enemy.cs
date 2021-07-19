@@ -40,6 +40,6 @@ public class Enemy : MonoBehaviour
             GameObject keycard = Instantiate(keyCardDrop, transform.position, Quaternion.identity);
         }
 
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }

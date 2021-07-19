@@ -1,42 +1,54 @@
-using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
     public Player player;
-
     public UiController uiController;
-    [SerializeField]
-    private int money = 100;
-    [SerializeField] 
-    private int keyCards = 0;
-    [SerializeField]
-    private int waveNumber = 0;
 
-    private int enemyCount = 0;
-    private int roomsOpen = 1;
+    public int startMoney, startKeyCards, startWave;
+
+    private int money;
+    private int keyCards;
+    private int waveNumber;
+    private int roomsOpen;
+    private int enemyCount;
+
+#pragma warning disable 414
     private bool canDropKeycard = false;
+#pragma warning restore 414
 
     [HideInInspector]
-    public int lastKeyDropWave = 0;
+    public int lastKeyDropWave;
 
     private void Start()
     {
-        FindPlayer();
+        FindReferences();
+    }
+
+    public void ResetGame()
+    {
+        FindReferences();
+
+        money = startMoney;
+        keyCards = startKeyCards;
+        waveNumber = startWave;
+        roomsOpen = 1;
+        lastKeyDropWave = 0;
+        enemyCount = 0;
+        player.healthPoints = 100;
     }
 
     protected override void Awake()
     {
         base.Awake();
-        FindPlayer();
+        ResetGame();
     }
 
-    private void FindPlayer()
+    private void FindReferences()
     {
-        if (player == null)
-        {
-            player = FindObjectOfType<Player>();
-        }
+        player = FindObjectOfType<Player>();
+        uiController = FindObjectOfType<UiController>();
     }
 
     public bool CanDropKeycard
