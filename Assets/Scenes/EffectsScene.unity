@@ -3257,6 +3257,18 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: playerDamageTakenSound
+      value: 
+      objectReference: {fileID: 315753159}
+    - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: playerDamageTakenParticle
+      value: 
+      objectReference: {fileID: 1679525734}
+    - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: playerUITakeDamageAnimation
+      value: 
+      objectReference: {fileID: 1654168491}
     - target: {fileID: 8116413541067230164, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3345,6 +3357,10 @@ PrefabInstance:
       propertyPath: dashCooldownTimer
       value: 
       objectReference: {fileID: 935046587}
+    - target: {fileID: 9181959083307838673, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
 --- !u!4 &152935094 stripped
@@ -6106,6 +6122,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &315753159 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7928034923651117214, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+  m_PrefabInstance: {fileID: 152935093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &322287596
 GameObject:
   m_ObjectHideFlags: 0
@@ -33918,6 +33939,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1654168491 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7544222062570977207, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+  m_PrefabInstance: {fileID: 1710412719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1654448598
 GameObject:
   m_ObjectHideFlags: 0
@@ -34501,6 +34527,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9875, y: 4.0375}
   m_EdgeRadius: 0
+--- !u!198 &1679525734 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1256468307064309798, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+  m_PrefabInstance: {fileID: 152935093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1683575479
 GameObject:
   m_ObjectHideFlags: 0
@@ -35620,6 +35651,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4643069414771722994, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -150.50012
+      objectReference: {fileID: 0}
     - target: {fileID: 4943448782226136468, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_Camera
       value: 
@@ -35711,6 +35746,14 @@ PrefabInstance:
     - target: {fileID: 4943448782226136473, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029085867116181946, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029085867116181946, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6624113490630403827, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: m_IsActive
