@@ -25,6 +25,7 @@ public class GunSystem : MonoBehaviour
     public AudioSource reloadAudioSource;
     public AudioSource weaponSwitchAudioSource;
     public Animator weaponSwitchAnimation;
+    public ParticleSystem MuzzleFlashParticle;
     int bulletsLeft, bulletsToShoot;
 
     bool shooting, readyToShoot, reloading;
@@ -122,6 +123,7 @@ public class GunSystem : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(direction * currentWeapon.bulletForce, ForceMode2D.Impulse);
         currentWeapon.FireEffects();
+        MuzzleFlashParticle.Play();
         PlayGunSound();
 
         Destroy(bullet, 3f);

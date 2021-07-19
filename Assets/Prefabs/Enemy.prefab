@@ -143,7 +143,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  attackRange: 3.3
+  attackRange: 3.6
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!114 &6843096791398924693
