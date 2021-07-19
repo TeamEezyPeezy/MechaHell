@@ -15,6 +15,12 @@ public class Player : MonoBehaviour
     private float doorCheckInterval = .25f;
     public EnemySpawner enemySpawner;
     private GameManager gameManager;
+    [SerializeField]
+    private Animator playerUITakeDamageAnimation;
+    [SerializeField]
+    private AudioSource playerDamageTakenSound;
+    [SerializeField]
+    private ParticleSystem playerDamageTakenParticle;
 
     public Room CurrentRoom
     {
@@ -158,7 +164,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(int amount)
     {
         healthPoints -= amount;
-        if (healthPoints <= 0)
+        playerUITakeDamageAnimation.Play("playerUIDamageEffectAnimation");
+        playerDamageTakenSound.Play();
+        playerDamageTakenParticle.Play();
+        if(healthPoints <= 0)
         {
             healthPoints = 0; // if hp went under 0, corrects visual information
             PlayerDeath();
