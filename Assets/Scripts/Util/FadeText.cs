@@ -5,6 +5,7 @@ using UnityEngine;
 public class FadeText : MonoBehaviour
 {
     private TextMeshProUGUI text;
+    private bool isFading = false;
 
     private void Start()
     {
@@ -18,16 +19,18 @@ public class FadeText : MonoBehaviour
 
     public void FadeIn(float fadeTime)
     {
-        if (text != null)
+        if (text != null && !isFading)
         {
+            isFading = true;
             StartCoroutine(FadeTextToFullAlpha(fadeTime, text));
         }
     }
 
     public void FadeOut(float fadeTime)
     {
-        if (text != null)
+        if (text != null && !isFading)
         {
+            isFading = true;
             StartCoroutine(FadeTextToZeroAlpha(fadeTime, text));
         }
     }
@@ -40,6 +43,8 @@ public class FadeText : MonoBehaviour
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
             yield return null;
         }
+
+        isFading = false;
     }
 
     public IEnumerator FadeTextToZeroAlpha(float t, TextMeshProUGUI i)
@@ -50,5 +55,7 @@ public class FadeText : MonoBehaviour
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
             yield return null;
         }
+
+        isFading = false;
     }
 }

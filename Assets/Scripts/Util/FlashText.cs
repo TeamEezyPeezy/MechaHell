@@ -5,12 +5,13 @@ using UnityEngine;
 public class FlashText : MonoBehaviour
 {
     private float fadeTime;
+    private bool isFlashing = false;
 
     public void Flash(float fadeTime)
     {
         this.fadeTime = fadeTime;
 
-        FadeOut(this.fadeTime);
+        if(!isFlashing) FadeOut(this.fadeTime);
     }
 
     private void FadeIn(float fadeTime)
@@ -20,6 +21,7 @@ public class FlashText : MonoBehaviour
 
     private void FadeOut(float fadeTime)
     {
+        isFlashing = true;
         StartCoroutine(FadeTextToZeroAlpha(fadeTime, GetComponent<TextMeshProUGUI>()));
     }
 
@@ -31,6 +33,8 @@ public class FlashText : MonoBehaviour
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
             yield return null;
         }
+
+        isFlashing = false;
     }
 
     public IEnumerator FadeTextToZeroAlpha(float t, TextMeshProUGUI i)
