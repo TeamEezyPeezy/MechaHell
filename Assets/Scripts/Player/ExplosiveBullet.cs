@@ -17,6 +17,16 @@ public class ExplosiveBullet : MonoBehaviour
        Destroy(gameObject);
    }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+            Explode();
+            ScreenShakeController.instance.StartShake(.2f, 1f);
+            Destroy(gameObject);
+        }
+        
+    }
 
    void Explode()
    {

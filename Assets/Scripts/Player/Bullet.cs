@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int damage = 10;
+    public bool pierceEnemy = false;
 
     // public GameObject hitAnimation;
    void OnCollisionEnter2D(Collision2D collision)
@@ -10,8 +11,7 @@ public class Bullet : MonoBehaviour
      
      if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet")) return;
 
-
-        CheckEnemyCollision(collision);
+        // CheckEnemyCollision(collision);
         Destroy(gameObject);
         // TODO When animation for bullet explosion / disappearing is done, enable these
         //GameObject animation = Instantiate(hitAnimation, transform.position, Quaternion.identity);
@@ -20,9 +20,14 @@ public class Bullet : MonoBehaviour
 
    }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("triger hit");
+        CheckEnemyCollision(other);
+    }
 
 
-   private void CheckEnemyCollision(Collision2D collision)
+   private void CheckEnemyCollision(Collider2D collision)
    {
        if (collision.gameObject.CompareTag("Enemy"))
        {
@@ -31,6 +36,7 @@ public class Bullet : MonoBehaviour
            if (enemy != null)
            {
                enemy.TakeDamage(damage);
+               if(!pierceEnemy) Destroy(gameObject); 
            }
        }
     }

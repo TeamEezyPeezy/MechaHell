@@ -3299,7 +3299,7 @@ PrefabInstance:
       objectReference: {fileID: 335676896}
     - target: {fileID: 8116413541067230169, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8116413541067230169, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12061,9 +12061,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2130695167}
   uiController: {fileID: 1108259437}
-  money: 1000
-  keyCards: 0
-  waveNumber: 1
+  startMoney: 0
+  startKeyCards: 0
+  startWave: 0
   lastKeyDropWave: 0
 --- !u!4 &588877438
 Transform:
@@ -23085,7 +23085,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3972662266301917747, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3972662266301917747, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24498,7 +24498,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1192590366 stripped
 GameObject:
@@ -41300,7 +41300,7 @@ Transform:
   m_LocalScale: {x: 400, y: 400, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1976234960
 GameObject:
