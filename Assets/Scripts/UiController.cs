@@ -63,7 +63,7 @@ public class UiController : MonoBehaviour
         if(player.healthPoints != previousHealhPoints)
         {
             Debug.Log(player.healthPoints);
-            hpText.text = "HP: " + player.healthPoints;
+            hpText.text = "" + player.healthPoints;
             previousHealhPoints = player.healthPoints;
         }
     }
