@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float doorOpenRange = 5f;
-    public int healthPoints = 100;
-
+    private GameManager gameManager;
+    public EnemySpawner enemySpawner;
     public Room currentRoom;
     public Room startRoom;
-
-    public GameObject doorInfoText;
     private Timer timer;
+
+    public int healthPoints = 100;
+    public float doorOpenRange = 5f;
     private float doorCheckInterval = .25f;
-    public EnemySpawner enemySpawner;
-    private GameManager gameManager;
+
     [SerializeField]
     private Animator playerUITakeDamageAnimation;
     [SerializeField]
@@ -102,12 +101,11 @@ public class Player : MonoBehaviour
             {
                 if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange && !closestDoor.isOpen && !closestDoor.doorPair.isOpen && gameManager.Keycards >= 1)
                 {
-                    // Show door info text.
-                    doorInfoText.SetActive(true);
+                    gameManager.uiController.ShowPlayerDoorInfo(true);
                 }
                 else
                 {
-                    doorInfoText.SetActive(false);
+                    gameManager.uiController.ShowPlayerDoorInfo(false);
                 }
             }
         }
@@ -164,9 +162,22 @@ public class Player : MonoBehaviour
     public void TakeDamage(int amount)
     {
         healthPoints -= amount;
-        playerUITakeDamageAnimation.Play("playerUIDamageEffectAnimation");
-        playerDamageTakenSound.Play();
-        playerDamageTakenParticle.Play();
+
+        if (playerUITakeDamageAnimation != null)
+        {
+            playerUITakeDamageAnimation.Play("playerUIDamageEffectAnimation");
+        }
+
+        if (playerDamageTakenParticle != null)
+        {
+            playerDamageTakenParticle.Play();
+        }
+
+        if (playerDamageTakenSound != null)
+        {
+            playerDamageTakenSound.Play();
+        }
+
         if(healthPoints <= 0)
         {
             healthPoints = 0; // if hp went under 0, corrects visual information

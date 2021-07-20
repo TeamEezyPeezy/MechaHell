@@ -93,7 +93,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        print("CurrentlySpawning: " + currentlySpawning + " EnemyCount: " + gameManager.EnemyCount);
+        //print("CurrentlySpawning: " + currentlySpawning + " EnemyCount: " + gameManager.EnemyCount);
 
         if (!currentlySpawning && gameManager.EnemyCount <= 0)
         {
@@ -103,7 +103,7 @@ public class EnemySpawner : MonoBehaviour
                 betweenWaveTime = true;
             }
 
-            print("Between wavetime: " + (int)timer.CurrentTime);
+            //print("Between wavetime: " + (int)timer.CurrentTime);
         }
 
         if (timer.IsComplete)

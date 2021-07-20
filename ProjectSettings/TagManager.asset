@@ -9,6 +9,7 @@ TagManager:
   - Keycard
   - Room
   - UpgradeCenter
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

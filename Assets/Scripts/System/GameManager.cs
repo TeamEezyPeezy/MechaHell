@@ -8,6 +8,11 @@ public class GameManager : Singleton<GameManager>
 
     public int startMoney, startKeyCards, startWave;
 
+    public delegate void PlayerValueUpdate();
+    public static event PlayerValueUpdate onMoneyChange;
+    public static event PlayerValueUpdate onKeycardChange;
+    public static event PlayerValueUpdate onWaveNumberChange;
+
     private int money;
     private int keyCards;
     private int waveNumber;
@@ -78,19 +83,6 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public int WaveNumber
-    {
-        get
-        {
-            return waveNumber;
-        }
-        set
-        {
-            waveNumber = value;
-            player.RefillHealth();
-        }
-    }
-
     public int EnemyCount
     {
         get
@@ -110,6 +102,22 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public int WaveNumber
+    {
+        get
+        {
+            return waveNumber;
+        }
+        set
+        {
+            if (waveNumber == value) return;
+            if (onWaveNumberChange != null) onWaveNumberChange();
+
+            waveNumber = value;
+            player.RefillHealth();
+        }
+    }
+
     public int Money
     {
         get
@@ -118,6 +126,9 @@ public class GameManager : Singleton<GameManager>
         }
         set
         {
+            if (money == value) return;
+            if (onMoneyChange != null) onMoneyChange();
+
             money = value;
         }
     }
@@ -130,6 +141,7 @@ public class GameManager : Singleton<GameManager>
         }
         set
         {
+            if (onKeycardChange != null) onKeycardChange();
             keyCards = value;
         }
     }

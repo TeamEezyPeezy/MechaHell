@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,10 @@ public class UiController : MonoBehaviour
 {
     [SerializeField] private GameObject pauseHud;
     [SerializeField] private GameObject gameOverHud;
+
+    [SerializeField] private GameObject doorInfoText;
+    private bool doorInfoEnabled = false;
+
     [SerializeField] private Player player;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private TextMeshProUGUI hpText;
@@ -23,6 +28,47 @@ public class UiController : MonoBehaviour
     private void OnEnable()
     {
         gameManager = GameManager.Instance;
+
+        GameManager.onKeycardChange += this.UpdateKeyCardValue;
+        GameManager.onMoneyChange += this.UpdateMoneyValue;
+        GameManager.onWaveNumberChange += this.UpdateWaveNumber;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.onKeycardChange -= this.UpdateKeyCardValue;
+        GameManager.onMoneyChange -= this.UpdateMoneyValue;
+        GameManager.onWaveNumberChange -= this.UpdateWaveNumber;
+    }
+
+    private void UpdateKeyCardValue()
+    {
+        print("Keycard value changed.");
+        FlashText fa = keyCardText.GetComponent<FlashText>();
+        if (fa != null)
+        {
+            fa.Flash(0.25f);
+        }
+    }
+
+    private void UpdateMoneyValue()
+    {
+        print("Money value changed.");
+        FlashText fa = moneyText.GetComponent<FlashText>();
+        if (fa != null)
+        {
+            fa.Flash(0.25f);
+        }
+    }
+
+    private void UpdateWaveNumber()
+    {
+        print("Wave value changed.");
+        FlashText fa = waveNumberText.GetComponent<FlashText>();
+        if (fa != null)
+        {
+            fa.Flash(0.25f);
+        }
     }
 
     private void Awake()
@@ -43,6 +89,34 @@ public class UiController : MonoBehaviour
         UpdatePlayerTexts();
     }
 
+    public void ShowPlayerDoorInfo(bool showInfo)
+    {
+        if(showInfo && doorInfoEnabled) return;
+        if (!showInfo && !doorInfoEnabled) return;
+
+        FadeText fa = doorInfoText.GetComponent<FadeText>();
+
+        if (showInfo)
+        {
+            if (fa != null)
+            {
+                fa.FadeIn(0.25f);
+
+                doorInfoEnabled = true;
+                doorInfoText.SetActive(true);
+            }
+        }
+        else
+        {
+            if (fa != null)
+            {
+                fa.FadeOut(0.25f);
+
+                doorInfoEnabled = false;
+            }
+        }
+    }
+
     private void UpdatePlayerTexts()
     {
         if (moneyText != null)
@@ -52,12 +126,12 @@ public class UiController : MonoBehaviour
 
         if (keyCardText != null)
         {
-            keyCardText.text = "Keycards " + gameManager.Keycards;
+            keyCardText.text = "" + gameManager.Keycards;
         }
 
         if (waveNumberText != null)
         {
-            waveNumberText.text = "Wave: " + gameManager.WaveNumber;
+            waveNumberText.text = "" + gameManager.WaveNumber;
         }
 
         if(player.healthPoints != previousHealhPoints)

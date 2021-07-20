@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("triger hit");
+        //Debug.Log("triger hit");
         CheckEnemyCollision(other);
     }
 
