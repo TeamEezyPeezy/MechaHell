@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private int currentHealth;
 
     public GameObject keyCardDrop;
+    public GameObject deathEffect;
 
     private void Awake()
     {
@@ -38,6 +39,12 @@ public class Enemy : MonoBehaviour
             print("Dropping keycard...");
             gameManager.lastKeyDropWave = gameManager.WaveNumber;
             GameObject keycard = Instantiate(keyCardDrop, transform.position, Quaternion.identity);
+        }
+
+        if (deathEffect != null)
+        {
+            GameObject de = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(de.gameObject, 3f);
         }
 
         Destroy(this.gameObject);
