@@ -106,7 +106,7 @@ public class EnemySpawner : MonoBehaviour
             //print("Between wavetime: " + (int)timer.CurrentTime);
         }
 
-        if (timer.IsComplete)
+        if (timer.IsComplete && betweenWaveTime)
         {
             timer.Reset();
             betweenWaveTime = false;
@@ -118,6 +118,8 @@ public class EnemySpawner : MonoBehaviour
     {
         currentlySpawning = true;
         print("Spawning new wave of enemies.");
+
+        gameManager.WaveNumber++;
 
         CalculateEnemyAmounts();
 
@@ -168,7 +170,6 @@ public class EnemySpawner : MonoBehaviour
         }
 
         currentlySpawning = false;
-        gameManager.WaveNumber++;
 
         StopCoroutine(nameof(SpawnWave));
     }

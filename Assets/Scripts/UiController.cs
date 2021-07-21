@@ -59,7 +59,7 @@ public class UiController : MonoBehaviour
         FlashText fa = keyCardText.GetComponent<FlashText>();
         if (fa != null)
         {
-            fa.Flash(0.25f);
+            fa.Flash(0.25f, 1);
         }
     }
 
@@ -69,7 +69,7 @@ public class UiController : MonoBehaviour
         FlashText fa = moneyText.GetComponent<FlashText>();
         if (fa != null)
         {
-            fa.Flash(0.25f);
+            fa.Flash(0.25f, 1);
         }
     }
 
@@ -79,7 +79,7 @@ public class UiController : MonoBehaviour
         FlashText fa = waveNumberText.GetComponent<FlashText>();
         if (fa != null)
         {
-            fa.Flash(0.25f);
+            fa.Flash(.25f, 2);
         }
     }
 

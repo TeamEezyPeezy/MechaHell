@@ -2960,6 +2960,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: keycardEffect
+      value: 
+      objectReference: {fileID: 3031549462630249775, guid: e72c3c13e4c123a41a210dfe80d81294, type: 3}
+    - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: playerDamageTakenSound
       value: 
       objectReference: {fileID: 315753159}

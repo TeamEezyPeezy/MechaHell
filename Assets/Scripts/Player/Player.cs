@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public Room currentRoom;
     public Room startRoom;
     private Timer timer;
+    private Timer timer2;
+    public GameObject keycardEffect;
 
     public int healthPoints = 100;
     public float doorOpenRange = 5f;
@@ -37,12 +39,14 @@ public class Player : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         timer = gameObject.AddComponent<Timer>();
+        timer2 = gameObject.AddComponent<Timer>();
         startRoom = currentRoom;
     }
 
     private void Start()
     {
         timer.Run(doorCheckInterval);
+        timer2.Run(2f);
     }
 
     private void Update()
@@ -52,11 +56,33 @@ public class Player : MonoBehaviour
             OpenDoor();
         }
 
+        if (timer2.IsComplete)
+        {
+            RandomCheck();
+            timer2.Reset();
+            timer2.Run(2f);
+        }
+
         if (timer.IsComplete)
         {
             CheckIfCloseToDoor();
             timer.Reset();
             timer.Run(doorCheckInterval);
+        }
+    }
+
+    private void RandomCheck()
+    {
+        if (currentRoom != null)
+        {
+            Door closestDoor = GetClosestDoor(currentRoom.MyDoors);
+            if (closestDoor != null)
+            {
+                if (Vector2.Distance(transform.position, closestDoor.transform.position) >= doorOpenRange)
+                {
+                    gameManager.uiController.ShowPlayerDoorInfo(false);
+                }
+            }
         }
     }
 
@@ -68,6 +94,12 @@ public class Player : MonoBehaviour
 
             if (other.gameObject.tag.Equals("Keycard"))
             {
+                if (keycardEffect != null)
+                {
+                    GameObject de = Instantiate(keycardEffect, transform.position, Quaternion.identity);
+                    Destroy(de.gameObject, 3f);
+                }
+
                 Destroy(other.gameObject);
             }
         } 
