@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject bulletHitPrefab;
+    public GameObject enemyHitPrefab;
     public int damage = 10;
     public bool pierceEnemy = false;
 
@@ -12,7 +14,10 @@ public class Bullet : MonoBehaviour
      if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet")) return;
 
         // CheckEnemyCollision(collision);
+        GameObject _bulletHitPrefab = Instantiate(bulletHitPrefab, transform.position, transform.rotation);
+        Destroy(_bulletHitPrefab, 1);
         Destroy(gameObject);
+
         // TODO When animation for bullet explosion / disappearing is done, enable these
         //GameObject animation = Instantiate(hitAnimation, transform.position, Quaternion.identity);
         //Destroy(animation, 5f);
@@ -35,8 +40,13 @@ public class Bullet : MonoBehaviour
 
            if (enemy != null)
            {
-               enemy.TakeDamage(damage);
-               if(!pierceEnemy) Destroy(gameObject); 
+                enemy.TakeDamage(damage);
+                GameObject _enemyHitPrefab = Instantiate(enemyHitPrefab, transform.position, transform.rotation);
+                Destroy(_enemyHitPrefab, 1);
+               if(!pierceEnemy)
+               {
+                    Destroy(gameObject); 
+                }
            }
        }
     }
