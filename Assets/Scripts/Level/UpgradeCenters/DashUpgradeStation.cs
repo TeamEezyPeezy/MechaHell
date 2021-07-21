@@ -13,7 +13,11 @@ public class DashUpgradeStation : MonoBehaviour
     GameManager gameManager;
     GameObject textVisibilityHandler;
     bool playerClose = false;
-  
+    [SerializeField]
+    private ParticleSystem upgradeParticle;
+    [SerializeField]
+    private AudioSource upgradeSound;
+
 
     void Start()
     {
@@ -59,6 +63,8 @@ public class DashUpgradeStation : MonoBehaviour
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
             dashLvl += 1;
+            upgradeParticle.Play();
+            upgradeSound.Play();
 
             playerMovementReference.dashCooldown  -= 1f;
 

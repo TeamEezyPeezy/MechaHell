@@ -14,7 +14,11 @@ public class MachineGunUpgradeCenter : MonoBehaviour
     Machinegun machinegunReference;
     GameObject textVisibilityHandler;
     bool playerClose = false;
-  
+    [SerializeField]
+    private ParticleSystem upgradeParticle;
+    [SerializeField]
+    private AudioSource upgradeSound;
+
 
     void Start()
     {
@@ -61,6 +65,8 @@ public class MachineGunUpgradeCenter : MonoBehaviour
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
             rifleLvl += 1;
+            upgradeParticle.Play();
+            upgradeSound.Play();
 
             machinegunReference.magazineSize += 5;
             machinegunReference.timeBetweenShooting *= 0.7f;

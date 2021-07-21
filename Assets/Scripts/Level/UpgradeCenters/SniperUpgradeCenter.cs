@@ -14,7 +14,11 @@ public class SniperUpgradeCenter : MonoBehaviour
     Sniper sniperReference;
     GameObject textVisibilityHandler;
     bool playerClose = false;
-  
+    [SerializeField]
+    private ParticleSystem upgradeParticle;
+    [SerializeField]
+    private AudioSource upgradeSound;
+
 
     void Start()
     {
@@ -61,6 +65,8 @@ public class SniperUpgradeCenter : MonoBehaviour
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
             sniperLvl += 1;
+            upgradeParticle.Play();
+            upgradeSound.Play();
 
             sniperReference.magazineSize += 1;
             sniperReference.timeBetweenShooting *= 0.8f;

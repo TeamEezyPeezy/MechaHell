@@ -13,7 +13,11 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
     GameManager gameManager;
     GameObject textVisibilityHandler;
     bool playerClose = false;
-  
+    [SerializeField]
+    private ParticleSystem upgradeParticle;
+    [SerializeField]
+    private AudioSource upgradeSound;
+
 
     void Start()
     {
@@ -61,7 +65,9 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
             upgradeCost += 150;
             playerMovementReference.moveSpeed += 1f;
             movespeedLvl += 1;
-            
+            upgradeParticle.Play();
+            upgradeSound.Play();
+
             infoTextUpdateHandler();
         }
     }

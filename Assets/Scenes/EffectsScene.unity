@@ -1154,6 +1154,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9875, y: 4.0375}
   m_EdgeRadius: 0
+--- !u!198 &57010449 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2428299314018150891, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+  m_PrefabInstance: {fileID: 152935093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &59313039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2943,6 +2948,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 5654646946204477, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: currentRoom
       value: 
@@ -2975,6 +2984,14 @@ PrefabInstance:
       propertyPath: playerUITakeDamageAnimation
       value: 
       objectReference: {fileID: 1654168491}
+    - target: {fileID: 3683176797561466899, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903752946282472654, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8116413541067230164, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_Name
       value: Player
@@ -10989,7 +11006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2130695167}
   uiController: {fileID: 1108259437}
-  startMoney: 0
+  startMoney: 10000
   startKeyCards: 1
   startWave: 0
   lastKeyDropWave: 0
@@ -20660,6 +20677,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1087194477}
     - target: {fileID: 5101900198777898049, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeSound
+      value: 
+      objectReference: {fileID: 2037765825}
+    - target: {fileID: 5101900198777898049, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeParticle
+      value: 
+      objectReference: {fileID: 57010449}
+    - target: {fileID: 5101900198777898049, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: playerMovementReference
       value: 
       objectReference: {fileID: 37835661}
@@ -20747,6 +20772,14 @@ PrefabInstance:
       propertyPath: upgradeInfo
       value: 
       objectReference: {fileID: 1087194477}
+    - target: {fileID: 5101900199689279502, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeSound
+      value: 
+      objectReference: {fileID: 2037765825}
+    - target: {fileID: 5101900199689279502, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeParticle
+      value: 
+      objectReference: {fileID: 57010449}
     - target: {fileID: 5101900199899292259, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -20811,6 +20844,14 @@ PrefabInstance:
       propertyPath: upgradeInfo
       value: 
       objectReference: {fileID: 1087194477}
+    - target: {fileID: 5101900199899292263, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeSound
+      value: 
+      objectReference: {fileID: 2037765825}
+    - target: {fileID: 5101900199899292263, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeParticle
+      value: 
+      objectReference: {fileID: 57010449}
     - target: {fileID: 5101900199934830033, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.5625
@@ -20856,6 +20897,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1087194477}
     - target: {fileID: 5101900199934830034, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeSound
+      value: 
+      objectReference: {fileID: 2037765825}
+    - target: {fileID: 5101900199934830034, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeParticle
+      value: 
+      objectReference: {fileID: 57010449}
+    - target: {fileID: 5101900199934830034, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: playerMovementReference
       value: 
       objectReference: {fileID: 37835661}
@@ -20883,6 +20932,14 @@ PrefabInstance:
       propertyPath: upgradeInfo
       value: 
       objectReference: {fileID: 1087194477}
+    - target: {fileID: 5101900200251627760, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeSound
+      value: 
+      objectReference: {fileID: 2037765825}
+    - target: {fileID: 5101900200251627760, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeParticle
+      value: 
+      objectReference: {fileID: 57010449}
     - target: {fileID: 5101900200251627760, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: bazookaReference
       value: 
@@ -37142,6 +37199,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5, y: 4.0375}
   m_EdgeRadius: 0
+--- !u!82 &2037765825 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8324026635844532300, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+  m_PrefabInstance: {fileID: 152935093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2039875251 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5939248187784046149, guid: 941173f027965ae4fba5cb6baf8fbc75, type: 3}

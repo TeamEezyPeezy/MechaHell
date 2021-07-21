@@ -13,7 +13,11 @@ public class BazookaUpgradeCenter : MonoBehaviour
     GameManager gameManager;
     GameObject textVisibilityHandler;
     bool playerClose = false;
-  
+    [SerializeField]
+    private ParticleSystem upgradeParticle;
+    [SerializeField]
+    private AudioSource upgradeSound;
+
 
     void Start()
     {
@@ -58,6 +62,8 @@ public class BazookaUpgradeCenter : MonoBehaviour
             gameManager.Money -= upgradeCost;
             upgradeCost += 200;
             bazookaLvl += 1;
+            upgradeParticle.Play();
+            upgradeSound.Play();
 
             bazookaReference.cooldown -= 1f;
 
