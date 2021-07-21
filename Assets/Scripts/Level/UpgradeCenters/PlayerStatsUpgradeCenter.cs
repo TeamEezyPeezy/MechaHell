@@ -9,6 +9,7 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
     public TextMeshProUGUI upgradeInfo;
     public PlayerMovement playerMovementReference;
     public int upgradeCost = 200;
+    public int movespeedLvl = 1;
     GameManager gameManager;
     GameObject textVisibilityHandler;
     bool playerClose = false;
@@ -59,6 +60,7 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
             playerMovementReference.moveSpeed += 1f;
+            movespeedLvl += 1;
             
             infoTextUpdateHandler();
         }

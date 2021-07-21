@@ -9,6 +9,7 @@ public class MachineGunUpgradeCenter : MonoBehaviour
     public TextMeshProUGUI upgradeInfo;
     public GunSystem gunSystem;
     public int upgradeCost = 200;
+    public int rifleLvl = 1;
     GameManager gameManager;
     Machinegun machinegunReference;
     GameObject textVisibilityHandler;
@@ -59,6 +60,7 @@ public class MachineGunUpgradeCenter : MonoBehaviour
 
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
+            rifleLvl += 1;
 
             machinegunReference.magazineSize += 5;
             machinegunReference.timeBetweenShooting *= 0.7f;

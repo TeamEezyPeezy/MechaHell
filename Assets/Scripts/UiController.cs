@@ -20,10 +20,22 @@ public class UiController : MonoBehaviour
     private GameManager gameManager;
     private int previousHealhPoints = 0;
 
+    [SerializeField] private TextMeshProUGUI moveSpeedLevelText;
+    [SerializeField] private TextMeshProUGUI dashLevelTextText;
+    [SerializeField] private TextMeshProUGUI rifleLevelText;
+    [SerializeField] private TextMeshProUGUI sniperLevelText;
+    [SerializeField] private TextMeshProUGUI bazookaLevelText;
+
     public PlayerMovement playerMovementReference;
     public ExplosiveGun bazookaReference;
     public GunSystem gunReference;
     public CooldownIcon coolDownReference;
+
+    public MachineGunUpgradeCenter machineGunUpgradeReference;
+    public PlayerStatsUpgradeCenter moveSpeedUpgradeReference;
+    public SniperUpgradeCenter sniperUpgradeReference;
+    public DashUpgradeStation dashUpgradeReference;
+    public BazookaUpgradeCenter bazookaUpgradeReference;
 
     private void OnEnable()
     {
@@ -139,6 +151,31 @@ public class UiController : MonoBehaviour
             Debug.Log(player.healthPoints);
             hpText.text = "" + player.healthPoints;
             previousHealhPoints = player.healthPoints;
+        }
+
+        if (moveSpeedLevelText != null)
+        {
+            moveSpeedLevelText.text = "Lvl " + moveSpeedUpgradeReference.movespeedLvl;
+        }
+
+        if (dashLevelTextText != null)
+        {
+            dashLevelTextText.text = "Lvl " + dashUpgradeReference.dashLvl;
+        }
+
+        if (rifleLevelText != null)
+        {
+            rifleLevelText.text = "Lvl " + machineGunUpgradeReference.rifleLvl;
+        }
+
+        if (sniperLevelText != null)
+        {
+            sniperLevelText.text = "Lvl " + sniperUpgradeReference.sniperLvl;
+        }
+
+        if (bazookaLevelText != null)
+        {
+            bazookaLevelText.text = "Lvl " + bazookaUpgradeReference.bazookaLvl;
         }
     }
 

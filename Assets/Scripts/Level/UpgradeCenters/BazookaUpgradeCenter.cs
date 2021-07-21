@@ -9,6 +9,7 @@ public class BazookaUpgradeCenter : MonoBehaviour
     public TextMeshProUGUI upgradeInfo;
     public ExplosiveGun bazookaReference;
     public int upgradeCost = 200;
+    public int bazookaLvl = 1;
     GameManager gameManager;
     GameObject textVisibilityHandler;
     bool playerClose = false;
@@ -56,6 +57,7 @@ public class BazookaUpgradeCenter : MonoBehaviour
         if(bazookaReference.cooldown > 1f && hasEnoughMoneyFor(upgradeCost)){
             gameManager.Money -= upgradeCost;
             upgradeCost += 200;
+            bazookaLvl += 1;
 
             bazookaReference.cooldown -= 1f;
 

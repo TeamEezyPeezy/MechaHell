@@ -9,6 +9,7 @@ public class DashUpgradeStation : MonoBehaviour
     public TextMeshProUGUI upgradeInfo;
     public PlayerMovement playerMovementReference;
     public int upgradeCost = 200;
+    public int dashLvl = 1;
     GameManager gameManager;
     GameObject textVisibilityHandler;
     bool playerClose = false;
@@ -57,6 +58,7 @@ public class DashUpgradeStation : MonoBehaviour
         if(playerMovementReference.dashCooldown > 1 && hasEnoughMoneyFor(upgradeCost)){
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
+            dashLvl += 1;
 
             playerMovementReference.dashCooldown  -= 1f;
 
