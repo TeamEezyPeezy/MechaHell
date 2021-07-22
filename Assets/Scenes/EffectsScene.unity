@@ -21004,6 +21004,26 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
       value: 0.9233202
       objectReference: {fileID: 0}
+    - target: {fileID: 6197298922093395674, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464659829401088271, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeInfo
+      value: 
+      objectReference: {fileID: 1087194477}
+    - target: {fileID: 6464659829401088271, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeSound
+      value: 
+      objectReference: {fileID: 2037765825}
+    - target: {fileID: 6464659829401088271, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeParticle
+      value: 
+      objectReference: {fileID: 57010449}
+    - target: {fileID: 6464659829401088271, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: playerMovementReference
+      value: 
+      objectReference: {fileID: 37835661}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
 --- !u!1 &1161739743
