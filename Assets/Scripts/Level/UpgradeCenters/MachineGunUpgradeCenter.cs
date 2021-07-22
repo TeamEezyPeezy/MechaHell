@@ -19,7 +19,6 @@ public class MachineGunUpgradeCenter : MonoBehaviour
     [SerializeField]
     private AudioSource upgradeSound;
 
-
     void Start()
     {
         machinegunReference = gunSystem.machinegun;
@@ -60,7 +59,7 @@ public class MachineGunUpgradeCenter : MonoBehaviour
 
     public void UpgradeMachineGun()
     {
-        if(machinegunReference.upgradeLevel < 3  && hasEnoughMoneyFor(upgradeCost)){
+        if(machinegunReference.upgradeLevel < 4  && hasEnoughMoneyFor(upgradeCost)){
 
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
@@ -88,12 +87,12 @@ public class MachineGunUpgradeCenter : MonoBehaviour
 
     void infoTextUpdateHandler()
     {
-        if(machinegunReference.upgradeLevel == 3)
+        if(machinegunReference.upgradeLevel == 4)
         {
             upgradeInfo.SetText("Machinegun fully upgraded!");
 
         } else {
-            upgradeInfo.SetText("Press E to upgrade machinegun. Cost: " + upgradeCost + "\n current upgrade level: " + gunSystem.machinegun.upgradeLevel);
+            upgradeInfo.SetText("Press E to upgrade machinegun. Cost: " + upgradeCost);
 
         }
     }

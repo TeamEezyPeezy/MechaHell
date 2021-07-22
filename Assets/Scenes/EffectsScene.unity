@@ -2930,7 +2930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 670281782, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: cooldown
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 670281782, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: cooldownInfo
@@ -3076,6 +3076,10 @@ PrefabInstance:
       propertyPath: DashSound
       value: 
       objectReference: {fileID: 910960874}
+    - target: {fileID: 8116413541067230170, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8116413541067230170, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: dashCooldown
       value: 4

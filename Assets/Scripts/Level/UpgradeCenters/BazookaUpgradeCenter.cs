@@ -17,6 +17,7 @@ public class BazookaUpgradeCenter : MonoBehaviour
     private ParticleSystem upgradeParticle;
     [SerializeField]
     private AudioSource upgradeSound;
+    int maxLevel = 3;
 
 
     void Start()
@@ -58,14 +59,19 @@ public class BazookaUpgradeCenter : MonoBehaviour
 
      public void UpgradeBazooka()
     {
-        if(bazookaReference.cooldown > 1f && hasEnoughMoneyFor(upgradeCost)){
+        if(bazookaLvl <= maxLevel && hasEnoughMoneyFor(upgradeCost)){
             gameManager.Money -= upgradeCost;
             upgradeCost += 200;
             bazookaLvl += 1;
             upgradeParticle.Play();
             upgradeSound.Play();
 
-            bazookaReference.cooldown -= 1f;
+            // ensure CD wont go under 1s
+            if(bazookaReference.cooldown - 2 >= 1) 
+            {
+                bazookaReference.cooldown -= 2f;
+            }
+            
 
             infoTextUpdateHandler();
             
@@ -84,7 +90,7 @@ public class BazookaUpgradeCenter : MonoBehaviour
             upgradeInfo.SetText("Bazooka fully upgraded!");
 
         } else {
-            upgradeInfo.SetText("Press E to upgrade bazooka. Cost: " + upgradeCost + "\ncurrent cooldown: " + bazookaReference.cooldown + "s");
+            upgradeInfo.SetText("Press E to upgrade bazooka. Cost: " + upgradeCost);
 
         }
     }

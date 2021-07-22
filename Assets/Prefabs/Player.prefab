@@ -11160,7 +11160,7 @@ MonoBehaviour:
   moveSpeed: 5
   dashStartSpeed: 100
   dashSpeedDropMultiplier: 15
-  dashCooldown: 2
+  dashCooldown: 4
   dashCooldownTimer: {fileID: 0}
   playerRigidBody: {fileID: 8116413541067230171}
   cam: {fileID: 0}
@@ -11205,6 +11205,7 @@ MonoBehaviour:
   enemySpawner: {fileID: 0}
   currentRoom: {fileID: 0}
   startRoom: {fileID: 0}
+  keycardEffect: {fileID: 0}
   healthPoints: 100
   doorOpenRange: 5
   playerUITakeDamageAnimation: {fileID: 0}
@@ -11225,7 +11226,7 @@ MonoBehaviour:
   explosiveBulletPreFab: {fileID: 7456490683519980421, guid: 2630fa7616a5cf54682bbf04ae353661, type: 3}
   firePoint: {fileID: 1918406233}
   bulletForce: 20
-  cooldown: 2
+  cooldown: 7
   cooldownInfo: {fileID: 0}
   BazookaAudioSource: {fileID: 1064711965}
   animator: {fileID: 671347002}

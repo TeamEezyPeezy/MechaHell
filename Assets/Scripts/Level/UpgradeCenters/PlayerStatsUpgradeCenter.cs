@@ -17,6 +17,7 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
     private ParticleSystem upgradeParticle;
     [SerializeField]
     private AudioSource upgradeSound;
+    int maxLevel = 3;
 
 
     void Start()
@@ -59,11 +60,11 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
   
     public void UpgradePlayerStats()
     {
-        if(playerMovementReference.moveSpeed < 10f && hasEnoughMoneyFor(upgradeCost))
+        if(movespeedLvl <= maxLevel && playerMovementReference.moveSpeed < 10f && hasEnoughMoneyFor(upgradeCost))
         {   
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
-            playerMovementReference.moveSpeed += 1f;
+            playerMovementReference.moveSpeed += 2f;
             movespeedLvl += 1;
             upgradeParticle.Play();
             upgradeSound.Play();
@@ -78,12 +79,12 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
 
     void infoTextUpdateHandler()
     {
-        if(playerMovementReference.moveSpeed == 10f)
+        if(movespeedLvl == 4)
         {
             upgradeInfo.SetText("Player fully upgraded!");
 
         } else {
-            upgradeInfo.SetText("Press E to upgrade player movespeed. Cost: " + upgradeCost + "\ncurrent movespeed: " + playerMovementReference.moveSpeed);
+            upgradeInfo.SetText("Press E to upgrade player movespeed. Cost: " + upgradeCost);
 
         }
     }

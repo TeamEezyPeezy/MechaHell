@@ -17,6 +17,7 @@ public class DashUpgradeStation : MonoBehaviour
     private ParticleSystem upgradeParticle;
     [SerializeField]
     private AudioSource upgradeSound;
+    int maxLevel = 3;
 
 
     void Start()
@@ -59,14 +60,14 @@ public class DashUpgradeStation : MonoBehaviour
   
   public void UpgradeDash()
     {
-        if(playerMovementReference.dashCooldown > 1 && hasEnoughMoneyFor(upgradeCost)){
+        if(dashLvl <= maxLevel && hasEnoughMoneyFor(upgradeCost) && playerMovementReference.dashCooldown - 1 >= 1){
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
             dashLvl += 1;
             upgradeParticle.Play();
             upgradeSound.Play();
 
-            playerMovementReference.dashCooldown  -= 1f;
+            playerMovementReference.dashCooldown  -= 1f;        
 
             infoTextUpdateHandler();
         }

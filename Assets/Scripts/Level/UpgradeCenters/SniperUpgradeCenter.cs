@@ -61,7 +61,7 @@ public class SniperUpgradeCenter : MonoBehaviour
 
     public void UpgradeSniper()
     {
-        if(sniperReference.upgradeLevel < 3 && hasEnoughMoneyFor(upgradeCost)){
+        if(sniperReference.upgradeLevel < 4 && hasEnoughMoneyFor(upgradeCost)){
             gameManager.Money -= upgradeCost;
             upgradeCost += 150;
             sniperLvl += 1;
@@ -84,12 +84,12 @@ public class SniperUpgradeCenter : MonoBehaviour
 
     void infoTextUpdateHandler()
     {
-        if(sniperReference.upgradeLevel == 3)
+        if(sniperReference.upgradeLevel == 4)
         {
             upgradeInfo.SetText("Sniper fully upgraded!");
 
         } else {
-            upgradeInfo.SetText("Press E to upgrade sniper. Cost: " + upgradeCost + "\ncurrent upgrade level: " + gunSystem.machinegun.upgradeLevel);
+            upgradeInfo.SetText("Press E to upgrade sniper. Cost: " + upgradeCost);
 
         }
     }
