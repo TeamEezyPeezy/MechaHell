@@ -82,7 +82,7 @@ public class HealthUpgradeStation : MonoBehaviour
 
     void healPlayer()
     {
-        gameManager.player.healthPoints = 100;
+        gameManager.player.RefillHealth();
     }
 
     void overHealPlayer()
