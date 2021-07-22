@@ -224,7 +224,10 @@ public class Player : MonoBehaviour
 
     public void RefillHealth()
     {
-        healthPoints = 100;
+        if(healthPoints < 100){
+            healthPoints = 100;
+        }
+        
     }
 
     public void BuyBonushealth()
