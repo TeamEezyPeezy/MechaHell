@@ -133,10 +133,12 @@ public class Player : MonoBehaviour
             {
                 if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange && !closestDoor.isOpen && !closestDoor.doorPair.isOpen && gameManager.Keycards >= 1)
                 {
+                    print("SHOW INFOO");
                     gameManager.uiController.ShowPlayerDoorInfo(true);
                 }
                 else
                 {
+                    print("DONT SHOW INFOO");
                     gameManager.uiController.ShowPlayerDoorInfo(false);
                 }
             }

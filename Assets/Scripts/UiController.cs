@@ -9,7 +9,6 @@ public class UiController : MonoBehaviour
     [SerializeField] private GameObject gameOverHud;
 
     [SerializeField] private GameObject doorInfoText;
-    private bool doorInfoEnabled = false;
 
     [SerializeField] private Player player;
     [SerializeField] private TextMeshProUGUI moneyText;
@@ -103,28 +102,22 @@ public class UiController : MonoBehaviour
 
     public void ShowPlayerDoorInfo(bool showInfo)
     {
-        if(showInfo && doorInfoEnabled) return;
-        if (!showInfo && !doorInfoEnabled) return;
-
         FadeText fa = doorInfoText.GetComponent<FadeText>();
 
-        if (showInfo)
+        if (showInfo && fa.FadeValue <= 0f)
         {
             if (fa != null)
             {
                 fa.FadeIn(0.25f);
 
-                doorInfoEnabled = true;
                 doorInfoText.SetActive(true);
             }
         }
-        else
+        else if (!showInfo && fa.FadeValue >= 1f) 
         {
             if (fa != null)
             {
                 fa.FadeOut(0.25f);
-
-                doorInfoEnabled = false;
             }
         }
     }

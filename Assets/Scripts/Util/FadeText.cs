@@ -6,6 +6,19 @@ public class FadeText : MonoBehaviour
 {
     private TextMeshProUGUI text;
     private bool isFading = false;
+    private float fadeValue;
+
+    public float FadeValue
+    {
+        get
+        {
+            return fadeValue;
+        }
+        set
+        {
+            fadeValue = value;
+        }
+    }
 
     private void Start()
     {
@@ -45,6 +58,7 @@ public class FadeText : MonoBehaviour
         }
 
         isFading = false;
+        FadeValue = 1f;
     }
 
     public IEnumerator FadeTextToZeroAlpha(float t, TextMeshProUGUI i)
@@ -57,5 +71,6 @@ public class FadeText : MonoBehaviour
         }
 
         isFading = false;
+        FadeValue = 0f;
     }
 }
