@@ -62,7 +62,7 @@ public class MachineGunUpgradeCenter : MonoBehaviour
         if(machinegunReference.upgradeLevel < 4  && hasEnoughMoneyFor(upgradeCost)){
 
             gameManager.Money -= upgradeCost;
-            upgradeCost += 150;
+            upgradeCost *= 2;
             rifleLvl += 1;
             upgradeParticle.Play();
             upgradeSound.Play();

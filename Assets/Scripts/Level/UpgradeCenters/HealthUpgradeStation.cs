@@ -8,8 +8,8 @@ public class HealthUpgradeStation : MonoBehaviour
 
     public TextMeshProUGUI upgradeInfo;
     public PlayerMovement playerMovementReference;
-    public int healCost = 500;
-    public int overHealCost = 750;
+    public int healCost = 1000;
+    public int overHealCost = 1500;
     int upgradeCost;
     
     GameManager gameManager;

@@ -62,7 +62,7 @@ public class DashUpgradeStation : MonoBehaviour
     {
         if(dashLvl <= maxLevel && hasEnoughMoneyFor(upgradeCost) && playerMovementReference.dashCooldown - 1 >= 1){
             gameManager.Money -= upgradeCost;
-            upgradeCost += 150;
+            upgradeCost *= 2;
             dashLvl += 1;
             upgradeParticle.Play();
             upgradeSound.Play();

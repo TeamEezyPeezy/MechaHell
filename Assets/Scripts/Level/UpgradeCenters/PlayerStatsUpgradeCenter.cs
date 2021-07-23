@@ -8,7 +8,7 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
  
     public TextMeshProUGUI upgradeInfo;
     public PlayerMovement playerMovementReference;
-    public int upgradeCost = 200;
+    public int upgradeCost = 400;
     public int movespeedLvl = 1;
     GameManager gameManager;
     GameObject textVisibilityHandler;
@@ -63,7 +63,7 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
         if(movespeedLvl <= maxLevel && playerMovementReference.moveSpeed < 10f && hasEnoughMoneyFor(upgradeCost))
         {   
             gameManager.Money -= upgradeCost;
-            upgradeCost += 150;
+            upgradeCost *= 2;
             playerMovementReference.moveSpeed += 2f;
             movespeedLvl += 1;
             upgradeParticle.Play();

@@ -63,7 +63,7 @@ public class SniperUpgradeCenter : MonoBehaviour
     {
         if(sniperReference.upgradeLevel < 4 && hasEnoughMoneyFor(upgradeCost)){
             gameManager.Money -= upgradeCost;
-            upgradeCost += 150;
+            upgradeCost *= 2;
             sniperLvl += 1;
             upgradeParticle.Play();
             upgradeSound.Play();

@@ -22588,9 +22588,17 @@ PrefabInstance:
       value: -23
       objectReference: {fileID: 0}
     - target: {fileID: 6464659829401088271, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: healCost
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464659829401088271, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: upgradeInfo
       value: 
       objectReference: {fileID: 1087194477}
+    - target: {fileID: 6464659829401088271, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: overHealCost
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 6464659829401088271, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: upgradeSound
       value: 
