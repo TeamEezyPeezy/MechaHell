@@ -829,7 +829,7 @@ GameObject:
   - component: {fileID: 1918406233}
   m_Layer: 0
   m_Name: FirePointExplosive
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11055,7 +11055,7 @@ GameObject:
   - component: {fileID: 8116413540481223789}
   m_Layer: 0
   m_Name: FirePoint
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
