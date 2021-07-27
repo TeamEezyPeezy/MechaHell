@@ -64,8 +64,7 @@ namespace PlayFab.PfEditor
                     propInfo = LoadProps(name);
                 if (propInfo != null)
                     propInfo.SetValue(null, value, null);
-                else
-                    Debug.LogWarning("Could not save " + name + " because PlayFabSettings could not be found.");
+                //Debug.LogWarning("Could not save " + name + " because PlayFabSettings could not be found.");
             }
         }
         #endregion EditorPref data classes
