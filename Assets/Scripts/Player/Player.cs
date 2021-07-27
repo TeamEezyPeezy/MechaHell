@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = GameManager.Instance;
+        gameManager = GameManager.instance;
         timer = gameObject.AddComponent<Timer>();
         timer2 = gameObject.AddComponent<Timer>();
         startRoom = currentRoom;
@@ -133,12 +133,12 @@ public class Player : MonoBehaviour
             {
                 if (Vector2.Distance(transform.position, closestDoor.transform.position) <= doorOpenRange && !closestDoor.isOpen && !closestDoor.doorPair.isOpen && gameManager.Keycards >= 1)
                 {
-                    print("SHOW INFOO");
+                    //print("SHOW INFOO");
                     gameManager.uiController.ShowPlayerDoorInfo(true);
                 }
                 else
                 {
-                    print("DONT SHOW INFOO");
+                    //print("DONT SHOW INFOO");
                     gameManager.uiController.ShowPlayerDoorInfo(false);
                 }
             }

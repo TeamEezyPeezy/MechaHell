@@ -7,7 +7,8 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-   
+    public bool canMove = true;
+
    private enum State {
        Normal,
        Dashing,
@@ -50,12 +51,10 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        GetMovementInputs();
-        GetMousePosition();
-        HandleMovementAnimations();
+        GetMovementInputs(); 
+        GetMousePosition(); 
+        HandleMovementAnimations(); 
         HandleCooldowns();
-        
-      
     }
 
     void HandleCooldowns()

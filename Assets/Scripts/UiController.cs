@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class UiController : MonoBehaviour
 {
+    public GameObject gamePausedUI, gameActiveUI;
+
+    // Highscore
+    public GameObject rowPrefab;
+    public Transform rowsParent;
+    public GameObject nameWindow;
+    public GameObject leaderboardWindow;
+    public TMP_InputField nameInput;
+    // - End - 
+
     [SerializeField] private GameObject pauseHud;
     [SerializeField] private GameObject gameOverHud;
 
@@ -38,7 +48,7 @@ public class UiController : MonoBehaviour
 
     private void OnEnable()
     {
-        gameManager = GameManager.Instance;
+        gameManager = GameManager.instance;
 
         GameManager.onKeycardChange += this.UpdateKeyCardValue;
         GameManager.onMoneyChange += this.UpdateMoneyValue;
@@ -141,7 +151,7 @@ public class UiController : MonoBehaviour
 
         if(player.healthPoints != previousHealhPoints)
         {
-            Debug.Log(player.healthPoints);
+            //Debug.Log(player.healthPoints);
             hpText.text = "" + player.healthPoints;
             previousHealhPoints = player.healthPoints;
         }
@@ -182,7 +192,9 @@ public class UiController : MonoBehaviour
 
     public void PauseGame()
     {
+        DisableGameHud();
         pauseHud.SetActive(true);
+
         playerMovementReference.enabled = false;
         gunReference.enabled = false;
         bazookaReference.enabled = false;
@@ -193,6 +205,7 @@ public class UiController : MonoBehaviour
 
     public void OnClickResumeButton()
     {
+        EnableGameHud();
         pauseHud.SetActive(false);
 
         playerMovementReference.enabled = true;
@@ -208,11 +221,37 @@ public class UiController : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnClickSubmitName()
+    {
+        gameManager.uiController.nameWindow.SetActive(false);
+        gameManager.playfabManager.SubmitNameButton();
+    }
+
+    void DisableGameHud()
+    {
+        gameActiveUI.SetActive(false);
+        gamePausedUI.SetActive(true);
+    }
+
+    void ReloadLeaderBoard()
+    {
+        gameManager.playfabManager.GetLeaderboard();
+        Time.timeScale = 0f;
+    }
+
+    void EnableGameHud()
+    {
+        gameActiveUI.SetActive(true);
+        gamePausedUI.SetActive(false);
+    }
+
     public void OpenGameOverHud()
     {
-        gameOverHud.SetActive(true);
+        DisableGameHud();
 
-        Time.timeScale = 0f;
+        gameManager.enemySpawner.DisableEnemies();
+
+        Invoke(nameof(ReloadLeaderBoard), 1f);
     }
 
     public void OnClickRestartButton()

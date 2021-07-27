@@ -26,6 +26,17 @@ public class EnemySpawner : MonoBehaviour
     public float roomExtraDifficulty = 0.25f;
     private float difficultyMultiplier = 1f;
 
+    public void DisableEnemies()
+    {
+        foreach (var enemy in enemies)
+        {
+            if (enemy != null)
+            {
+                Destroy(enemy.gameObject);
+            }
+        }
+    }
+
     public float RoomExtraDifficulty
     {
         get

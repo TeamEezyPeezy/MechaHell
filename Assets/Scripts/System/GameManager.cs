@@ -1,10 +1,18 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameManager : Singleton<GameManager>
+public class GameManager : MonoBehaviour
 {
+    // Singleton
+    public static GameManager instance;
+    public static GameManager Instance
+    {
+        get { return instance; }
+    }
+
     public Player player;
     public UiController uiController;
+    public PlayfabManager playfabManager;
+    public EnemySpawner enemySpawner;
 
     public int startMoney, startKeyCards, startWave;
 
@@ -26,6 +34,21 @@ public class GameManager : Singleton<GameManager>
     [HideInInspector]
     public int lastKeyDropWave;
 
+    private void Awake()
+    {
+        // Singleton
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
+        ResetGame();
+    }
+
     private void Start()
     {
         FindReferences();
@@ -41,19 +64,15 @@ public class GameManager : Singleton<GameManager>
         roomsOpen = 1;
         lastKeyDropWave = 0;
         enemyCount = 0;
-        player.healthPoints = 100;
-    }
-
-    protected override void Awake()
-    {
-        base.Awake();
-        ResetGame();
+        if(player != null) player.healthPoints = 100;
+        if (playfabManager == null) playfabManager = GetComponent<PlayfabManager>();
     }
 
     private void FindReferences()
     {
         player = FindObjectOfType<Player>();
         uiController = FindObjectOfType<UiController>();
+        enemySpawner = FindObjectOfType<EnemySpawner>();
     }
 
     public bool CanDropKeycard
@@ -156,8 +175,20 @@ public class GameManager : Singleton<GameManager>
     {
         EnemyCount++;
     }
+
     public void GameOver()
     {
+        if (playfabManager.hasName == false)
+        {
+            uiController.nameWindow.SetActive(true);
+        }
+
+        else
+        {
+            playfabManager.SendLeaderboard(WaveNumber);
+            uiController.leaderboardWindow.SetActive(true);
+        }
+
         uiController.OpenGameOverHud();
     }
 }
