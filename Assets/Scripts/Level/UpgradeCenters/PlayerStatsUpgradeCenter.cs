@@ -63,7 +63,7 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
         if(movespeedLvl <= maxLevel && playerMovementReference.moveSpeed < 10f && hasEnoughMoneyFor(upgradeCost))
         {   
             gameManager.Money -= upgradeCost;
-            upgradeCost *= 2;
+            upgradeCost *= 4;
             playerMovementReference.moveSpeed += 2f;
             movespeedLvl += 1;
             upgradeParticle.Play();

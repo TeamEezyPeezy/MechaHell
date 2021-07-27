@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
 
         if (gameManager.CanDropKeycard)
         {
-            print("Dropping keycard...");
+            //print("Dropping keycard...");
             gameManager.lastKeyDropWave = gameManager.WaveNumber;
             GameObject keycard = Instantiate(keyCardDrop, transform.position, Quaternion.identity);
         }

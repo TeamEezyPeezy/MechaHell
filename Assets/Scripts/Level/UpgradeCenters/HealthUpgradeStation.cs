@@ -83,11 +83,13 @@ public class HealthUpgradeStation : MonoBehaviour
     void healPlayer()
     {
         gameManager.player.RefillHealth();
+        healCost += 300;
     }
 
     void overHealPlayer()
     {
         gameManager.player.healthPoints = 150;
+        overHealCost += 300;
     }
     bool hasEnoughMoneyFor(int amount)
     {

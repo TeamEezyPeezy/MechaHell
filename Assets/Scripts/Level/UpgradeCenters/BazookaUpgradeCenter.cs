@@ -8,7 +8,7 @@ public class BazookaUpgradeCenter : MonoBehaviour
 
     public TextMeshProUGUI upgradeInfo;
     public ExplosiveGun bazookaReference;
-    public int upgradeCost = 400;
+    public int upgradeCost = 500;
     public int bazookaLvl = 1;
     GameManager gameManager;
     GameObject textVisibilityHandler;
@@ -61,7 +61,7 @@ public class BazookaUpgradeCenter : MonoBehaviour
     {
         if(bazookaLvl <= maxLevel && hasEnoughMoneyFor(upgradeCost)){
             gameManager.Money -= upgradeCost;
-            upgradeCost *= 2;
+            upgradeCost *= 3;
             bazookaLvl += 1;
             upgradeParticle.Play();
             upgradeSound.Play();

@@ -8,7 +8,7 @@ public class SniperUpgradeCenter : MonoBehaviour
 
     public TextMeshProUGUI upgradeInfo;
     public GunSystem gunSystem;
-    public int upgradeCost = 200;
+    public int upgradeCost = 400;
     public int sniperLvl = 1;
     GameManager gameManager;
     Sniper sniperReference;
@@ -63,14 +63,14 @@ public class SniperUpgradeCenter : MonoBehaviour
     {
         if(sniperReference.upgradeLevel < 4 && hasEnoughMoneyFor(upgradeCost)){
             gameManager.Money -= upgradeCost;
-            upgradeCost *= 2;
+            upgradeCost *= 3;
             sniperLvl += 1;
             upgradeParticle.Play();
             upgradeSound.Play();
 
             sniperReference.magazineSize += 1;
             sniperReference.timeBetweenShooting *= 0.8f;
-            sniperReference.reloadTime *= 0.8f;
+            //sniperReference.reloadTime *= 0.8f;
             sniperReference.upgradeLevel++;
             gunSystem.UpdateWeaponInfo();
             infoTextUpdateHandler();

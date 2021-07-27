@@ -19604,8 +19604,6 @@ MonoBehaviour:
   roomExtraDifficulty: 0.25
   timeBetweenSpawning: 5
   minRangeToSpawn: 4
-  minSpawnTime: 0.5
-  maxSpawnTime: 1.25
 --- !u!4 &978283219
 Transform:
   m_ObjectHideFlags: 0
@@ -22967,6 +22965,10 @@ PrefabInstance:
       value: 0.9233202
       objectReference: {fileID: 0}
     - target: {fileID: 5101900198777898049, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeCost
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101900198777898049, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: upgradeInfo
       value: 
       objectReference: {fileID: 1087194477}
@@ -23063,6 +23065,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1295281041}
     - target: {fileID: 5101900199689279502, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeCost
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101900199689279502, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: upgradeInfo
       value: 
       objectReference: {fileID: 1087194477}
@@ -23135,6 +23141,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1295281041}
     - target: {fileID: 5101900199899292263, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeCost
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101900199899292263, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: upgradeInfo
       value: 
       objectReference: {fileID: 1087194477}
@@ -23185,6 +23195,10 @@ PrefabInstance:
     - target: {fileID: 5101900199934830033, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
       value: 0.9233202
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101900199934830034, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
+      propertyPath: upgradeCost
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5101900199934830034, guid: 1ee923d287fb1fb4698588976f9cf9ba, type: 3}
       propertyPath: upgradeInfo

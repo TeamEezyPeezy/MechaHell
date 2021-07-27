@@ -43,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
     // Spawn times
     public float timeBetweenSpawning = 10f;
     public float minRangeToSpawn = 3.5f;
-    public float minSpawnTime = 0.5f, maxSpawnTime = 2f;
+    float minSpawnTime = 0.1f, maxSpawnTime = 2f;
 
     // Private * ------------- *
     private float timeBetweenSpawns = 0f;
@@ -118,6 +118,12 @@ public class EnemySpawner : MonoBehaviour
     {
         currentlySpawning = true;
         print("Spawning new wave of enemies.");
+
+        // reduce maxspawn time for 10 waves
+        if(maxSpawnTime > 1f){
+            maxSpawnTime -= 0.1f;
+            Debug.Log("decrease time" + maxSpawnTime);
+        }
 
         gameManager.WaveNumber++;
 
