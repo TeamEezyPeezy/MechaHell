@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour
 
     public int startMoney, startKeyCards, startWave;
 
-    private int difficulty = 1;
-
     public delegate void PlayerValueUpdate();
     public static event PlayerValueUpdate onMoneyChange;
     public static event PlayerValueUpdate onKeycardChange;

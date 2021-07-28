@@ -2093,6 +2093,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7486870751380344632, guid: b9cf8ace416527a439c4755b10cab5b0, type: 3}
+      propertyPath: startWave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486870751380344632, guid: b9cf8ace416527a439c4755b10cab5b0, type: 3}
+      propertyPath: startKeyCards
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8093309835461982423, guid: b9cf8ace416527a439c4755b10cab5b0, type: 3}
       propertyPath: m_RootOrder
       value: 0
