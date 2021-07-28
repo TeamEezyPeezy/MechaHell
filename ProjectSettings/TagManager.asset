@@ -10,6 +10,7 @@ TagManager:
   - Room
   - UpgradeCenter
   - SpawnPoint
+  - RowsParent
   layers:
   - Default
   - TransparentFX

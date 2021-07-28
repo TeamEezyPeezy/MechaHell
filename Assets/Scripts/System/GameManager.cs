@@ -10,10 +10,19 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
+    public enum GameState
+    {
+        Menu,
+        InGame
+    }
+
+    public GameState CurrentGameState;
+
     public Player player;
     public UiController uiController;
     public PlayfabManager playfabManager;
     public EnemySpawner enemySpawner;
+    public MainMenu mainMenu;
 
     public int startMoney, startKeyCards, startWave;
 
@@ -75,6 +84,11 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<Player>();
         uiController = FindObjectOfType<UiController>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
+
+        if (CurrentGameState == GameState.Menu)
+        {
+            mainMenu = FindObjectOfType<MainMenu>();
+        }
     }
 
     public bool CanDropKeycard

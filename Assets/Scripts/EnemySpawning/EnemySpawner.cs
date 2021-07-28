@@ -79,7 +79,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = GameManager.Instance;
+        gameManager = GameManager.instance;
         enemies = new List<Transform>();
         timer = gameObject.AddComponent<Timer>();
     }
@@ -87,6 +87,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         gameManager.ResetGame();
+        gameManager.CurrentGameState = GameManager.GameState.InGame;
 
         allRooms = FindObjectsOfType<Room>();
         if (player.currentRoom != null)

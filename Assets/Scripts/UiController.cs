@@ -94,7 +94,7 @@ public class UiController : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = GameManager.Instance;
+        gameManager = GameManager.instance;
     }
 
     void Start()
@@ -149,11 +149,14 @@ public class UiController : MonoBehaviour
             waveNumberText.text = "" + gameManager.WaveNumber;
         }
 
-        if(player.healthPoints != previousHealhPoints)
+        if (player != null)
         {
-            //Debug.Log(player.healthPoints);
-            hpText.text = "" + player.healthPoints;
-            previousHealhPoints = player.healthPoints;
+            if (player.healthPoints != previousHealhPoints)
+            {
+                //Debug.Log(player.healthPoints);
+                hpText.text = "" + player.healthPoints;
+                previousHealhPoints = player.healthPoints;
+            }
         }
 
         if (moveSpeedLevelText != null)

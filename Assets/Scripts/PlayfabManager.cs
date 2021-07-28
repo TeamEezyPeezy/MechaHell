@@ -47,6 +47,16 @@ public class PlayfabManager : MonoBehaviour
         }
     }
 
+    public void SubmitNameButtonMenu()
+    {
+        var request = new UpdateUserTitleDisplayNameRequest
+        {
+
+            DisplayName = gameManager.mainMenu.nameInput.text,
+        };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+    }
+
     public void SubmitNameButton()
     {
         var request = new UpdateUserTitleDisplayNameRequest
@@ -100,7 +110,35 @@ public class PlayfabManager : MonoBehaviour
             StartPosition = 0,
             MaxResultsCount = 10
         };
-        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
+
+        if (gameManager.CurrentGameState == GameManager.GameState.InGame)
+        {
+            PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
+        }
+        else
+        {
+            PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardMenuGet, OnError);
+        }
+
+    }
+
+    public void OnLeaderboardMenuGet(GetLeaderboardResult result)
+    {
+        foreach (Transform item in gameManager.mainMenu.rowsParent)
+        {
+            Destroy(item.gameObject);
+        }
+
+        foreach (var item in result.Leaderboard)
+        {
+            GameObject newGo = Instantiate(gameManager.mainMenu.rowPrefab, gameManager.mainMenu.rowsParent);
+            TextMeshProUGUI[] texts = newGo.GetComponentsInChildren<TextMeshProUGUI>();
+            texts[0].text = (item.Position + 1).ToString();
+            texts[1].text = item.DisplayName;
+            texts[2].text = item.StatValue.ToString();
+
+            print(item.Position + " " + item.PlayFabId + " " + item.StatValue);
+        }
     }
 
     public void OnLeaderboardGet(GetLeaderboardResult result)

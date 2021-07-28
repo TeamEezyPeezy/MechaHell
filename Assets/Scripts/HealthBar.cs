@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,10 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-
     public Player playerReference;
 
     public Image playerHealthImage;
 
-    // Update is called once per frame
     void Update()
     {
         HealthBarCheck();
@@ -18,6 +17,9 @@ public class HealthBar : MonoBehaviour
     
     void HealthBarCheck()
     {
-        playerHealthImage.fillAmount = ((float)playerReference.healthPoints / 100);
+        if (playerHealthImage != null)
+        {
+            playerHealthImage.fillAmount = ((float)playerReference.healthPoints / 100);
+        }
     }
 }
