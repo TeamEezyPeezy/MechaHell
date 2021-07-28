@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/UICreationScene.unity
     guid: 58e31f0ce2aa23e4798d47b2196f5b8c
   - enabled: 1
-    path: Assets/Scenes/EffectsScene.unity
-    guid: 7247c90f7ed52094b8cfdd5857fd7a3b
+    path: Assets/Scenes/EffectsScene2.unity
+    guid: 9e4424e2eb38e4443a46897d5cd34370
   m_configObjects: {}

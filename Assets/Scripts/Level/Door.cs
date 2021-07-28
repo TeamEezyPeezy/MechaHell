@@ -1,12 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class Door : MonoBehaviour, iDoor
 {
+    private GameManager gameManager;
     public Animator animator;
-
     public AudioSource DoorOpenAudioSource;
-
     public Door doorPair;
 
     private Light2D[] doorLights;
@@ -26,9 +26,30 @@ public class Door : MonoBehaviour, iDoor
 
     private void Awake()
     {
+        if (gameManager == null)
+        {
+            gameManager = GameManager.instance;
+        }
+
         doorLights = GetComponentsInChildren<Light2D>();
         doorCloseColor = Color.red;
         doorOpenColor = Color.green;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.onDoorOpen += this.OpenDoorOverride;
+    }
+
+    private void OpenDoorOverride()
+    {
+        canFade = true;
+        SetAnimTriggers();
+    }
+
+    private void OnDisable()
+    {
+        GameManager.onDoorOpen -= this.OpenDoorOverride;
     }
 
     private void Start()
@@ -63,6 +84,7 @@ public class Door : MonoBehaviour, iDoor
         if (animator != null)
         {
             animator.SetTrigger("OpenDoor");
+            isOpen = true;
         }
 
         if (!doorPairOpen)
@@ -70,10 +92,12 @@ public class Door : MonoBehaviour, iDoor
             if (doorPair.animator != null)
             {
                 doorPair.animator.SetTrigger("OpenDoor");
+                doorPairOpen = true;
+                doorPair.isOpen = true;
             }
-
-            doorPairOpen = true;
         }
+
+        GameManager.Instance.RoomsOpen++;
     }
 
     public void OpenDoor()
@@ -83,18 +107,11 @@ public class Door : MonoBehaviour, iDoor
             if (GameManager.Instance.Keycards >= doorCost)
             {
                 print("Opening door...");
-                // Open Door.
                 SetAnimTriggers();
-
                 Invoke("PlayDoorSound", doorSoundDelay);
 
-                // Set doors to green lights
                 canFade = true;
-
                 GameManager.Instance.Keycards -= doorCost;
-                GameManager.Instance.RoomsOpen ++;
-
-                isOpen = true;
             }
         }
     }

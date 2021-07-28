@@ -12,7 +12,10 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = GameManager.Instance;
+        if (gameManager == null)
+        {
+            gameManager = GameManager.instance;
+        }
     }
 
     void Start()

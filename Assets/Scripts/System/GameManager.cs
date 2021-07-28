@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -16,10 +17,13 @@ public class GameManager : MonoBehaviour
 
     public int startMoney, startKeyCards, startWave;
 
+    private int difficulty = 1;
+
     public delegate void PlayerValueUpdate();
     public static event PlayerValueUpdate onMoneyChange;
     public static event PlayerValueUpdate onKeycardChange;
     public static event PlayerValueUpdate onWaveNumberChange;
+    public static event PlayerValueUpdate onDoorOpen;
 
     private int money;
     private int keyCards;
@@ -131,6 +135,11 @@ public class GameManager : MonoBehaviour
         {
             if (waveNumber == value) return;
             if (onWaveNumberChange != null) onWaveNumberChange();
+
+            if (waveNumber >= 9)
+            {
+                if (onDoorOpen != null) onDoorOpen();
+            }
 
             waveNumber = value;
             player.RefillHealth();
