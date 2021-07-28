@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.29, y: 0}
-  m_SizeDelta: {x: 404.83, y: 60}
+  m_AnchoredPosition: {x: -1.549, y: 0}
+  m_SizeDelta: {x: 460.49, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &6075735654068944597
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Aleksi
+  m_text: Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9653e35a1d34a714880a9d7fc6545e04, type: 2}
   m_sharedMaterial: {fileID: 5407777925298848595, guid: 9653e35a1d34a714880a9d7fc6545e04, type: 2}

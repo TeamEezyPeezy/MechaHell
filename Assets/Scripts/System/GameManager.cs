@@ -202,8 +202,7 @@ public class GameManager : MonoBehaviour
         if (playfabManager.hasName == false)
         {
             uiController.nameWindow.SetActive(true);
-        }
-
+        } 
         else
         {
             playfabManager.SendLeaderboard(WaveNumber);

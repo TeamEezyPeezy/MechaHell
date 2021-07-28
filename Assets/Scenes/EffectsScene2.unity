@@ -6614,10 +6614,26 @@ PrefabInstance:
       propertyPath: playerMovementReference
       value: 
       objectReference: {fileID: 37835661}
+    - target: {fileID: 5341929453851232790, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5341929453901802804, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: playerReference
       value: 
       objectReference: {fileID: 2130695167}
+    - target: {fileID: 5341929454436925549, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341929455216112441, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341929455277624986, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3972003461ff7e84587347eaa1788967, type: 3}
 --- !u!95 &309266825 stripped

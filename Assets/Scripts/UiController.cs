@@ -13,6 +13,11 @@ public class UiController : MonoBehaviour
     public GameObject nameWindow;
     public GameObject leaderboardWindow;
     public TMP_InputField nameInput;
+
+    private Timer highScoreTimer;
+
+    private float highScoreUpdateFreq = 3f;
+    private bool highScoreOpen = false;
     // - End - 
 
     [SerializeField] private GameObject pauseHud;
@@ -95,6 +100,7 @@ public class UiController : MonoBehaviour
     private void Awake()
     {
         gameManager = GameManager.instance;
+        highScoreTimer = gameObject.AddComponent<Timer>();
     }
 
     void Start()
@@ -108,27 +114,40 @@ public class UiController : MonoBehaviour
         CheckUserInput();
 
         UpdatePlayerTexts();
+
+        TimerControl();
+    }
+
+    private void TimerControl()
+    {
+        if (highScoreTimer.IsComplete && highScoreOpen)
+        {
+            highScoreTimer.Stop();
+
+            ReloadLeaderBoard();
+
+            highScoreTimer.Run(highScoreUpdateFreq);
+        }
     }
 
     public void ShowPlayerDoorInfo(bool showInfo)
     {
         FadeText fa = doorInfoText.GetComponent<FadeText>();
 
+        if (fa == null) return;
+
         if (showInfo && fa.FadeValue <= 0f)
         {
-            if (fa != null)
-            {
-                fa.FadeIn(0.25f);
+            fa.FadeIn(0.25f);
 
+            if (doorInfoText.activeInHierarchy)
+            {
                 doorInfoText.SetActive(true);
             }
         }
         else if (!showInfo && fa.FadeValue >= 1f) 
         {
-            if (fa != null)
-            {
-                fa.FadeOut(0.25f);
-            }
+            fa.FadeOut(0.25f);
         }
     }
 
@@ -189,7 +208,10 @@ public class UiController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
+            if (!highScoreOpen)
+            {
+                PauseGame();
+            }
         }
     }
 
@@ -228,6 +250,14 @@ public class UiController : MonoBehaviour
     {
         gameManager.uiController.nameWindow.SetActive(false);
         gameManager.playfabManager.SubmitNameButton();
+        Invoke(nameof(ReloadLeaderBoard), 0.5f);
+    }
+
+    void ReloadLeaderBoard()
+    {
+        gameManager.playfabManager.GetLeaderboard();
+
+        Time.timeScale = 0f;
     }
 
     void DisableGameHud()
@@ -236,14 +266,10 @@ public class UiController : MonoBehaviour
         gamePausedUI.SetActive(true);
     }
 
-    void ReloadLeaderBoard()
-    {
-        gameManager.playfabManager.GetLeaderboard();
-        Time.timeScale = 0f;
-    }
-
     void EnableGameHud()
     {
+        highScoreTimer.Stop();
+
         gameActiveUI.SetActive(true);
         gamePausedUI.SetActive(false);
     }
@@ -251,10 +277,11 @@ public class UiController : MonoBehaviour
     public void OpenGameOverHud()
     {
         DisableGameHud();
+        Invoke(nameof(ReloadLeaderBoard), 0.5f);
 
+        highScoreOpen = true;
         gameManager.enemySpawner.DisableEnemies();
-
-        Invoke(nameof(ReloadLeaderBoard), 1f);
+        highScoreTimer.Run(highScoreUpdateFreq);
     }
 
     public void OnClickRestartButton()

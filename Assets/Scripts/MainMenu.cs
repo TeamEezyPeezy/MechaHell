@@ -13,8 +13,16 @@ public class MainMenu : MonoBehaviour
     public TMP_InputField nameInput;
     public GameObject rowPrefab;
     public Transform rowsParent;
+    private Timer timer;
+    private float highScoreUpdateFreq = 3f;
+    private bool highScoreOpen = false;
 
     private GameManager gameManager;
+
+    private void Awake()
+    {
+        timer = gameObject.AddComponent<Timer>();
+    }
 
     private void Start()
     {
@@ -24,6 +32,16 @@ public class MainMenu : MonoBehaviour
         }
 
         gameManager.CurrentGameState = GameManager.GameState.Menu;
+    }
+
+    private void Update()
+    {
+        if (timer.IsComplete && highScoreOpen)
+        {
+            timer.Stop();
+            RefreshHighScore();
+            timer.Run(highScoreUpdateFreq);
+        }
     }
 
     public void LoadGame()
@@ -38,13 +56,19 @@ public class MainMenu : MonoBehaviour
 
     public void OpenHighScore()
     {
+        highScoreOpen = true;
+        timer.Run(highScoreUpdateFreq);
+
         pauseGamePanel.SetActive(false);
         highscorePanel.SetActive(true);
-        gameManager.playfabManager.GetLeaderboard();
+        Invoke(nameof(RefreshHighScore), 0.5f);
     }
 
     public void CloseHighScore()
     {
+        highScoreOpen = false;
+        timer.Stop();
+
         pauseGamePanel.SetActive(true);
         highscorePanel.SetActive(false);
     }
@@ -77,6 +101,9 @@ public class MainMenu : MonoBehaviour
         if (gameManager != null)
         {
             gameManager.playfabManager.SubmitNameButtonMenu();
+            
+            Invoke(nameof(RefreshHighScore), 0.5f);
+
             renamePanel.SetActive(false);
         }
     }

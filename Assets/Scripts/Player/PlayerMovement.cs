@@ -4,56 +4,54 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-
 public class PlayerMovement : MonoBehaviour
 {
-    public bool canMove = true;
+    private enum State { 
+        Normal, 
+        Dashing,
+    }
 
-   private enum State {
-       Normal,
-       Dashing,
-   }
-   public float moveSpeed = 5f;
-   public float dashStartSpeed;
-   public float dashSpeedDropMultiplier;
-   public float dashCooldown;
-   public TextMeshProUGUI dashCooldownTimer;
-   float dashSpeed;
-   public Rigidbody2D playerRigidBody;
-   public Camera cam;
+    public float moveSpeed = 5f;
+    public float dashStartSpeed;
+    public float dashSpeedDropMultiplier;
+    public float dashCooldown;
+    public TextMeshProUGUI dashCooldownTimer;
+    float dashSpeed;
+    public Rigidbody2D playerRigidBody;
+    public Camera cam;
 
     public Animator animator;
 
     public AudioSource DashSound;
 
-
     float dashStartTime;
-   Vector2 movement;
-   Vector2 lastMovementDirection;
-   Vector2 mousePos;
-   float angleOffset = -90f;
+    Vector2 movement;
+    Vector2 lastMovementDirection;
+    Vector2 mousePos;
+    float angleOffset = -90f;
 
-   State state;
-
+    State state;
 
     bool isWalking = false;
+   
     bool animationChanged = false;
 #pragma warning disable 414
     bool isDashButtonDown;
 #pragma warning restore 414
     bool dashOnCooldown;
+
     void Awake()
     {
         state = State.Normal;
         dashOnCooldown = false;
         dashCooldownTimer.SetText("");
-
     }
+
     void Update()
     {
-        GetMovementInputs(); 
-        GetMousePosition(); 
-        HandleMovementAnimations(); 
+        GetMovementInputs();
+        GetMousePosition();
+        HandleMovementAnimations();
         HandleCooldowns();
     }
 
@@ -78,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
             animationChanged = false;
         }
     }
+
     void FixedUpdate()
     {
         MovePlayer();
@@ -96,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+
     void RotatePlayer()
     {
         Vector2 lookDir = mousePos - playerRigidBody.position;
@@ -155,6 +155,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
     }
+
     void GetMousePosition()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
