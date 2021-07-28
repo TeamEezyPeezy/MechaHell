@@ -64,7 +64,7 @@ public class PlayerStatsUpgradeCenter : MonoBehaviour
         {   
             gameManager.Money -= upgradeCost;
             upgradeCost *= 4;
-            playerMovementReference.moveSpeed += 2f;
+            playerMovementReference.moveSpeed += 1f;
             movespeedLvl += 1;
             upgradeParticle.Play();
             upgradeSound.Play();
