@@ -11,7 +11,7 @@ public class Sniper : Weapon
         spread = 0.02f;
         reloadTime = 1.5f;
         timeBetweenShots = 0.05f;
-        magazineSize = 7;
+        magazineSize = 4;
         bulletsLeftWhenSwitching = 7;
         bulletsPerTap = 1;
         allowButtonHold = false;

@@ -232,5 +232,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletHitPrefab: {fileID: 6865010906733915890, guid: fbde3a38fe47b434db1b29af0ba84617, type: 3}
   enemyHitPrefab: {fileID: 890367300641629653, guid: d355ce7a22c053d429d4fc954cc9d171, type: 3}
-  damage: 50
+  damage: 70
   pierceEnemy: 1

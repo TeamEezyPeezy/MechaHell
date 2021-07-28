@@ -85,7 +85,7 @@ public class DashUpgradeStation : MonoBehaviour
             upgradeInfo.SetText("Dash fully upgraded!");
 
         } else {
-            upgradeInfo.SetText("Press E to upgrade dash. Cost: " + upgradeCost + "\ncurrent cooldown: " + playerMovementReference.dashCooldown + "s");
+            upgradeInfo.SetText("Press E to upgrade dash. Cost: " + upgradeCost);
 
         }
     }

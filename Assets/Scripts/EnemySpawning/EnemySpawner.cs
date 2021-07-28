@@ -131,8 +131,8 @@ public class EnemySpawner : MonoBehaviour
         print("Spawning new wave of enemies.");
 
         // reduce maxspawn time for 10 waves
-        if(maxSpawnTime > 1f){
-            maxSpawnTime -= 0.1f;
+        if(maxSpawnTime > 0.2f){
+            maxSpawnTime -= 0.15f;
             Debug.Log("decrease time" + maxSpawnTime);
         }
 
