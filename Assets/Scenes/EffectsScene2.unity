@@ -6651,6 +6651,14 @@ PrefabInstance:
       propertyPath: machineGunUpgradeReference
       value: 
       objectReference: {fileID: 1046600408}
+    - target: {fileID: 3466027477092333394, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466027477092333394, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 1fe634248dff22b41aa425a5ec69a7b8, type: 3}
     - target: {fileID: 3998511789636272966, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: bazookaReference
       value: 
@@ -6659,10 +6667,50 @@ PrefabInstance:
       propertyPath: playerMovementReference
       value: 
       objectReference: {fileID: 37835661}
+    - target: {fileID: 4271537598162811892, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271537598162811892, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 1fe634248dff22b41aa425a5ec69a7b8, type: 3}
+    - target: {fileID: 4271537598162811892, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341929453824293998, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341929453824293998, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 1fe634248dff22b41aa425a5ec69a7b8, type: 3}
     - target: {fileID: 5341929453901802804, guid: 3972003461ff7e84587347eaa1788967, type: 3}
       propertyPath: playerReference
       value: 
       objectReference: {fileID: 2130695167}
+    - target: {fileID: 5341929454436925547, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341929454436925547, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 1fe634248dff22b41aa425a5ec69a7b8, type: 3}
+    - target: {fileID: 5341929455216112439, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341929455216112439, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 1fe634248dff22b41aa425a5ec69a7b8, type: 3}
+    - target: {fileID: 9144609909780903977, guid: 3972003461ff7e84587347eaa1788967, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3972003461ff7e84587347eaa1788967, type: 3}
 --- !u!95 &309266825 stripped
