@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
 
             waveNumber = value;
 
-            if (waveNumber >= 10)
+            if (waveNumber == 10)
             {
                 if (onDoorOpen != null) onDoorOpen();
                 if (onReachWave10 != null) onReachWave10();

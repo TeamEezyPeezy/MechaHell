@@ -88,6 +88,11 @@ public class MainMenu : MonoBehaviour
         renamePanel.SetActive(true);
     }
 
+    public void CloseRenameField()
+    {
+        renamePanel.SetActive(false);
+    }
+
     public void RefreshHighScore()
     {
         if (gameManager != null)

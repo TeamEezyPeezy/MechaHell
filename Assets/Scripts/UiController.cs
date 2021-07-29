@@ -25,6 +25,9 @@ public class UiController : MonoBehaviour
 
     [SerializeField] private GameObject doorInfoText;
 
+    [SerializeField] private Animator waveWarningAnimation;
+    [SerializeField] private AudioSource waveWarningSound;
+
     [SerializeField] private Player player;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private TextMeshProUGUI hpText;
@@ -58,6 +61,7 @@ public class UiController : MonoBehaviour
         GameManager.onKeycardChange += this.UpdateKeyCardValue;
         GameManager.onMoneyChange += this.UpdateMoneyValue;
         GameManager.onWaveNumberChange += this.UpdateWaveNumber;
+        GameManager.onReachWave10 += WaveWarningIndicator;
     }
 
     private void OnDisable()
@@ -65,6 +69,7 @@ public class UiController : MonoBehaviour
         GameManager.onKeycardChange -= this.UpdateKeyCardValue;
         GameManager.onMoneyChange -= this.UpdateMoneyValue;
         GameManager.onWaveNumberChange -= this.UpdateWaveNumber;
+        GameManager.onReachWave10 -= WaveWarningIndicator;
     }
 
     private void UpdateKeyCardValue()
@@ -288,5 +293,11 @@ public class UiController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);
+    }
+
+    void WaveWarningIndicator()
+    {
+        waveWarningAnimation.Play("waveWarning");
+        waveWarningSound.Play();
     }
 }
