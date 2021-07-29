@@ -8,11 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject controlsPanel, highscorePanel, pauseGamePanel, renamePanel;
+    [SerializeField] private GameObject controlsPanel, highscorePanel, pauseGamePanel, renamePanel, blackFadeObject;
 
     public TMP_InputField nameInput;
     public GameObject rowPrefab;
     public Transform rowsParent;
+    public Animator fadeAnimation;
     private Timer timer;
     private float highScoreUpdateFreq = 3f;
     private bool highScoreOpen = false;
@@ -21,6 +22,9 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        blackFadeObject.SetActive(true);
+        fadeAnimation.Play("blackFadeAnimation1");
+
         timer = gameObject.AddComponent<Timer>();
 
         if (gameManager == null)
@@ -44,7 +48,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(ChangeScene(1, 1.5f));
     }
 
     public void QuitGame()
@@ -109,5 +113,11 @@ public class MainMenu : MonoBehaviour
 
             renamePanel.SetActive(false);
         }
+    }
+
+    IEnumerator ChangeScene(int index, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(index);
     }
 }

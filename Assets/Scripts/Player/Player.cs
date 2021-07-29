@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     private Timer timer;
     private Timer timer2;
     public GameObject keycardEffect;
+    public GameObject playerDeathEffect;
 
     public int healthPoints = 100;
     public float doorOpenRange = 5f;
@@ -19,9 +21,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Animator playerUITakeDamageAnimation;
     [SerializeField]
+    private Animator gameOverTextAnimation;
+    [SerializeField]
     private AudioSource playerDamageTakenSound;
     [SerializeField]
     private ParticleSystem playerDamageTakenParticle;
+
+    [SerializeField]
+    private GameObject player;
 
     public Room CurrentRoom
     {
@@ -221,7 +228,14 @@ public class Player : MonoBehaviour
 
     private void PlayerDeath()
     {
-        gameManager.GameOver();
+        /* if (playerDeathEffect != null)
+        {
+            GameObject de = Instantiate(playerDeathEffect, transform.position, Quaternion.identity);
+            Destroy(de.gameObject, 3f);
+        } */
+
+        gameOverTextAnimation.Play("gameOverAnimation");
+        StartCoroutine(GameOverDelay(2f));
     }
 
     public void RefillHealth()
@@ -229,7 +243,6 @@ public class Player : MonoBehaviour
         if(healthPoints < 100){
             healthPoints = 100;
         }
-        
     }
 
     public void BuyBonushealth()
@@ -241,5 +254,11 @@ public class Player : MonoBehaviour
         } else {
             healthPoints += 25;
         }
+    }
+
+    IEnumerator GameOverDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameManager.GameOver();
     }
 }

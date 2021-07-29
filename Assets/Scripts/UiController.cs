@@ -24,7 +24,9 @@ public class UiController : MonoBehaviour
     [SerializeField] private GameObject gameOverHud;
     [SerializeField] private GameObject controlsPanel;
     [SerializeField] private GameObject quitPanel;
+    [SerializeField] private GameObject blackFadeObject;
 
+    [SerializeField] private Animator fadeAnimation;
 
     [SerializeField] private GameObject doorInfoText;
 
@@ -109,6 +111,8 @@ public class UiController : MonoBehaviour
     {
         gameManager = GameManager.instance;
         highScoreTimer = gameObject.AddComponent<Timer>();
+        blackFadeObject.SetActive(true);
+        fadeAnimation.Play("blackFadeAnimation1");
     }
 
     void Start()
