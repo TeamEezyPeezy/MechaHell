@@ -22326,7 +22326,9 @@ MonoBehaviour:
   activeRooms: []
   player: {fileID: 2130695167}
   enemy_Basic: {fileID: 6843096791398924692, guid: afba5ec2485ae8e4ab67c984baf8a741, type: 3}
+  enemy_Basic_Stronk: {fileID: 6843096791398924692, guid: 8f826a2af6ac74649805450e0a84689f, type: 3}
   enemy_Flying: {fileID: 6843096791398924692, guid: 15083594a0435444d997e87a61413589, type: 3}
+  enemy_Flying_Stronk: {fileID: 6843096791398924692, guid: 7b5fe1ae73cf6574ea50198f0454f05d, type: 3}
   enemiesAtStart: 5
   roomExtraDifficulty: 0.25
   timeBetweenSpawning: 5
@@ -28123,8 +28125,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7486870751380344632, guid: b9cf8ace416527a439c4755b10cab5b0, type: 3}
+      propertyPath: startMoney
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486870751380344632, guid: b9cf8ace416527a439c4755b10cab5b0, type: 3}
       propertyPath: startKeyCards
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8093309835461982423, guid: b9cf8ace416527a439c4755b10cab5b0, type: 3}
       propertyPath: m_RootOrder

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,12 +8,18 @@ public class EnemySpawner : MonoBehaviour
 {
     private GameManager gameManager;
     public static List<Transform> enemies;
+
+    [HideInInspector]
     public Room[] allRooms;
+    [HideInInspector]
     public List<Room> activeRooms;
+
     public Player player;
 
     public GameObject enemy_Basic;
+    public GameObject enemy_Basic_Stronk;
     public GameObject enemy_Flying;
+    public GameObject enemy_Flying_Stronk;
 
     private Timer timer;
 
@@ -63,6 +70,8 @@ public class EnemySpawner : MonoBehaviour
     private bool betweenWaveTime = false;
 #pragma warning restore 414
 
+    private bool hasReachedWave10 = false;
+
     private void CalculateEnemyAmounts()
     {
         difficultyMultiplier = baseDifficultyMultiplier + RoomExtraDifficulty;
@@ -75,6 +84,21 @@ public class EnemySpawner : MonoBehaviour
             flyingEnemiesToSpawn = flyingEnemiesToSpawn + (gameManager.WaveNumber * difficultyMultiplier);
             print("Next wave flying enemies: " + flyingEnemiesToSpawn);
         }
+    }
+
+    private void OnEnable()
+    {
+        GameManager.onReachWave10 += this.ReachWave10;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.onReachWave10 -= this.ReachWave10;
+    }
+
+    private void ReachWave10()
+    {
+        hasReachedWave10 = true;
     }
 
     private void Awake()
@@ -153,7 +177,25 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Vector2 spawnPos = randomRoom.CalculateSpawnPoint(player.transform, minRangeToSpawn);
 
-                    SpawnEnemy(enemy_Basic, spawnPos);
+                    if (hasReachedWave10)
+                    {
+                        int random = Random.Range(0, 2);
+
+                        print(random);
+
+                        if (random <= 0)
+                        {
+                            SpawnEnemy(enemy_Basic, spawnPos);
+                        }
+                        else
+                        {
+                            SpawnEnemy(enemy_Basic_Stronk, spawnPos);
+                        }
+                    }
+                    else
+                    {
+                        SpawnEnemy(enemy_Basic, spawnPos);
+                    }
                 }
                 else
                 {
@@ -178,7 +220,22 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Vector2 spawnPos = randomRoom.CalculateSpawnPoint(player.transform, minRangeToSpawn);
 
-                    SpawnEnemy(enemy_Flying, spawnPos);
+                    if (hasReachedWave10)
+                    {
+                        int random = Random.Range(0, 2);
+                        if (random <= 0)
+                        {
+                            SpawnEnemy(enemy_Flying, spawnPos);
+                        }
+                        else
+                        {
+                            SpawnEnemy(enemy_Flying_Stronk, spawnPos);
+                        }
+                    }
+                    else
+                    {
+                        SpawnEnemy(enemy_Flying, spawnPos);
+                    }
                 }
 
                 timeBetweenSpawns = Random.Range(minSpawnTime, maxSpawnTime);

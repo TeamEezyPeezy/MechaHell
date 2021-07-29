@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public static event PlayerValueUpdate onKeycardChange;
     public static event PlayerValueUpdate onWaveNumberChange;
     public static event PlayerValueUpdate onDoorOpen;
+    public static event PlayerValueUpdate onReachWave10;
+
 
     private int money;
     private int keyCards;
@@ -148,12 +150,13 @@ public class GameManager : MonoBehaviour
             if (waveNumber == value) return;
             if (onWaveNumberChange != null) onWaveNumberChange();
 
-            if (waveNumber >= 9)
+            waveNumber = value;
+
+            if (waveNumber >= 10)
             {
                 if (onDoorOpen != null) onDoorOpen();
+                if (onReachWave10 != null) onReachWave10();
             }
-
-            waveNumber = value;
             player.RefillHealth();
         }
     }
