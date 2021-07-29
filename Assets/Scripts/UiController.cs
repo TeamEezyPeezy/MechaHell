@@ -22,6 +22,9 @@ public class UiController : MonoBehaviour
 
     [SerializeField] private GameObject pauseHud;
     [SerializeField] private GameObject gameOverHud;
+    [SerializeField] private GameObject controlsPanel;
+    [SerializeField] private GameObject quitPanel;
+
 
     [SerializeField] private GameObject doorInfoText;
 
@@ -248,7 +251,12 @@ public class UiController : MonoBehaviour
 
     public void OnClickQuitButton()
     {
-        Application.Quit();
+        quitPanel.SetActive(true);
+    }
+
+    public void onClickBackButton()
+    {
+        quitPanel.SetActive(false);
     }
 
     public void OnClickSubmitName()
@@ -279,6 +287,16 @@ public class UiController : MonoBehaviour
         gamePausedUI.SetActive(false);
     }
 
+    public void EnableControlsPanel()
+    {
+        controlsPanel.SetActive(true);
+    }
+
+    public void DisableControlsPanel()
+    {
+        controlsPanel.SetActive(false);
+    }
+
     public void OpenGameOverHud()
     {
         DisableGameHud();
@@ -287,6 +305,10 @@ public class UiController : MonoBehaviour
         highScoreOpen = true;
         gameManager.enemySpawner.DisableEnemies();
         highScoreTimer.Run(highScoreUpdateFreq);
+        playerMovementReference.enabled = false;
+        gunReference.enabled = false;
+        bazookaReference.enabled = false;
+        coolDownReference.enabled = false;
     }
 
     public void OnClickRestartButton()
@@ -299,5 +321,17 @@ public class UiController : MonoBehaviour
     {
         waveWarningAnimation.Play("waveWarning");
         waveWarningSound.Play();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void QuitToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        Cursor.visible = true;
     }
 }

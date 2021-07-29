@@ -87,10 +87,8 @@ public class GameManager : MonoBehaviour
         uiController = FindObjectOfType<UiController>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
 
-        if (CurrentGameState == GameState.Menu)
-        {
-            mainMenu = FindObjectOfType<MainMenu>();
-        }
+        mainMenu = FindObjectOfType<MainMenu>();
+        
     }
 
     public bool CanDropKeycard

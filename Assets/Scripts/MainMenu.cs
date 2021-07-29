@@ -22,17 +22,15 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         timer = gameObject.AddComponent<Timer>();
-    }
 
-    private void Start()
-    {
         if (gameManager == null)
         {
             gameManager = GameManager.instance;
         }
-
+        gameManager.ResetGame();
         gameManager.CurrentGameState = GameManager.GameState.Menu;
     }
+
 
     private void Update()
     {
