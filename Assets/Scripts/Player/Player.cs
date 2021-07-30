@@ -28,7 +28,17 @@ public class Player : MonoBehaviour
     private ParticleSystem playerDamageTakenParticle;
 
     [SerializeField]
-    private GameObject player;
+    private GameObject playerLight;
+    [SerializeField]
+    private GameObject playerWeapon;
+    [SerializeField]
+    private GameObject playerTorso;
+    [SerializeField]
+    private GameObject playerLegs;
+    [SerializeField]
+    private GameObject playerGunArm;
+    [SerializeField]
+    private GameObject playerLeftArm;
 
     public Room CurrentRoom
     {
@@ -228,12 +238,20 @@ public class Player : MonoBehaviour
 
     private void PlayerDeath()
     {
-        /* if (playerDeathEffect != null)
+        if (playerDeathEffect != null)
         {
+            playerLight.SetActive(false);
+            playerWeapon.SetActive(false);
+            playerTorso.SetActive(false);
+            playerLegs.SetActive(false);
+            playerGunArm.SetActive(false);
+            playerLeftArm.SetActive(false);
+
             GameObject de = Instantiate(playerDeathEffect, transform.position, Quaternion.identity);
             Destroy(de.gameObject, 3f);
-        } */
+        }
 
+        gameManager.enemySpawner.DisableEnemies();
         gameOverTextAnimation.Play("gameOverAnimation");
         StartCoroutine(GameOverDelay(2f));
     }

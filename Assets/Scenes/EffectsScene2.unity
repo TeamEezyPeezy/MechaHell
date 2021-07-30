@@ -285,6 +285,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8116413541067230164, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
   m_PrefabInstance: {fileID: 152935093}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &6720706 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 671347002, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+  m_PrefabInstance: {fileID: 152935093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8066267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3299,7 +3304,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 308100712, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 506550802, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 670281782, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: cooldown
@@ -3321,6 +3330,30 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 813835812, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098417658, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1182718042, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403170120, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918406233, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014401453, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5654646946204477, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -3329,6 +3362,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6720705}
+    - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3222000044811696104, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: currentRoom
       value: 
@@ -3375,7 +3412,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7903752946282472654, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913592222039091659, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7984915051589741359, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_audioClip
@@ -3384,6 +3425,10 @@ PrefabInstance:
     - target: {fileID: 7984915051589741359, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116413540481223789, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8116413541067230164, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_Name
@@ -3466,6 +3511,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1376416394}
     - target: {fileID: 8116413541067230170, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 6720706}
+    - target: {fileID: 8116413541067230170, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: DashSound
       value: 
       objectReference: {fileID: 910960874}
@@ -3483,7 +3532,7 @@ PrefabInstance:
       objectReference: {fileID: 1168432072}
     - target: {fileID: 9181959083307838673, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81d130a660e97aa4a8b2513626a4a643, type: 3}
@@ -6498,7 +6547,7 @@ Transform:
   - {fileID: 1064711966}
   - {fileID: 910960873}
   m_Father: {fileID: 152935094}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &309266824
 PrefabInstance:

@@ -190,11 +190,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506550801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.73600006, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0.73600006, y: 0.010000229, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 8116413541067230169}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &506550803
 SpriteRenderer:
@@ -271,12 +271,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813835811}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -0.01, y: 0.88, z: 0}
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: -0.010000229, y: 0.8800001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 8116413541067230169}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!114 &813835813
 MonoBehaviour:
@@ -475,7 +475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 8116413541067230169}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1098417659
 SpriteRenderer:
@@ -553,11 +553,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182718041}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.038, y: -0.184, z: 0}
+  m_LocalPosition: {x: -0.038000107, y: -0.18400002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 8116413541067230169}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1182718043
 SpriteRenderer:
@@ -635,11 +635,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403170119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.003, y: 0.428, z: 0}
+  m_LocalPosition: {x: -0.0029997826, y: 0.42799997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 8116413541067230169}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1403170121
 SpriteRenderer:
@@ -847,7 +847,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 8116413541067230169}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014246625
 GameObject:
@@ -1001,11 +1001,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014401452}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.89226854, y: -0.0012102127, z: 0}
+  m_LocalPosition: {x: -0.89226866, y: -0.0012102127, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 8116413541067230169}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2014401454
 SpriteRenderer:
@@ -11201,7 +11201,7 @@ Transform:
   m_Children:
   - {fileID: 7992171638495181111}
   m_Father: {fileID: 8116413541067230169}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8116413541067230164
 GameObject:
@@ -11238,14 +11238,14 @@ Transform:
   m_LocalPosition: {x: -0.39, y: -1.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
-  - {fileID: 8116413540481223789}
   - {fileID: 813835812}
-  - {fileID: 1918406233}
   - {fileID: 506550802}
   - {fileID: 1403170120}
   - {fileID: 1182718042}
   - {fileID: 2014401453}
   - {fileID: 1098417658}
+  - {fileID: 8116413540481223789}
+  - {fileID: 1918406233}
   - {fileID: 308100712}
   - {fileID: 9181959083307838673}
   - {fileID: 7903752946282472654}
@@ -11334,11 +11334,19 @@ MonoBehaviour:
   currentRoom: {fileID: 0}
   startRoom: {fileID: 0}
   keycardEffect: {fileID: 0}
+  playerDeathEffect: {fileID: 0}
   healthPoints: 100
   doorOpenRange: 5
   playerUITakeDamageAnimation: {fileID: 0}
+  gameOverTextAnimation: {fileID: 0}
   playerDamageTakenSound: {fileID: 0}
   playerDamageTakenParticle: {fileID: 0}
+  playerLight: {fileID: 813835811}
+  playerWeapon: {fileID: 506550801}
+  playerTorso: {fileID: 1403170119}
+  playerLegs: {fileID: 1182718041}
+  playerGunArm: {fileID: 2014401452}
+  playerLeftArm: {fileID: 1098417657}
 --- !u!114 &670281782
 MonoBehaviour:
   m_ObjectHideFlags: 0
