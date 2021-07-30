@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
+    public AudioSource enemyDeathAudioSource;
+
     public enum GameState
     {
         Menu,

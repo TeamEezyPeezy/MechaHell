@@ -47,6 +47,16 @@ public class Enemy : MonoBehaviour
         if (deathEffect != null)
         {
             GameObject de = Instantiate(deathEffect, transform.position, Quaternion.identity);
+
+            if (!gameManager.enemyDeathAudioSource.isPlaying)
+            {
+                AudioClip audioClip = gameManager.enemyDeathAudioSource.clip;
+                if (audioClip != null)
+                {
+                    gameManager.enemyDeathAudioSource.PlayOneShot(audioClip);
+                }
+            }
+
             Destroy(de.gameObject, 3f);
         }
 
