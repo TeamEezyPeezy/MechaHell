@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     private Timer timer;
     private float highScoreUpdateFreq = 3f;
     private bool highScoreOpen = false;
+    public Image blackFadeImage;
 
     private GameManager gameManager;
 
@@ -49,6 +50,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         StartCoroutine(ChangeScene(1, 1.5f));
+        blackFadeImage.raycastTarget = true;
     }
 
     public void QuitGame()

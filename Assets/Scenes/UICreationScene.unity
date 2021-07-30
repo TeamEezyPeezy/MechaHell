@@ -4358,6 +4358,7 @@ MonoBehaviour:
   rowPrefab: {fileID: 6075735654854707320, guid: cc3975cc9a10ef547be3cb66f209ea78, type: 3}
   rowsParent: {fileID: 7510470545298292565}
   fadeAnimation: {fileID: 1716384419}
+  blackFadeImage: {fileID: 1716384420}
 --- !u!224 &4943448781591924282
 RectTransform:
   m_ObjectHideFlags: 0

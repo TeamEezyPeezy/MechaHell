@@ -236,6 +236,7 @@ public class UiController : MonoBehaviour
         gunReference.enabled = false;
         bazookaReference.enabled = false;
         coolDownReference.enabled = false;
+        blackFadeObject.SetActive(false);
 
         Time.timeScale = 0f;
     }
