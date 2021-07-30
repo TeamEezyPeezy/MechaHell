@@ -32,7 +32,7 @@ public class FadeText : MonoBehaviour
 
     public void FadeIn(float fadeTime)
     {
-        if (text != null && !isFading)
+        if (text != null && !isFading && text.gameObject.activeInHierarchy)
         {
             isFading = true;
             StartCoroutine(FadeTextToFullAlpha(fadeTime, text));
@@ -41,7 +41,7 @@ public class FadeText : MonoBehaviour
 
     public void FadeOut(float fadeTime)
     {
-        if (text != null && !isFading)
+        if (text != null && !isFading && text.gameObject.activeInHierarchy)
         {
             isFading = true;
             StartCoroutine(FadeTextToZeroAlpha(fadeTime, text));
