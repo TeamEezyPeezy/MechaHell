@@ -93,7 +93,7 @@ public class HealthUpgradeStation : MonoBehaviour
     }
     bool hasEnoughMoneyFor(int amount)
     {
-        return gameManager.Money > amount;
+        return gameManager.Money >= amount;
     }
 
     void infoTextUpdateHandler()
