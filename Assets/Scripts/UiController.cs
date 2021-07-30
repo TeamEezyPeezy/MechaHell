@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,7 @@ public class UiController : MonoBehaviour
 
     private Timer highScoreTimer;
 
-    private float highScoreUpdateFreq = 3f;
+    private float highScoreUpdateFreq = 1f;
     private bool highScoreOpen = false;
     // - End - 
 
@@ -25,6 +26,7 @@ public class UiController : MonoBehaviour
     [SerializeField] private GameObject controlsPanel;
     [SerializeField] private GameObject quitPanel;
     [SerializeField] private GameObject blackFadeObject;
+    [SerializeField] private GameObject waveWarningObject;
 
     [SerializeField] private Animator fadeAnimation;
 
@@ -274,8 +276,6 @@ public class UiController : MonoBehaviour
     void ReloadLeaderBoard()
     {
         gameManager.playfabManager.GetLeaderboard();
-
-        Time.timeScale = 0f;
     }
 
     void DisableGameHud()
@@ -326,6 +326,7 @@ public class UiController : MonoBehaviour
     {
         waveWarningAnimation.Play("waveWarning");
         waveWarningSound.Play();
+        StartCoroutine(DestroyWaveWarning(2f));
     }
 
     public void QuitGame()
@@ -338,5 +339,11 @@ public class UiController : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
         Cursor.visible = true;
+    }
+
+    IEnumerator DestroyWaveWarning(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(waveWarningObject);
     }
 }

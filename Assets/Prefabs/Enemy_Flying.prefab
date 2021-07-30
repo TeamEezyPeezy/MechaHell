@@ -377,9 +377,9 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  bulletSpeed: 9
+  bulletSpeed: 10
   burstBulletAmount: 3
-  burstSpeed: 0.2
+  burstSpeed: 0.3
   timeBetweenAttacks: 1.25
   attackRange: 8
   playerInSightRange: 0

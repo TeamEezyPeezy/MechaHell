@@ -373,14 +373,14 @@ MonoBehaviour:
   firePoint: {fileID: 3666265755991483359}
   firePoint2: {fileID: 1901630851}
   firePoint3: {fileID: 490338854}
-  projectile: {fileID: 5684146929126159320, guid: f798bbb5cab65954885bcd99fdd9b1c2, type: 3}
+  projectile: {fileID: 5684146929126159320, guid: d483a56482ef2ea4b8dc36393002109d, type: 3}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  bulletSpeed: 9
-  burstBulletAmount: 3
-  burstSpeed: 0.2
-  timeBetweenAttacks: 1.25
+  bulletSpeed: 12
+  burstBulletAmount: 4
+  burstSpeed: 0.15
+  timeBetweenAttacks: 1.5
   attackRange: 8
   playerInSightRange: 0
   playerInAttackRange: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 60
   keyCardDrop: {fileID: 4411184046429463690, guid: a285cf2f9fbd86e4495de7dc775029bb, type: 3}
-  deathEffect: {fileID: 3575149695788892448, guid: 5705db500a784154298d52e071d42810, type: 3}
+  deathEffect: {fileID: 3575149695788892448, guid: 31f3d19753c2f054e95d7fd272a6ce83, type: 3}
 --- !u!95 &1759325192071807438
 Animator:
   serializedVersion: 3

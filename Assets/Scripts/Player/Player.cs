@@ -40,6 +40,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject playerLeftArm;
 
+    [SerializeField]
+    private CircleCollider2D playerCollider;
+
     public Room CurrentRoom
     {
         get
@@ -246,6 +249,7 @@ public class Player : MonoBehaviour
             playerLegs.SetActive(false);
             playerGunArm.SetActive(false);
             playerLeftArm.SetActive(false);
+            playerCollider.enabled = !playerCollider.enabled;
 
             GameObject de = Instantiate(playerDeathEffect, transform.position, Quaternion.identity);
             Destroy(de.gameObject, 3f);
