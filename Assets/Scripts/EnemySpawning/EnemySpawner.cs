@@ -76,12 +76,12 @@ public class EnemySpawner : MonoBehaviour
     {
         difficultyMultiplier = baseDifficultyMultiplier + RoomExtraDifficulty;
         print("Difficulty multiplier = " + difficultyMultiplier);
-        basicEnemiesToSpawn = basicEnemiesToSpawn + (gameManager.WaveNumber * difficultyMultiplier);
+        basicEnemiesToSpawn = (basicEnemiesToSpawn + (gameManager.WaveNumber * difficultyMultiplier)) / 2;
         print("Next wave basic enemies: " + basicEnemiesToSpawn);
 
         if (gameManager.WaveNumber >= 5 || gameManager.RoomsOpen >= 2)
         {
-            flyingEnemiesToSpawn = flyingEnemiesToSpawn + (gameManager.WaveNumber * difficultyMultiplier);
+            flyingEnemiesToSpawn = (flyingEnemiesToSpawn + (gameManager.WaveNumber * difficultyMultiplier)) /2;
             print("Next wave flying enemies: " + flyingEnemiesToSpawn);
         }
     }
@@ -157,7 +157,7 @@ public class EnemySpawner : MonoBehaviour
 
         // reduce maxspawn time for 10 waves
         if(maxSpawnTime > 0.2f){
-            maxSpawnTime -= 0.15f;
+            maxSpawnTime -= 0.1f;
             Debug.Log("decrease time" + maxSpawnTime);
         }
 

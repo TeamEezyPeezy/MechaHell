@@ -190,7 +190,7 @@ public class GameManager : MonoBehaviour
     public void EnemyDied()
     {
         EnemyCount--;
-        Money += 50;
+        Money += 100;
     }
 
     public void EnemySpawned()
